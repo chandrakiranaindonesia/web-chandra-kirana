@@ -29,10 +29,9 @@
         header.scrolled { background: rgba(11, 28, 44, 0.97); backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(201,168,76,0.15); }
         .navbar-inner { max-width: 1320px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 80px; }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-mark { width: 40px; height: 40px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 16px; color: var(--navy); letter-spacing: 0.02em; }
         .logo-text { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 13px; color: var(--white); letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; }
         .logo-text span { display: block; font-weight: 300; font-size: 10px; letter-spacing: 0.18em; color: var(--gold-light); opacity: 0.8; }
-        nav { display: flex; align-items: center; gap: 2.5rem; }
+        nav { display: flex; align-items: center; gap: 2rem; }
         nav a { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,250,248,0.65); text-decoration: none; transition: color var(--transition); position: relative; }
         nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width var(--transition); }
         nav a:hover { color: var(--white); }
@@ -54,11 +53,10 @@
         .inner-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 5vw, 64px); font-weight: 600; color: var(--white); line-height: 1.1; letter-spacing: -0.01em; opacity: 0; animation: fadeUp 0.9s 0.38s forwards; }
         .inner-hero h1 em { font-style: italic; color: var(--gold-light); }
 
-        /* ── PORTFOLIO GALLERY SECTION ── */
-        .gallery-section { padding: 100px 2rem; background: var(--white); min-height: 80vh; }
+        /* ── PORTFOLIO GALLERY SECTION (DESAIN 3D) ── */
+        .gallery-section { padding: 100px 2rem; background: var(--white); }
         .container { max-width: 1320px; margin: 0 auto; }
         
-        /* ── FEATURED PROJECT (BENTO GRID - DIPERBESAR) ── */
         .featured-project { margin-bottom: 100px; }
         .featured-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; gap: 2rem; flex-wrap: wrap; }
         .featured-header .section-label { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
@@ -67,7 +65,6 @@
         .featured-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4vw, 48px); font-weight: 600; color: var(--navy); line-height: 1.1; }
         .featured-text { max-width: 500px; font-size: 15px; color: var(--gray-text); line-height: 1.7; font-weight: 300; }
 
-        /* Grid diperbarui untuk menampung 6 gambar (4 render + 2 dokumentasi) */
         .bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 240px; gap: 16px; }
         .bento-item { position: relative; overflow: hidden; border-radius: 4px; background: #E5E2DA; cursor: pointer; }
         .bento-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
@@ -81,33 +78,68 @@
         .bento-wide { grid-column: span 2; grid-row: span 1; }
         .bento-small { grid-column: span 1; grid-row: span 1; }
 
-        /* Filter Menu */
         .portfolio-filter { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 48px; list-style: none; padding-top: 40px; border-top: 1px solid #E5E2DA;}
-        .filter-btn {
-            background: transparent; border: 1px solid #E5E2DA; color: var(--gray-text);
-            padding: 10px 24px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600;
-            letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all var(--transition);
-        }
+        .filter-btn { background: transparent; border: 1px solid #E5E2DA; color: var(--gray-text); padding: 10px 24px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all var(--transition); }
         .filter-btn:hover { border-color: var(--gold); color: var(--navy); }
         .filter-btn.active { background: var(--gold); border-color: var(--gold); color: var(--navy); }
 
-        /* Grid Layout (Galeri Bawah) */
         .portfolio-grid-page { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .portfolio-item { position: relative; overflow: hidden; cursor: pointer; background: #E5E2DA; transition: all 0.4s ease; border-radius: 4px; }
         .portfolio-item.hidden { display: none; }
-        
         .portfolio-item img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
         .portfolio-item:hover img { transform: scale(1.06); }
-        
         .portfolio-overlay-std { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,28,44,0.95) 0%, rgba(11,28,44,0.2) 60%, transparent 100%); opacity: 0; transition: opacity var(--transition); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; }
         .portfolio-item:hover .portfolio-overlay-std { opacity: 1; }
-        
         .portfolio-category { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 8px; transform: translateY(15px); opacity: 0; transition: all 0.5s ease; }
         .portfolio-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--white); line-height: 1.2; margin-bottom: 8px; transform: translateY(15px); opacity: 0; transition: all 0.5s ease 0.05s; }
         .portfolio-location { font-size: 12px; color: rgba(250,250,248,0.6); font-weight: 300; transform: translateY(15px); opacity: 0; transition: all 0.5s ease 0.1s; display: flex; align-items: center; gap: 6px; }
-        .portfolio-location svg { width: 14px; height: 14px; color: var(--gold); }
-        
         .portfolio-item:hover .portfolio-category, .portfolio-item:hover .portfolio-name, .portfolio-item:hover .portfolio-location { transform: translateY(0); opacity: 1; }
+
+        /* ── DOKUMENTASI LAPANGAN SECTION (BARU) ── */
+        .doc-section { padding: 100px 2rem; background: var(--cream); border-top: 1px solid #E5E2DA; }
+        .doc-header { text-align: center; margin-bottom: 56px; }
+        .doc-header .section-label { display: flex; justify-content: center; align-items: center; gap: 14px; margin-bottom: 16px; }
+        .doc-header .section-label::before, .doc-header .section-label::after { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+        .doc-header .section-label span { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+        .doc-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4vw, 48px); font-weight: 600; color: var(--navy); line-height: 1.1; margin-bottom: 16px; }
+        .doc-header p { color: var(--gray-text); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+        /* Layout Grid Masonry/Gallery sederhana */
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .doc-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #E5E2DA;
+            height: 280px; /* Tinggi seragam agar rapi */
+            box-shadow: 0 4px 16px rgba(11,28,44,0.05);
+            border: 1px solid rgba(201,168,76,0.2);
+            transition: all var(--transition);
+        }
+        
+        .doc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(11,28,44,0.1);
+            border-color: var(--gold);
+        }
+        
+        .doc-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .doc-item:hover img {
+            transform: scale(1.08);
+        }
 
         /* ── CTA BANNER ── */
         .cta-section { background: var(--navy); padding: 80px 2rem; position: relative; overflow: hidden; border-top: 1px solid rgba(201,168,76,0.2); }
@@ -194,17 +226,14 @@
     <header id="mainHeader">
         <div class="navbar-inner">
             <a href="index.html" class="logo">
-                <!-- Logo Gambar -->
                 <div style="background: var(--white); padding: 4px; border-radius: 6px; display: flex; align-items: center; justify-content: center; height: 44px; width: 44px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <img src="img/Logo cv.png" alt="Logo CKI" style="height: 100%; width: 100%; object-fit: contain;">
+                    <img src="img/logo-cki.png" alt="Logo CKI" style="height: 100%; width: 100%; object-fit: contain;">
                 </div>
-                <!-- Logo Teks -->
                 <div class="logo-text">
                     Kontraktor
                     <span>Chandra Kirana Indonesia</span>
                 </div>
             </a>
-            
             <nav>
                 <a href="index.html">Beranda</a>
                 <a href="tentang-kami.html">Tentang Kami</a>
@@ -230,11 +259,10 @@
         </div>
     </section>
 
-    <!-- Portfolio Gallery -->
+    <!-- Portfolio Gallery (Desain MRF) -->
     <section class="gallery-section">
         <div class="container">
             
-            <!-- FEATURED PROJECT: BENTO GRID DENGAN FOTO PERESMIAN -->
             <div class="featured-project reveal">
                 <div class="featured-header">
                     <div>
@@ -246,9 +274,7 @@
                     </div>
                 </div>
 
-                <!-- Grid Bento diperbesar menjadi 6 kotak -->
                 <div class="bento-grid">
-                    <!-- Main Large Image (Masterplan) -->
                     <div class="bento-item bento-main">
                         <img src="img/desain 5.jpeg" alt="Aerial View Fasilitas Industri">
                         <div class="bento-overlay">
@@ -256,26 +282,20 @@
                         </div>
                     </div>
                     
-                    <!-- Foto Peresmian Bupati Malang (Wide Kanan Atas) -->
-                    <!-- Foto Peresmian Bupati Malang (Wide Kanan Atas) -->
                     <div class="bento-item bento-wide">
-                        <!-- Tambahkan style="object-position: top;" di sini -->
                         <img src="img/peresmian 1.jpeg" alt="Peresmian Fasilitas oleh Bupati Malang" style="object-position: top;">
                         <div class="bento-overlay">
                             <h3 class="bento-title">Peresmian Fasilitas oleh Bupati Malang</h3>
                         </div>
                     </div>
                     
-                    <!-- Foto Peninjauan Lokasi bersama Pejabat (Wide Kanan Bawah) -->
                     <div class="bento-item bento-wide">
-                        <!-- Tambahkan style="object-position: top;" di sini -->
                         <img src="img/peresmian 2.jpeg" alt="Peninjauan Lokasi Proyek" style="object-position: top;">
                         <div class="bento-overlay">
                             <h3 class="bento-title">Peninjauan Lokasi Terpadu</h3>
                         </div>
                     </div>
                     
-                    <!-- Render Tipping & Loading (Small Kiri Bawah) -->
                     <div class="bento-item bento-small">
                         <img src="img/desain 7.jpeg" alt="Tipping and Loading Area">
                         <div class="bento-overlay">
@@ -283,7 +303,6 @@
                         </div>
                     </div>
                     
-                    <!-- Render Rumah Pompa (Small Tengah Bawah) -->
                     <div class="bento-item bento-small">
                         <img src="img/desain 4.jpeg" alt="Rumah Pompa">
                         <div class="bento-overlay">
@@ -293,7 +312,6 @@
                 </div>
             </div>
 
-            <!-- Filter Menu untuk Galeri Bawah -->
             <ul class="portfolio-filter reveal">
                 <li><button class="filter-btn active" data-filter="all">Semua Kategori</button></li>
                 <li><button class="filter-btn" data-filter="konstruksi">Konstruksi Bangunan</button></li>
@@ -301,69 +319,70 @@
                 <li><button class="filter-btn" data-filter="mekanikal">Mekanikal & Elektrikal</button></li>
             </ul>
 
-            <!-- Gallery Grid Bawah (Sisa Gambar Render: 1, 2, 3, 6, 8) -->
             <div class="portfolio-grid-page reveal" id="portfolioGrid">
-                
                 <div class="portfolio-item infrastruktur">
                     <img src="img/desain 1.jpeg" alt="Gerbang Timbangan">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Infrastruktur Area</div>
                         <div class="portfolio-name">Fasilitas Gerbang & Timbangan</div>
-                        <div class="portfolio-location">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            Fasilitas Mini MRF
-                        </div>
                     </div>
                 </div>
-
                 <div class="portfolio-item infrastruktur">
                     <img src="img/desain 2.jpeg" alt="Fasilitas Parkir">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Infrastruktur Area</div>
                         <div class="portfolio-name">Area Parkir Alat Berat</div>
-                        <div class="portfolio-location">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            Fasilitas Mini MRF
-                        </div>
                     </div>
                 </div>
-
                 <div class="portfolio-item mekanikal">
                     <img src="img/desain 6.jpeg" alt="Struktur Pabrik Pengolahan">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Mekanikal & Elektrikal</div>
                         <div class="portfolio-name">Sistem Conveyor Pengolahan</div>
-                        <div class="portfolio-location">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            Fasilitas Mini MRF
-                        </div>
                     </div>
                 </div>
-
                 <div class="portfolio-item infrastruktur">
                     <img src="img/desain 3.jpeg" alt="Washing Area">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Infrastruktur Area</div>
                         <div class="portfolio-name">Fasilitas Washing Area</div>
-                        <div class="portfolio-location">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            Fasilitas Mini MRF
-                        </div>
                     </div>
                 </div>
-
                 <div class="portfolio-item konstruksi">
                     <img src="img/desain 8.jpeg" alt="Area Residu">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Konstruksi Bangunan</div>
                         <div class="portfolio-name">Perencanaan Struktur Residu</div>
-                        <div class="portfolio-location">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            Fasilitas Mini MRF
-                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- NEW SECTION: DOKUMENTASI LAPANGAN (MENGGANTIKAN TIMELINE) -->
+    <section class="doc-section reveal">
+        <div class="container">
+            <div class="doc-header">
+                <div class="section-label"><span>Live Update & Aktivitas Lapangan</span></div>
+                <h2>Proyek <em>Rungkut Menanggal</em></h2>
+                <p>Galeri dokumentasi pengerjaan struktur bangunan secara langsung dari lapangan. Ini adalah bukti komitmen kami dalam mengawal proyek dari tahap pembongkaran awal hingga konstruksi akhir.</p>
+            </div>
+
+            <!-- Grid Galeri Dokumentasi -->
+            <div class="doc-grid">
+                
+                <!-- Agar gambar langsung muncul, ubah nama file foto-foto yang barusan Anda kirim 
+                     menjadi rungkut-1.jpg sampai rungkut-8.jpg dan masukkan ke folder img -->
+                     
+                <div class="doc-item reveal"><img src="img/Picture4.png" alt="Dokumentasi Proyek Rungkut 1"></div>
+                <div class="doc-item reveal"><img src="img/Picture5.png" alt="Dokumentasi Proyek Rungkut 2"></div>
+                <div class="doc-item reveal"><img src="img/Picture6.png" alt="Dokumentasi Proyek Rungkut 3"></div>
+                <div class="doc-item reveal"><img src="img/Picture7.png" alt="Dokumentasi Proyek Rungkut 4"></div>
+                <div class="doc-item reveal"><img src="img/Picture8.png" alt="Dokumentasi Proyek Rungkut 5"></div>
+                <div class="doc-item reveal"><img src="img/Picture9.png" alt="Dokumentasi Proyek Rungkut 6"></div>
+                <div class="doc-item reveal"><img src="img/Picture10.png" alt="Dokumentasi Proyek Rungkut 7"></div>
+                <div class="doc-item reveal"><img src="img/Picture11.png" alt="Dokumentasi Proyek Rungkut 8"></div>
+                
             </div>
         </div>
     </section>
@@ -390,7 +409,9 @@
             <div class="footer-top">
                 <div>
                     <div class="footer-logo">
-                        <div class="logo-mark">CKI</div>
+                        <div style="background: var(--white); padding: 6px; border-radius: 8px; display: flex; align-items: center; justify-content: center; height: 56px; width: 56px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                            <img src="img/logo-cki.png" alt="Logo CKI" style="height: 100%; width: 100%; object-fit: contain;">
+                        </div>
                         <div class="logo-text" style="color: var(--white);">
                             Kontraktor
                             <span>Chandra Kirana Indonesia</span>
@@ -452,7 +473,6 @@
     </footer>
 
     <script>
-        // Sticky Header & Mobile Menu
         const header = document.getElementById('mainHeader');
         window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 40); });
         header.classList.toggle('scrolled', window.scrollY > 40);
@@ -460,8 +480,8 @@
         function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; }
         function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); document.body.style.overflow = ''; }
 
-        // Scroll Reveal Animation
-        const revealEls = document.querySelectorAll('.reveal');
+        // Menerapkan animasi reveal ke semua gambar dokumen baru
+        const revealEls = document.querySelectorAll('.reveal, .doc-item');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry, i) => {
                 if (entry.isIntersecting) {
@@ -472,15 +492,12 @@
         }, { threshold: 0.12 });
         revealEls.forEach(el => observer.observe(el));
 
-        // Portfolio Filter Logic
         const filterBtns = document.querySelectorAll('.filter-btn');
         const portfolioItems = document.querySelectorAll('.portfolio-item');
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all buttons
                 filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
                 btn.classList.add('active');
 
                 const filterValue = btn.getAttribute('data-filter');
@@ -488,7 +505,6 @@
                 portfolioItems.forEach(item => {
                     if (filterValue === 'all' || item.classList.contains(filterValue)) {
                         item.classList.remove('hidden');
-                        // Reset animation for filtered items
                         item.style.opacity = '0';
                         item.style.transform = 'translateY(20px)';
                         setTimeout(() => {
