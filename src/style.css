@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  /* Memasukkan palet warna CV. Chandra Kirana Indonesia */
+  --color-cki-navy: #0A192F;
+  --color-cki-green: #4CAF50;
+  --color-cki-white: #FFFFFF;
+  --color-cki-gray: #F3F4F6;
+  
+  /* Font modern */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Custom base styling */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cki-white);
+  color: #1f2937; /* text-gray-800 */
+}

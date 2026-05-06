@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CV. Chandra Kirana Indonesia - Solusi Konstruksi dan Interior Terpercaya">
+    <title>CV. Chandra Kirana Indonesia | Beranda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --navy: #0B1C2C;
+            --navy-mid: #142436;
+            --navy-light: #1D3148;
+            --gold: #C9A84C;
+            --gold-light: #E2C97A;
+            --cream: #F5F0E8;
+            --cream-dark: #EDE8DF;
+            --white: #FAFAF8;
+            --gray-text: #6B7280;
+            --gray-light: #D1CFC9;
+            --transition: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--navy);
+            overflow-x: hidden;
+        }
+
+        /* ── SCROLLBAR ── */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--cream); }
+        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+        /* ── NAVBAR ── */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 0 2rem;
+            transition: all var(--transition);
+        }
+        header.scrolled {
+            background: rgba(11, 28, 44, 0.97);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 1px 0 rgba(201,168,76,0.15);
+        }
+        .navbar-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-mark {
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700; font-size: 16px;
+            color: var(--navy);
+            letter-spacing: 0.02em;
+        }
+        .logo-text {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--white);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+        .logo-text span {
+            display: block;
+            font-weight: 300;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            color: var(--gold-light);
+            opacity: 0.8;
+        }
+        nav { display: flex; align-items: center; gap: 2.5rem; }
+        nav a {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(250,250,248,0.65);
+            text-decoration: none;
+            transition: color var(--transition);
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 1px;
+            background: var(--gold);
+            transition: width var(--transition);
+        }
+        nav a:hover { color: var(--white); }
+        nav a:hover::after { width: 100%; }
+        nav a.active { color: var(--gold); }
+        nav a.active::after { width: 100%; }
+        .nav-cta {
+            background: transparent;
+            border: 1px solid rgba(201,168,76,0.5);
+            color: var(--gold) !important;
+            padding: 9px 22px;
+            font-size: 11px !important;
+            letter-spacing: 0.14em;
+            transition: all var(--transition) !important;
+        }
+        .nav-cta:hover {
+            background: var(--gold) !important;
+            color: var(--navy) !important;
+            border-color: var(--gold) !important;
+        }
+        .nav-cta::after { display: none !important; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+        .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: all 0.3s; }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+        }
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                to right,
+                rgba(11,28,44,0.96) 0%,
+                rgba(11,28,44,0.85) 45%,
+                rgba(11,28,44,0.3) 100%
+            );
+        }
+        .hero-overlay-bottom {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 200px;
+            background: linear-gradient(to top, var(--cream) 0%, transparent 100%);
+        }
+        .hero-content {
+            position: relative;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 2rem 100px;
+            width: 100%;
+        }
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.2s forwards;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 40px; height: 1px;
+            background: var(--gold);
+        }
+        .hero-eyebrow span {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(48px, 6.5vw, 88px);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.05;
+            letter-spacing: -0.01em;
+            max-width: 720px;
+            margin-bottom: 28px;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.38s forwards;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+        .hero-desc {
+            font-size: 15px;
+            line-height: 1.75;
+            color: rgba(250,250,248,0.55);
+            max-width: 460px;
+            margin-bottom: 44px;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.54s forwards;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.68s forwards;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 14px 32px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(201,168,76,0.25);
+        }
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--white);
+            padding: 14px 32px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 1px solid rgba(250,250,248,0.2);
+            transition: all var(--transition);
+        }
+        .btn-ghost:hover {
+            border-color: rgba(250,250,248,0.5);
+            background: rgba(250,250,248,0.05);
+        }
+        .hero-stats {
+            position: absolute;
+            right: 2rem; bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            opacity: 0;
+            animation: fadeLeft 0.9s 0.8s forwards;
+        }
+        .stat-item {
+            background: rgba(250,250,248,0.04);
+            border-left: 2px solid var(--gold);
+            padding: 16px 20px;
+            min-width: 160px;
+        }
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .stat-number sup { font-size: 16px; }
+        .stat-label {
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(250,250,248,0.4);
+        }
+
+        /* ── SECTION BASE ── */
+        .section {
+            padding: 100px 2rem;
+        }
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 32px; height: 1px;
+            background: var(--gold);
+        }
+        .section-label span {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(34px, 4vw, 54px);
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+        }
+        .section-title em { font-style: italic; color: var(--gold); }
+
+        /* ── SERVICES ── */
+        .services-section {
+            background: var(--white);
+            padding: 100px 2rem;
+        }
+        .services-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 64px;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .services-intro {
+            font-size: 15px;
+            color: var(--gray-text);
+            line-height: 1.75;
+            max-width: 360px;
+            font-weight: 300;
+            margin-top: 16px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border: 1px solid #E5E2DA;
+        }
+        .service-card {
+            padding: 40px 32px;
+            border-right: 1px solid #E5E2DA;
+            position: relative;
+            overflow: hidden;
+            transition: background var(--transition);
+            cursor: default;
+        }
+        .service-card:last-child { border-right: none; }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition);
+        }
+        .service-card:hover { background: var(--navy); }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            margin-bottom: 28px;
+            opacity: 0.6;
+            transition: opacity var(--transition);
+        }
+        .service-card:hover .service-number { opacity: 1; }
+        .service-icon {
+            width: 44px; height: 44px;
+            margin-bottom: 24px;
+            color: var(--navy);
+            transition: color var(--transition);
+        }
+        .service-card:hover .service-icon { color: var(--gold); }
+        .service-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 14px;
+            line-height: 1.2;
+            transition: color var(--transition);
+        }
+        .service-card:hover .service-name { color: var(--white); }
+        .service-desc {
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--gray-text);
+            font-weight: 300;
+            transition: color var(--transition);
+        }
+        .service-card:hover .service-desc { color: rgba(250,250,248,0.5); }
+
+        /* ── WHY US ── */
+        .why-section {
+            background: var(--navy);
+            padding: 100px 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .why-section::before {
+            content: 'CKI';
+            position: absolute;
+            right: -40px; top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 320px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.02);
+            pointer-events: none;
+            line-height: 1;
+        }
+        .why-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .why-image-wrap {
+            position: relative;
+        }
+        .why-image-wrap img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            display: block;
+        }
+        .why-image-badge {
+            position: absolute;
+            bottom: -24px; right: -24px;
+            background: var(--gold);
+            padding: 28px 32px;
+            text-align: center;
+        }
+        .why-image-badge .big-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1;
+        }
+        .why-image-badge .badge-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--navy);
+            opacity: 0.7;
+            margin-top: 6px;
+        }
+        .why-content .section-title { color: var(--white); }
+        .why-content .section-title em { color: var(--gold-light); }
+        .why-desc {
+            font-size: 15px;
+            line-height: 1.75;
+            color: rgba(250,250,248,0.45);
+            margin: 24px 0 44px;
+            font-weight: 300;
+            max-width: 440px;
+        }
+        .feature-list { display: flex; flex-direction: column; gap: 0; }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 22px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .feature-item:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+        .feature-icon-box {
+            width: 36px; height: 36px;
+            background: rgba(201,168,76,0.1);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .feature-icon-box svg { width: 16px; height: 16px; color: var(--gold); }
+        .feature-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.02em;
+            margin-bottom: 4px;
+        }
+        .feature-text {
+            font-size: 13px;
+            color: rgba(250,250,248,0.4);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* ── PORTFOLIO ── */
+        .portfolio-section {
+            background: var(--cream);
+            padding: 100px 2rem;
+        }
+        .portfolio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 56px;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .portfolio-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--navy);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        .portfolio-link .arrow-circle {
+            width: 36px; height: 36px;
+            border: 1px solid var(--navy);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            transition: all var(--transition);
+        }
+        .portfolio-link:hover { color: var(--gold); }
+        .portfolio-link:hover .arrow-circle {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--navy);
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 2px;
+        }
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .portfolio-item:first-child {
+            grid-row: span 2;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            min-height: 240px;
+        }
+        .portfolio-item:first-child img { min-height: 100%; }
+        .portfolio-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(11,28,44,0.9) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity var(--transition);
+            display: flex;
+            align-items: flex-end;
+            padding: 28px;
+        }
+        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+        .portfolio-item:hover img { transform: scale(1.06); }
+        .portfolio-info {}
+        .portfolio-category {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .portfolio-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        .portfolio-location {
+            font-size: 12px;
+            color: rgba(250,250,248,0.5);
+            margin-top: 4px;
+        }
+
+        /* ── CLIENTS / TRUST BAR ── */
+        .trust-section {
+            background: var(--white);
+            padding: 64px 2rem;
+            border-top: 1px solid #E5E2DA;
+            border-bottom: 1px solid #E5E2DA;
+        }
+        .trust-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .trust-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gray-text);
+            white-space: nowrap;
+            padding-right: 48px;
+            border-right: 1px solid #E5E2DA;
+        }
+        .trust-items {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+        .trust-item {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #A0A0A0;
+            letter-spacing: 0.05em;
+            transition: color var(--transition);
+        }
+        .trust-item:hover { color: var(--navy); }
+
+        /* ── CTA BANNER ── */
+        .cta-section {
+            background: var(--navy);
+            padding: 80px 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(201,168,76,0.06) 100%);
+            pointer-events: none;
+        }
+        .cta-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .cta-text .cta-sub {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .cta-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(32px, 3.5vw, 48px);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.1;
+        }
+        .cta-text h2 em { font-style: italic; color: var(--gold-light); }
+        .cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #070F17;
+            padding: 80px 2rem 0;
+        }
+        .footer-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 60px;
+            padding-bottom: 64px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .footer-tagline {
+            font-size: 13px;
+            line-height: 1.75;
+            color: rgba(250,250,248,0.35);
+            font-weight: 300;
+            max-width: 280px;
+            margin-bottom: 28px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        .social-btn {
+            width: 36px; height: 36px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center;
+            transition: all var(--transition);
+            color: rgba(250,250,248,0.4);
+        }
+        .social-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        .social-btn svg { width: 15px; height: 15px; }
+        .footer-col h5 {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(250,250,248,0.3);
+            margin-bottom: 24px;
+        }
+        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .footer-col ul li a {
+            font-size: 13px;
+            color: rgba(250,250,248,0.5);
+            text-decoration: none;
+            transition: color var(--transition);
+            font-weight: 300;
+        }
+        .footer-col ul li a:hover { color: var(--gold); }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+        .contact-item svg { width: 15px; height: 15px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+        .contact-item span {
+            font-size: 13px;
+            color: rgba(250,250,248,0.5);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        .footer-bottom {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .footer-bottom p {
+            font-size: 12px;
+            color: rgba(250,250,248,0.2);
+        }
+        .footer-bottom span {
+            font-size: 12px;
+            color: rgba(250,250,248,0.2);
+        }
+        .footer-bottom span b { color: rgba(250,250,248,0.4); }
+
+        /* ── MOBILE MENU ── */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--navy);
+            z-index: 200;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            transition: color 0.3s;
+        }
+        .mobile-menu a:hover { color: var(--gold); }
+        .mobile-close {
+            position: absolute;
+            top: 28px; right: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--white);
+            padding: 8px;
+        }
+        .mobile-close svg { width: 24px; height: 24px; }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeLeft {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1100px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .service-card:nth-child(2) { border-right: none; }
+            .service-card:nth-child(3) { border-right: 1px solid #E5E2DA; border-top: 1px solid #E5E2DA; }
+            .service-card:nth-child(4) { border-top: 1px solid #E5E2DA; border-right: none; }
+            .why-inner { grid-template-columns: 1fr; gap: 60px; }
+            .why-image-wrap { order: -1; }
+            .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+        }
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hamburger { display: flex; }
+            .hero-stats { display: none; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .portfolio-item:first-child { grid-row: span 1; }
+            .portfolio-item img { min-height: 280px; }
+            .portfolio-overlay { opacity: 1; }
+            .services-grid { grid-template-columns: 1fr; }
+            .service-card { border-right: none; border-top: 1px solid #E5E2DA; }
+            .service-card:first-child { border-top: none; }
+            .cta-inner { flex-direction: column; align-items: flex-start; }
+            .footer-top { grid-template-columns: 1fr; }
+            .trust-inner { flex-direction: column; align-items: flex-start; }
+            .trust-label { border-right: none; padding-right: 0; border-bottom: 1px solid #E5E2DA; padding-bottom: 16px; width: 100%; }
+        }
+        @media (max-width: 500px) {
+            .hero-actions { flex-direction: column; align-items: flex-start; }
+            .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" onclick="closeMobileMenu()" aria-label="Close menu">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <a href="index.html" onclick="closeMobileMenu()">Beranda</a>
+        <a href="tentang-kami.html" onclick="closeMobileMenu()">Tentang Kami</a>
+        <a href="layanan.html" onclick="closeMobileMenu()">Layanan</a>
+        <a href="portofolio.html" onclick="closeMobileMenu()">Portofolio</a>
+        <a href="legalitas.html" onclick="closeMobileMenu()">Legalitas</a>
+        <a href="testimoni.html" onclick="closeMobileMenu()" >Testimoni</a>
+        <a href="kontak.html" onclick="closeMobileMenu()" style="color: var(--gold); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 600; margin-top: 16px; border: 1px solid var(--gold); padding: 14px 36px;">Hubungi Kami</a>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header id="mainHeader">
+        <div class="navbar-inner">
+            <a href="index.html" class="logo">
+                <!-- Logo Gambar -->
+                <div style="background: var(--white); padding: 4px; border-radius: 6px; display: flex; align-items: center; justify-content: center; height: 44px; width: 44px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    <img src="img/Logo cv.png" alt="Logo CKI" style="height: 100%; width: 100%; object-fit: contain;">
+                </div>
+                <!-- Logo Teks -->
+                <div class="logo-text">
+                    Kontraktor
+                    <span>Chandra Kirana Indonesia</span>
+                </div>
+            </a>
+            <nav>
+                <a href="index.html" class="active">Beranda</a>
+                <a href="tentang-kami.html">Tentang Kami</a>
+                <a href="layanan.html">Layanan</a>
+                <a href="portofolio.html">Portofolio</a>
+                <a href="legalitas.html">Legalitas</a>
+                <a href="testimoni.html">Testimoni</a>
+                <a href="kontak.html" class="nav-cta">Hubungi Kami</a>
+            </nav>
+            <div class="hamburger" onclick="openMobileMenu()" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-overlay-bottom"></div>
+        <div class="hero-content">
+            <div class="hero-eyebrow">
+                <span>CV. Chandra Kirana Indonesia</span>
+            </div>
+            <h1>Solusi Konstruksi &amp; <em>Interior</em> Terpercaya</h1>
+            <p class="hero-desc">Berkomitmen menciptakan nilai melalui perencanaan yang matang, pelaksanaan yang presisi, dan kepatuhan ketat pada standar keselamatan nasional.</p>
+            <div class="hero-actions">
+                <a href="layanan.html" class="btn-primary">
+                    Lihat Layanan
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+                <a href="portofolio.html" class="btn-ghost">Jelajahi Portofolio</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-number">10<sup>+</sup></div>
+                <div class="stat-label">Tahun Pengalaman</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">150<sup>+</sup></div>
+                <div class="stat-label">Proyek Selesai</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98<sup>%</sup></div>
+                <div class="stat-label">Kepuasan Klien</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <div>
+                    <div class="section-label"><span>Apa Yang Kami Kerjakan</span></div>
+                    <h2 class="section-title">Layanan <em>Utama</em> Kami</h2>
+                </div>
+                <p class="services-intro">Solusi konstruksi lengkap dari perencanaan hingga penyelesaian, mencakup seluruh kebutuhan infrastruktur dan interior Anda.</p>
+            </div>
+            <div class="services-grid reveal">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    <h3 class="service-name">Konstruksi Bangunan</h3>
+                    <p class="service-desc">Pembangunan gedung perkantoran, pusat perbelanjaan, fasilitas industri, hingga area produksi.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <h3 class="service-name">Mekanikal &amp; Elektrikal</h3>
+                    <p class="service-desc">Instalasi kelistrikan, Solar Water Heater, dan pemeliharaan sistem utilitas bangunan.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path></svg>
+                    <h3 class="service-name">Jalan &amp; Pengaspalan</h3>
+                    <p class="service-desc">Pembukaan lahan, pemadatan tanah, pelapisan aspal hotmix, dan perbaikan akses jalan.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    <h3 class="service-name">Desain &amp; Renovasi</h3>
+                    <p class="service-desc">Desain arsitektur, penataan interior, serta renovasi bangunan untuk fungsi dan estetika optimal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-section">
+        <div class="trust-inner">
+            <div class="trust-label">Dipercaya Oleh</div>
+            <div class="trust-items">
+                <div class="trust-item">PT Sinar Mas</div>
+                <div class="trust-item">Pakuwon Group</div>
+                <div class="trust-item">PT Pelindo</div>
+                <div class="trust-item">Ciputra Group</div>
+                <div class="trust-item">PTPN XI</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Us -->
+    <section class="why-section">
+        <div class="container">
+            <div class="why-inner">
+                <div class="why-image-wrap reveal">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop" alt="Engineering Excellence CKI">
+                    <div class="why-image-badge">
+                        <div class="big-num">10+</div>
+                        <div class="badge-label">Tahun Berkarya</div>
+                    </div>
+                </div>
+                <div class="why-content reveal">
+                    <div class="section-label"><span>Keunggulan Kami</span></div>
+                    <h2 class="section-title">Mengapa Memilih <em>CKI?</em></h2>
+                    <p class="why-desc">Sebagai entitas konstruksi profesional, kami mengutamakan mutu, keselamatan, dan efisiensi waktu untuk memastikan setiap proyek memberikan nilai tambah yang berkelanjutan.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon-box">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div>
+                                <div class="feature-title">Profesional &amp; Berpengalaman</div>
+                                <div class="feature-text">Dikerjakan oleh tenaga ahli tersertifikasi dengan portofolio proyek kelas atas di Jawa Timur.</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-box">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div>
+                                <div class="feature-title">Tepat Waktu &amp; On-Budget</div>
+                                <div class="feature-text">Manajemen proyek ketat dengan laporan progres berkala untuk penyelesaian sesuai jadwal dan anggaran.</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-box">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                            </div>
+                            <div>
+                                <div class="feature-title">Bergaransi &amp; Berkualitas</div>
+                                <div class="feature-text">Material terbaik dengan jaminan konstruksi jangka panjang dan layanan purna jual yang responsif.</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon-box">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                            </div>
+                            <div>
+                                <div class="feature-title">Legalitas Lengkap</div>
+                                <div class="feature-text">Perizinan resmi dan dokumen legalitas yang terpenuhi sesuai regulasi konstruksi nasional Indonesia.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="portfolio-header reveal">
+                <div>
+                    <div class="section-label"><span>Hasil Karya Kami</span></div>
+                    <h2 class="section-title">Highlight <em>Portofolio</em></h2>
+                </div>
+                <a href="portofolio.html" class="portfolio-link">
+                    Semua Proyek
+                    <div class="arrow-circle">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-grid reveal">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop" alt="Konstruksi Gedung">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <div class="portfolio-category">Konstruksi Bangunan</div>
+                            <div class="portfolio-name">Gedung Perkantoran Premium</div>
+                            <div class="portfolio-location">Surabaya, Jawa Timur</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?q=80&w=2072&auto=format&fit=crop" alt="Interior Office">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <div class="portfolio-category">Desain Interior</div>
+                            <div class="portfolio-name">Renovasi Interior Kantor</div>
+                            <div class="portfolio-location">Sidoarjo, Jawa Timur</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop" alt="Industrial Facility">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <div class="portfolio-category">Fasilitas Industri</div>
+                            <div class="portfolio-name">Kawasan Pabrik Modern</div>
+                            <div class="portfolio-location">Gresik, Jawa Timur</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1584464457692-7efc92135c34?q=80&w=2072&auto=format&fit=crop" alt="Infrastruktur Jalan">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <div class="portfolio-category">Infrastruktur</div>
+                            <div class="portfolio-name">Pengaspalan &amp; Akses Jalan</div>
+                            <div class="portfolio-location">Mojokerto, Jawa Timur</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-section">
+        <div class="cta-inner">
+            <div class="cta-text">
+                <div class="cta-sub">Mulai Proyek Anda</div>
+                <h2>Siap Mewujudkan <em>Proyek Impian</em> Anda?</h2>
+            </div>
+            <div class="cta-actions">
+                <a href="kontak.html" class="btn-primary">
+                    Konsultasi Gratis
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+                <a href="portofolio.html" class="btn-ghost">Lihat Portofolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div>
+                    <div class="footer-logo">
+                        <div class="logo-mark">CKI</div>
+                        <div class="logo-text" style="color: var(--white);">
+                            Kontraktor
+                            <span>Chandra Kirana Indonesia</span>
+                        </div>
+                    </div>
+                    <p class="footer-tagline">Perusahaan konstruksi dan layanan interior yang berdedikasi memberikan kualitas terbaik dengan standar keamanan nasional Indonesia.</p>
+                    <div class="footer-social">
+                        <a class="social-btn" href="#" aria-label="Instagram">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="1.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2" stroke-linecap="round"/></svg>
+                        </a>
+                        <a class="social-btn" href="#" aria-label="WhatsApp">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+                        </a>
+                        <a class="social-btn" href="#" aria-label="LinkedIn">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2" stroke-width="1.5"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Tautan Cepat</h5>
+                    <ul>
+                        <li><a href="tentang-kami.html">Tentang Perusahaan</a></li>
+                        <li><a href="layanan.html">Layanan Utama</a></li>
+                        <li><a href="portofolio.html">Portofolio Proyek</a></li>
+                        <li><a href="legalitas.html">Legalitas</a></li>
+                        <li><a href="kontak.html">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Layanan</h5>
+                    <ul>
+                        <li><a href="layanan.html">Konstruksi Bangunan</a></li>
+                        <li><a href="layanan.html">Mekanikal &amp; Elektrikal</a></li>
+                        <li><a href="layanan.html">Jalan &amp; Pengaspalan</a></li>
+                        <li><a href="layanan.html">Desain &amp; Renovasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Kontak</h5>
+                    <div class="contact-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <span>Pakis Tirtosari 2/9-11 A, Kec. Sawahan, Kota Surabaya, Jawa Timur 60256</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        <span>0822-5786-2583</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <span>cv.chandrakiranaindonesia@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CV. Chandra Kirana Indonesia. Hak cipta dilindungi undang-undang.</p>
+                <span>Didesain oleh <b>Codevela</b></span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky header
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 40);
+        });
+        // Trigger on load
+        header.classList.toggle('scrolled', window.scrollY > 40);
+
+        // Mobile menu
+        function openMobileMenu() {
+            document.getElementById('mobileMenu').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // Scroll reveal
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
