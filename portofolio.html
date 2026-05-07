@@ -1,217 +1,1240 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portofolio Proyek CV. Chandra Kirana Indonesia - Galeri dokumentasi proyek konstruksi, infrastruktur, dan interior.">
-    <title>Portofolio | CV. Chandra Kirana Indonesia</title>
+    <meta name="description"
+        content="Portofolio Proyek CV Chandra Kirana - Galeri dokumentasi proyek konstruksi, infrastruktur, dan interior.">
+    <title>Portofolio | CV Chandra Kirana</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         /* ── BASE STYLES & VARIABLES ── */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-            --navy: #0B1C2C; --navy-mid: #142436; --navy-light: #1D3148;
-            --gold: #C9A84C; --gold-light: #E2C97A;
-            --cream: #F5F0E8; --cream-dark: #EDE8DF; --white: #FAFAF8;
-            --gray-text: #6B7280; --gray-light: #D1CFC9;
-            --transition: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: var(--cream); }
-        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+        :root {
+            --navy: #0c3555;
+            --navy-mid: #144b75;
+            --navy-light: #1b6092;
+            --green: #16A34A;
+            --green-dark: #15803D;
+            --green-light: #22C55E;
+            --gold: #16A34A;
+            --gold-light: #22C55E;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
+            --cream: #F8F9FA;
+            --cream-dark: #F1F5F9;
+            --gray-text: #4B5563;
+            --gray-light: #CBD5E1;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--navy);
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--green);
+            border-radius: 2px;
+        }
 
         /* ── NAVBAR ── */
-        header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 2rem; transition: all var(--transition); }
-        header.scrolled { background: rgba(11, 28, 44, 0.97); backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(201,168,76,0.15); }
-        .navbar-inner { max-width: 1320px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 80px; }
-        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-text { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 13px; color: var(--white); letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; }
-        .logo-text span { display: block; font-weight: 300; font-size: 10px; letter-spacing: 0.18em; color: var(--gold-light); opacity: 0.8; }
-        nav { display: flex; align-items: center; gap: 2rem; }
-        nav a { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,250,248,0.65); text-decoration: none; transition: color var(--transition); position: relative; }
-        nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width var(--transition); }
-        nav a:hover { color: var(--white); }
-        nav a:hover::after { width: 100%; }
-        nav a.active { color: var(--gold); }
-        nav a.active::after { width: 100%; }
-        .nav-cta { background: transparent; border: 1px solid rgba(201,168,76,0.5); color: var(--gold) !important; padding: 9px 22px; font-size: 11px !important; letter-spacing: 0.14em; transition: all var(--transition) !important; }
-        .nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; border-color: var(--gold) !important; }
-        .nav-cta::after { display: none !important; }
-        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
-        .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: all 0.3s; }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 0 2rem;
+            transition: all var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(11, 28, 44, 0.97);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 1px 0 rgba(22, 163, 74, 0.15);
+        }
+
+        .navbar-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--white);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+
+        .logo-text span {
+            display: block;
+            font-weight: 300;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            color: var(--gold-light);
+            opacity: 0.8;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(250, 250, 248, 0.65);
+            text-decoration: none;
+            transition: color var(--transition);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--green);
+            transition: width var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a.active {
+            color: var(--green);
+        }
+
+        nav a.active::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: transparent;
+            border: 1px solid rgba(22, 163, 74, 0.5);
+            color: var(--green) !important;
+            padding: 9px 22px;
+            font-size: 11px !important;
+            letter-spacing: 0.14em;
+            transition: all var(--transition) !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--green) !important;
+            color: var(--navy) !important;
+            border-color: var(--green) !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
 
         /* ── INNER HERO ── */
-        .inner-hero { position: relative; height: 55vh; min-height: 400px; display: flex; align-items: flex-end; background: var(--navy); overflow: hidden; }
-        .inner-hero-bg { position: absolute; inset: 0; background: url('img/desain 5.jpg') center/cover no-repeat; opacity: 0.3; filter: grayscale(30%); }
-        .inner-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,28,44,1) 0%, transparent 100%); }
-        .inner-hero-content { position: relative; max-width: 1320px; margin: 0 auto; padding: 0 2rem 60px; width: 100%; text-align: center; }
-        .inner-hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; opacity: 0; animation: fadeUp 0.9s 0.2s forwards; }
-        .inner-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 5vw, 64px); font-weight: 600; color: var(--white); line-height: 1.1; letter-spacing: -0.01em; opacity: 0; animation: fadeUp 0.9s 0.38s forwards; }
-        .inner-hero h1 em { font-style: italic; color: var(--gold-light); }
+        .inner-hero {
+            position: relative;
+            height: 40vh;
+            min-height: 320px;
+            display: flex;
+            align-items: flex-end;
+            background: var(--navy);
+            overflow: hidden;
+        }
+
+        .inner-hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('img/desain 5.jpg') center/cover no-repeat;
+            opacity: 0.3;
+            filter: grayscale(30%);
+        }
+
+        .inner-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(11, 28, 44, 1) 0%, transparent 100%);
+        }
+
+        .inner-hero-content {
+            position: relative;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 2rem 60px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .inner-hero-eyebrow {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--green);
+            margin-bottom: 16px;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.2s forwards;
+        }
+
+        .inner-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(40px, 5vw, 64px);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            opacity: 0;
+            animation: fadeUp 0.9s 0.38s forwards;
+        }
+
+        .inner-hero h1 em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
 
         /* ── PORTFOLIO GALLERY SECTION (DESAIN 3D) ── */
-        .gallery-section { padding: 100px 2rem; background: var(--white); }
-        .container { max-width: 1320px; margin: 0 auto; }
-        
-        .featured-project { margin-bottom: 100px; }
-        .featured-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; gap: 2rem; flex-wrap: wrap; }
-        .featured-header .section-label { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-        .featured-header .section-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
-        .featured-header .section-label span { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
-        .featured-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4vw, 48px); font-weight: 600; color: var(--navy); line-height: 1.1; }
-        .featured-text { max-width: 500px; font-size: 15px; color: var(--gray-text); line-height: 1.7; font-weight: 300; }
+        .gallery-section {
+            padding: 100px 2rem;
+            background: var(--white);
+        }
 
-        .bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 240px; gap: 16px; }
-        .bento-item { position: relative; overflow: hidden; border-radius: 4px; background: #E5E2DA; cursor: pointer; }
-        .bento-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        .bento-item:hover img { transform: scale(1.05); }
-        .bento-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,28,44,0.9) 0%, transparent 50%); opacity: 0; transition: opacity var(--transition); display: flex; align-items: flex-end; padding: 24px; }
-        .bento-item:hover .bento-overlay { opacity: 1; }
-        .bento-title { color: var(--white); font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; transform: translateY(10px); transition: all 0.4s; }
-        .bento-item:hover .bento-title { transform: translateY(0); }
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
 
-        .bento-main { grid-column: span 2; grid-row: span 2; }
-        .bento-wide { grid-column: span 2; grid-row: span 1; }
-        .bento-small { grid-column: span 1; grid-row: span 1; }
+        .featured-project {
+            margin-bottom: 100px;
+        }
 
-        .portfolio-filter { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 48px; list-style: none; padding-top: 40px; border-top: 1px solid #E5E2DA;}
-        .filter-btn { background: transparent; border: 1px solid #E5E2DA; color: var(--gray-text); padding: 10px 24px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all var(--transition); }
-        .filter-btn:hover { border-color: var(--gold); color: var(--navy); }
-        .filter-btn.active { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+        .featured-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
 
-        .portfolio-grid-page { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .portfolio-item { position: relative; overflow: hidden; cursor: pointer; background: #E5E2DA; transition: all 0.4s ease; border-radius: 4px; }
-        .portfolio-item.hidden { display: none; }
-        .portfolio-item img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        .portfolio-item:hover img { transform: scale(1.06); }
-        .portfolio-overlay-std { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,28,44,0.95) 0%, rgba(11,28,44,0.2) 60%, transparent 100%); opacity: 0; transition: opacity var(--transition); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; }
-        .portfolio-item:hover .portfolio-overlay-std { opacity: 1; }
-        .portfolio-category { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 8px; transform: translateY(15px); opacity: 0; transition: all 0.5s ease; }
-        .portfolio-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--white); line-height: 1.2; margin-bottom: 8px; transform: translateY(15px); opacity: 0; transition: all 0.5s ease 0.05s; }
-        .portfolio-location { font-size: 12px; color: rgba(250,250,248,0.6); font-weight: 300; transform: translateY(15px); opacity: 0; transition: all 0.5s ease 0.1s; display: flex; align-items: center; gap: 6px; }
-        .portfolio-item:hover .portfolio-category, .portfolio-item:hover .portfolio-name, .portfolio-item:hover .portfolio-location { transform: translateY(0); opacity: 1; }
+        .featured-header .section-label {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .featured-header .section-label::before {
+            content: '';
+            display: block;
+            width: 32px;
+            height: 1px;
+            background: var(--green);
+        }
+
+        .featured-header .section-label span {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--green);
+        }
+
+        .featured-header h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(34px, 4vw, 48px);
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.1;
+        }
+
+        .featured-text {
+            max-width: 500px;
+            font-size: 15px;
+            color: var(--gray-text);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 240px;
+            gap: 16px;
+        }
+
+        .bento-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            background: #E5E2DA;
+            cursor: pointer;
+        }
+
+        .bento-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .bento-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .bento-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(11, 28, 44, 0.9) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity var(--transition);
+            display: flex;
+            align-items: flex-end;
+            padding: 24px;
+        }
+
+        .bento-item:hover .bento-overlay {
+            opacity: 1;
+        }
+
+        .bento-title {
+            color: var(--white);
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 600;
+            transform: translateY(10px);
+            transition: all 0.4s;
+        }
+
+        .bento-item:hover .bento-title {
+            transform: translateY(0);
+        }
+
+        .bento-main {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .bento-wide {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .bento-small {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 48px;
+            list-style: none;
+            padding-top: 40px;
+            border-top: 1px solid #E5E2DA;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid #E5E2DA;
+            color: var(--gray-text);
+            padding: 10px 24px;
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all var(--transition);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--green);
+            color: var(--navy);
+        }
+
+        .filter-btn.active {
+            background: var(--green);
+            border-color: var(--green);
+            color: var(--navy);
+        }
+
+        .portfolio-grid-page {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: #E5E2DA;
+            transition: all 0.4s ease;
+            border-radius: 4px;
+        }
+
+        .portfolio-item.hidden {
+            display: none;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .portfolio-overlay-std {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(11, 28, 44, 0.95) 0%, rgba(11, 28, 44, 0.2) 60%, transparent 100%);
+            opacity: 0;
+            transition: opacity var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+        }
+
+        .portfolio-item:hover .portfolio-overlay-std {
+            opacity: 1;
+        }
+
+        .portfolio-category {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--green);
+            font-weight: 600;
+            margin-bottom: 8px;
+            transform: translateY(15px);
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .portfolio-name {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 8px;
+            transform: translateY(15px);
+            opacity: 0;
+            transition: all 0.5s ease 0.05s;
+        }
+
+        .portfolio-location {
+            font-size: 12px;
+            color: rgba(250, 250, 248, 0.6);
+            font-weight: 300;
+            transform: translateY(15px);
+            opacity: 0;
+            transition: all 0.5s ease 0.1s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .portfolio-item:hover .portfolio-category,
+        .portfolio-item:hover .portfolio-name,
+        .portfolio-item:hover .portfolio-location {
+            transform: translateY(0);
+            opacity: 1;
+        }
 
         /* ── CUSTOM GRID 2 COL (UNTUK WARKOP) ── */
-        .grid-2-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 1000px; margin: 0 auto; }
+        .grid-2-col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
         /* ── DOKUMENTASI LAPANGAN SECTION (BARU) ── */
-        .doc-section { padding: 100px 2rem; background: var(--cream); border-top: 1px solid #E5E2DA; }
-        .doc-header { text-align: center; margin-bottom: 56px; }
-        .doc-header .section-label { display: flex; justify-content: center; align-items: center; gap: 14px; margin-bottom: 16px; }
-        .doc-header .section-label::before, .doc-header .section-label::after { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
-        .doc-header .section-label span { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
-        .doc-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4vw, 48px); font-weight: 600; color: var(--navy); line-height: 1.1; margin-bottom: 16px; }
-        .doc-header p { color: var(--gray-text); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+        .doc-section {
+            padding: 100px 2rem;
+            background: var(--cream);
+            border-top: 1px solid #E5E2DA;
+        }
+
+        .doc-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .doc-header .section-label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .doc-header .section-label::before,
+        .doc-header .section-label::after {
+            content: '';
+            display: block;
+            width: 32px;
+            height: 1px;
+            background: var(--green);
+        }
+
+        .doc-header .section-label span {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--green);
+        }
+
+        .doc-header h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(34px, 4vw, 48px);
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .doc-header p {
+            color: var(--gray-text);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
 
         /* Layout Grid Masonry/Gallery sederhana */
-        .doc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .doc-item { position: relative; border-radius: 8px; overflow: hidden; background: #E5E2DA; height: 280px; box-shadow: 0 4px 16px rgba(11,28,44,0.05); border: 1px solid rgba(201,168,76,0.2); transition: all var(--transition); }
-        .doc-item:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(11,28,44,0.1); border-color: var(--gold); }
-        .doc-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
-        .doc-item:hover img { transform: scale(1.08); }
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .doc-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #E5E2DA;
+            height: 280px;
+            /* Tinggi seragam agar rapi */
+            box-shadow: 0 4px 16px rgba(11, 28, 44, 0.05);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            transition: all var(--transition);
+        }
+
+        .doc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(11, 28, 44, 0.1);
+            border-color: var(--gold);
+        }
+
+        .doc-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .doc-item:hover img {
+            transform: scale(1.08);
+        }
 
         /* ── CTA BANNER ── */
-        .cta-section { background: var(--navy); padding: 80px 2rem; position: relative; overflow: hidden; border-top: 1px solid rgba(201,168,76,0.2); }
-        .cta-section::after { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: linear-gradient(135deg, transparent 0%, rgba(201,168,76,0.06) 100%); pointer-events: none; }
-        .cta-inner { max-width: 1320px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; }
-        .cta-text .cta-sub { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 16px; }
-        .cta-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 3.5vw, 48px); font-weight: 600; color: var(--white); line-height: 1.1; }
-        .cta-text h2 em { font-style: italic; color: var(--gold-light); }
-        .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--navy); padding: 14px 32px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: all var(--transition); }
-        .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(201,168,76,0.25); }
+        .cta-section {
+            background: var(--navy);
+            padding: 80px 2rem;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(22, 163, 74, 0.2);
+        }
+
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(22, 163, 74, 0.06) 100%);
+            pointer-events: none;
+        }
+
+        .cta-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .cta-text .cta-sub {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--green);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .cta-text h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(32px, 3.5vw, 48px);
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.1;
+        }
+
+        .cta-text h2 em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--green);
+            color: var(--navy);
+            padding: 14px 32px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(22, 163, 74, 0.25);
+        }
 
         /* ── FOOTER ── */
-        footer { background: #070F17; padding: 80px 2rem 0; }
-        .footer-inner { max-width: 1320px; margin: 0 auto; }
-        .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 60px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,0.06); }
-        .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-        .footer-tagline { font-size: 13px; line-height: 1.75; color: rgba(250,250,248,0.35); font-weight: 300; max-width: 280px; margin-bottom: 28px; }
-        .footer-social { display: flex; gap: 12px; }
-        .social-btn { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: all var(--transition); color: rgba(250,250,248,0.4); }
-        .social-btn:hover { border-color: var(--gold); color: var(--gold); }
-        .social-btn svg { width: 15px; height: 15px; }
-        .footer-col h5 { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,250,248,0.3); margin-bottom: 24px; }
-        .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-        .footer-col ul li a { font-size: 13px; color: rgba(250,250,248,0.5); text-decoration: none; transition: color var(--transition); font-weight: 300; }
-        .footer-col ul li a:hover { color: var(--gold); }
-        .contact-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
-        .contact-item svg { width: 15px; height: 15px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
-        .contact-item span { font-size: 13px; color: rgba(250,250,248,0.5); line-height: 1.6; font-weight: 300; }
-        .footer-bottom { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-        .footer-bottom p, .footer-bottom span { font-size: 12px; color: rgba(250,250,248,0.2); }
-        .footer-bottom span b { color: rgba(250,250,248,0.4); }
+        footer {
+            background: #070F17;
+            padding: 80px 2rem 0;
+        }
+
+        .footer-inner {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 60px;
+            padding-bottom: 64px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .footer-tagline {
+            font-size: 13px;
+            line-height: 1.75;
+            color: rgba(250, 250, 248, 0.35);
+            font-weight: 300;
+            max-width: 280px;
+            margin-bottom: 28px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition);
+            color: rgba(250, 250, 248, 0.4);
+        }
+
+        .social-btn:hover {
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        .social-btn svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        .footer-col h5 {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(250, 250, 248, 0.3);
+            margin-bottom: 24px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col ul li a {
+            font-size: 13px;
+            color: rgba(250, 250, 248, 0.5);
+            text-decoration: none;
+            transition: color var(--transition);
+            font-weight: 300;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--green);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .contact-item svg {
+            width: 15px;
+            height: 15px;
+            color: var(--green);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .contact-item span {
+            font-size: 13px;
+            color: rgba(250, 250, 248, 0.5);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .footer-bottom {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom p,
+        .footer-bottom span {
+            font-size: 12px;
+            color: rgba(250, 250, 248, 0.2);
+        }
+
+        .footer-bottom span b {
+            color: rgba(250, 250, 248, 0.4);
+        }
 
         /* ── MOBILE MENU ── */
-        .mobile-menu { display: none; position: fixed; inset: 0; background: var(--navy); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
-        .mobile-menu.open { display: flex; }
-        .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600; color: var(--white); text-decoration: none; letter-spacing: -0.01em; transition: color 0.3s; }
-        .mobile-menu a:hover { color: var(--gold); }
-        .mobile-close { position: absolute; top: 28px; right: 28px; background: none; border: none; cursor: pointer; color: var(--white); padding: 8px; }
-        .mobile-close svg { width: 24px; height: 24px; }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--navy);
+            z-index: 200;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            transition: color 0.3s;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--green);
+        }
+
+        .mobile-close {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--white);
+            padding: 8px;
+        }
+
+        .mobile-close svg {
+            width: 24px;
+            height: 24px;
+        }
 
         /* ── ANIMATIONS ── */
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
-            .portfolio-grid-page { grid-template-columns: repeat(2, 1fr); }
-            .bento-grid { grid-template-columns: repeat(2, 1fr); }
-            .bento-main { grid-column: span 2; grid-row: span 2; }
-            .bento-wide { grid-column: span 2; grid-row: span 1; }
-            .bento-small { grid-column: span 1; grid-row: span 1; }
+            .portfolio-grid-page {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bento-main {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .bento-wide {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+
+            .bento-small {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
         }
+
         @media (max-width: 768px) {
-            nav { display: none; }
-            .hamburger { display: flex; }
-            .portfolio-grid-page { grid-template-columns: 1fr; }
-            .cta-inner { flex-direction: column; align-items: flex-start; }
-            .footer-top { grid-template-columns: 1fr; }
-            
-            .bento-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
-            .bento-main, .bento-wide, .bento-small { grid-column: span 1; grid-row: span 1; }
-            .bento-main { grid-row: span 2; }
-            
-            .grid-2-col { grid-template-columns: 1fr; }
+            nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .portfolio-grid-page {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 200px;
+            }
+
+            .bento-main,
+            .bento-wide,
+            .bento-small {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .bento-main {
+                grid-row: span 2;
+            }
+
+            .grid-2-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown .dropbtn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dropdown-content {
+            display: block;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            position: absolute;
+            background-color: var(--navy);
+            min-width: 220px;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            top: 100%;
+            left: 0;
+            padding: 10px 0;
+            border-top: 2px solid var(--green);
+            border-radius: 0 0 4px 4px;
+        }
+
+        .dropdown-content a {
+            color: rgba(250, 250, 248, 0.7) !important;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            text-transform: none !important;
+            letter-spacing: 0.05em !important;
+            font-size: 13px !important;
+            font-weight: 400 !important;
+        }
+
+        .dropdown-content a::after {
+            display: none !important;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--green) !important;
+        }
+
+        .nav-dropdown:hover .dropdown-content {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-nav-dropdown {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .mobile-nav-dropdown-btn {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--white);
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav-dropdown-content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .mobile-nav-dropdown-content.open {
+            display: flex;
+        }
+
+        .mobile-nav-dropdown-content a {
+            font-size: 24px !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        .mobile-nav-dropdown-content a:hover {
+            color: var(--green) !important;
+        }
+
+
+        /* Scrolled Navbar Theme */
+        header.scrolled {
+            background: var(--white) !important;
+            backdrop-filter: none !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        header.scrolled nav a {
+            color: var(--navy) !important;
+        }
+
+        header.scrolled nav a:hover {
+            color: var(--green-light) !important;
+        }
+
+        header.scrolled nav a.active {
+            color: var(--green-light) !important;
+        }
+
+        header.scrolled .logo-text {
+            color: var(--navy) !important;
+        }
+
+        header.scrolled .logo-text span {
+            color: var(--green-light) !important;
+        }
+
+        header.scrolled .nav-cta {
+            border-color: var(--green-light) !important;
+            color: var(--green-light) !important;
+        }
+
+        header.scrolled .nav-cta:hover {
+            background: var(--green-light) !important;
+            color: var(--white) !important;
+        }
+
+        header.scrolled .hamburger span {
+            background: var(--navy) !important;
+        }
+
+        header.scrolled .nav-dropdown .dropbtn {
+            color: var(--navy) !important;
+        }
+
+        header.scrolled .nav-dropdown:hover .dropbtn {
+            color: var(--green-light) !important;
+        }
+
+        header.scrolled .dropdown-content {
+            background-color: var(--white) !important;
+            border-top: 2px solid var(--green-light) !important;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        header.scrolled .dropdown-content a {
+            color: var(--navy) !important;
+        }
+
+        header.scrolled .dropdown-content a:hover {
+            background-color: var(--cream) !important;
+            color: var(--green-light) !important;
+        }
+
+        header.scrolled .mobile-nav-dropdown-btn {
+            color: var(--navy) !important;
+        }
+
+        header.scrolled .mobile-close {
+            color: var(--navy) !important;
+        }
+
+
+        /* Lighter green for normal navbar */
+        nav a::after {
+            background: var(--green-light) !important;
+        }
+
+        nav a.active {
+            color: var(--green-light) !important;
+        }
+
+        .nav-cta {
+            border-color: rgba(34, 197, 94, 0.5) !important;
+            color: var(--green-light) !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--green-light) !important;
+            color: var(--navy) !important;
+            border-color: var(--green-light) !important;
+        }
+
+        .logo-text span {
+            color: var(--green-light) !important;
+        }
+
+        .dropdown-content {
+            border-top: 2px solid var(--green-light) !important;
+        }
+
+        .dropdown-content a:hover {
+            color: var(--green-light) !important;
+        }
+
+        .mobile-nav-dropdown-content a:hover {
+            color: var(--green-light) !important;
+        }
+
+        .nav-dropdown .dropbtn.active {
+            color: var(--green-light) !important;
         }
     </style>
 </head>
+
 <body>
 
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-close" onclick="closeMobileMenu()" aria-label="Close menu">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+            </svg>
         </button>
         <a href="index.html" onclick="closeMobileMenu()">Beranda</a>
         <a href="tentang-kami.html" onclick="closeMobileMenu()">Tentang Kami</a>
-        <a href="layanan.html" onclick="closeMobileMenu()">Layanan</a>
-        <a href="portofolio.html" onclick="closeMobileMenu()" style="color: var(--gold);">Portofolio</a>
+        <div class="mobile-nav-dropdown">
+            <button class="mobile-nav-dropdown-btn" onclick="toggleMobileDropdown()">Layanan <svg width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></button>
+            <div class="mobile-nav-dropdown-content" id="mobileNavDropdown">
+                <a href="layanan.html" onclick="closeMobileMenu()">Layanan Utama</a>
+                <a href="portofolio.html" onclick="closeMobileMenu()">Portofolio Proyek</a>
+            </div>
+        </div>
+        <a href="portofolio.html" onclick="closeMobileMenu()" style="color: var(--green);">Portofolio</a>
         <a href="legalitas.html" onclick="closeMobileMenu()">Legalitas</a>
         <a href="testimoni.html" onclick="closeMobileMenu()">Testimoni</a>
-        <a href="kontak.html" onclick="closeMobileMenu()" style="color: var(--gold); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 600; margin-top: 16px; border: 1px solid var(--gold); padding: 14px 36px;">Hubungi Kami</a>
+        <a href="kontak.html" onclick="closeMobileMenu()"
+            style="color: var(--green); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-body); font-weight: 600; margin-top: 16px; border: 1px solid var(--green); padding: 14px 36px;">Hubungi
+            Kami</a>
     </div>
 
     <header id="mainHeader">
         <div class="navbar-inner">
             <a href="index.html" class="logo">
-                <div style="background: var(--white); padding: 4px; border-radius: 6px; display: flex; align-items: center; justify-content: center; height: 44px; width: 44px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <div
+                    style="background: var(--white); padding: 4px; border-radius: 6px; display: flex; align-items: center; justify-content: center; height: 44px; width: 44px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                     <img src="img/Logo cv.png" alt="Logo CKI" style="height: 100%; width: 100%; object-fit: contain;">
                 </div>
                 <div class="logo-text">
-                    Kontraktor
-                    <span>Chandra Kirana Indonesia</span>
+                    CV CHANDRA KIRANA
+                    <span>KONTRAKTOR</span>
                 </div>
             </a>
             <nav>
                 <a href="index.html">Beranda</a>
                 <a href="tentang-kami.html">Tentang Kami</a>
-                <a href="layanan.html">Layanan</a>
-                <a href="portofolio.html" class="active">Portofolio</a>
+                <div class="nav-dropdown">
+
+                    <a href="#" class="dropbtn">Layanan <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></a>
+
+                    <div class="dropdown-content">
+
+                        <a href="layanan.html">Layanan Utama</a>
+
+                        <a href="portofolio.html">Portofolio Proyek</a>
+
+                    </div>
+
+                </div>
                 <a href="legalitas.html">Legalitas</a>
                 <a href="testimoni.html">Testimoni</a>
                 <a href="kontak.html" class="nav-cta">Hubungi Kami</a>
@@ -233,7 +1256,7 @@
 
     <section class="gallery-section">
         <div class="container">
-            
+
             <div class="featured-project reveal">
                 <div class="featured-header">
                     <div>
@@ -241,7 +1264,9 @@
                         <h2>Fasilitas Industri <em>Terpadu</em></h2>
                     </div>
                     <div class="featured-text">
-                        <p>Desain dan pembangunan kawasan Mini MRF (Material Recovery Facility), mencakup rumah pompa, gerbang, dan area operasional. Proyek ini telah selesai dibangun dan diresmikan langsung oleh jajaran pejabat daerah setempat.</p>
+                        <p>Desain dan pembangunan kawasan Mini MRF (Material Recovery Facility), mencakup rumah pompa,
+                            gerbang, dan area operasional. Proyek ini telah selesai dibangun dan diresmikan langsung
+                            oleh jajaran pejabat daerah setempat.</p>
                     </div>
                 </div>
 
@@ -252,28 +1277,29 @@
                             <h3 class="bento-title">Kawasan Industri Terpadu</h3>
                         </div>
                     </div>
-                    
+
                     <div class="bento-item bento-wide">
-                        <img src="img/peresmian 1.jpeg" alt="Peresmian Fasilitas oleh Bupati Malang" style="object-position: top;">
+                        <img src="img/peresmian 1.jpeg" alt="Peresmian Fasilitas oleh Bupati Malang"
+                            style="object-position: top;">
                         <div class="bento-overlay">
                             <h3 class="bento-title">Peresmian Fasilitas oleh Bupati Malang</h3>
                         </div>
                     </div>
-                    
+
                     <div class="bento-item bento-wide">
                         <img src="img/peresmian 2.jpeg" alt="Peninjauan Lokasi Proyek" style="object-position: top;">
                         <div class="bento-overlay">
                             <h3 class="bento-title">Peninjauan Lokasi Terpadu</h3>
                         </div>
                     </div>
-                    
+
                     <div class="bento-item bento-small">
                         <img src="img/desain 7.jpeg" alt="Tipping and Loading Area">
                         <div class="bento-overlay">
                             <h3 class="bento-title">Tipping & Loading</h3>
                         </div>
                     </div>
-                    
+
                     <div class="bento-item bento-small">
                         <img src="img/desain 4.jpeg" alt="Rumah Pompa">
                         <div class="bento-overlay">
@@ -335,29 +1361,42 @@
             <div class="doc-header reveal" style="margin-bottom: 48px;">
                 <div class="section-label"><span>Proyek Komersial & Interior</span></div>
                 <h2>Renovasi <em>Warkop Krisna</em></h2>
-                <p>Penataan ulang eksterior dan interior area komersial (Food & Beverage) di Rewwin, Sidoarjo. Proyek ini berfokus pada optimalisasi sirkulasi ruang fungsional dan kenyamanan pengunjung.</p>
+                <p>Penataan ulang eksterior dan interior area komersial (Food & Beverage) di Rewwin, Sidoarjo. Proyek
+                    ini berfokus pada optimalisasi sirkulasi ruang fungsional dan kenyamanan pengunjung.</p>
             </div>
 
             <div class="grid-2-col reveal">
                 <div class="portfolio-item">
-                    <img src="img/projek warkop 1.jpeg" alt="Renovasi Warkop Krisna Rewwin Eksterior" style="height: 450px;">
+                    <img src="img/projek warkop 1.jpeg" alt="Renovasi Warkop Krisna Rewwin Eksterior"
+                        style="height: 450px;">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Eksterior & Fasad</div>
                         <div class="portfolio-name">Area Outdoor & Fasad Depan</div>
                         <div class="portfolio-location">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
                             Rewwin, Sidoarjo
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="portfolio-item">
-                    <img src="img/projek warkop 2.jpeg" alt="Renovasi Warkop Krisna Rewwin Interior" style="height: 450px;">
+                    <img src="img/projek warkop 2.jpeg" alt="Renovasi Warkop Krisna Rewwin Interior"
+                        style="height: 450px;">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Interior Ruangan</div>
                         <div class="portfolio-name">Penataan Area Indoor Komersial</div>
                         <div class="portfolio-location">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
                             Rewwin, Sidoarjo
                         </div>
                     </div>
@@ -371,7 +1410,8 @@
             <div class="doc-header">
                 <div class="section-label"><span>Live Update & Aktivitas Lapangan</span></div>
                 <h2>Proyek <em>Rungkut Menanggal</em></h2>
-                <p>Galeri dokumentasi pengerjaan struktur bangunan secara langsung dari lapangan. Ini adalah bukti komitmen kami dalam mengawal proyek dari tahap pembongkaran awal hingga konstruksi akhir.</p>
+                <p>Galeri dokumentasi pengerjaan struktur bangunan secara langsung dari lapangan. Ini adalah bukti
+                    komitmen kami dalam mengawal proyek dari tahap pembongkaran awal hingga konstruksi akhir.</p>
             </div>
 
             <div class="doc-grid">
@@ -396,7 +1436,10 @@
             <div class="cta-actions">
                 <a href="kontak.html" class="btn-primary">
                     Hubungi Tim Kami
-                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                 </a>
             </div>
         </div>
@@ -407,24 +1450,39 @@
             <div class="footer-top">
                 <div>
                     <div class="footer-logo">
-                        <div style="background: var(--white); padding: 6px; border-radius: 8px; display: flex; align-items: center; justify-content: center; height: 56px; width: 56px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-                            <img src="img/logo-cki.png" alt="Logo CKI" style="height: 100%; width: 100%; object-fit: contain;">
+                        <div
+                            style="background: var(--white); padding: 6px; border-radius: 8px; display: flex; align-items: center; justify-content: center; height: 56px; width: 56px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                            <img src="img/logo-cki.png" alt="Logo CKI"
+                                style="height: 100%; width: 100%; object-fit: contain;">
                         </div>
                         <div class="logo-text" style="color: var(--white);">
-                            Kontraktor
-                            <span>Chandra Kirana Indonesia</span>
+                            CV CHANDRA KIRANA
+                            <span>KONTRAKTOR</span>
                         </div>
                     </div>
-                    <p class="footer-tagline">Perusahaan konstruksi dan layanan interior yang berdedikasi memberikan kualitas terbaik dengan standar keamanan nasional Indonesia.</p>
+                    <p class="footer-tagline">Perusahaan konstruksi dan layanan interior yang berdedikasi memberikan
+                        kualitas terbaik dengan standar keamanan nasional Indonesia.</p>
                     <div class="footer-social">
                         <a class="social-btn" href="#" aria-label="Instagram">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="1.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2" stroke-linecap="round"/></svg>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="1.5" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2" stroke-linecap="round" />
+                            </svg>
                         </a>
                         <a class="social-btn" href="#" aria-label="WhatsApp">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+                            </svg>
                         </a>
                         <a class="social-btn" href="#" aria-label="LinkedIn">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2" stroke-width="1.5"/></svg>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                                <circle cx="4" cy="4" r="2" stroke-width="1.5" />
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -450,21 +1508,32 @@
                 <div class="footer-col">
                     <h5>Kontak</h5>
                     <div class="contact-item">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
                         <span>Pakis Tirtosari 2/9-11 A, Kec. Sawahan, Kota Surabaya, Jawa Timur 60256</span>
                     </div>
                     <div class="contact-item">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
                         <span>0822-5786-2583</span>
                     </div>
                     <div class="contact-item">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
                         <span>cv.chandrakiranaindonesia@gmail.com</span>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 CV. Chandra Kirana Indonesia. Hak cipta dilindungi undang-undang.</p>
+                <p>&copy; 2026 CV Chandra Kirana. Hak cipta dilindungi undang-undang.</p>
                 <span>Didesain oleh <b>Codevela</b></span>
             </div>
         </div>
@@ -516,6 +1585,12 @@
                 });
             });
         });
+
+        function toggleMobileDropdown() {
+            document.getElementById('mobileNavDropdown').classList.toggle('open');
+        }
+
     </script>
 </body>
+
 </html>

@@ -3,55 +3,67 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Hubungi CV. Chandra Kirana Indonesia untuk konsultasi proyek konstruksi dan interior Anda.">
-    <title>Kontak Kami | CV. Chandra Kirana Indonesia</title>
+    <meta name="description" content="Hubungi CV Chandra Kirana untuk konsultasi proyek konstruksi dan interior Anda.">
+    <title>Kontak Kami | CV Chandra Kirana</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* ── BASE STYLES & VARIABLES ── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-            --navy: #0B1C2C; --navy-mid: #142436; --navy-light: #1D3148;
-            --gold: #C9A84C; --gold-light: #E2C97A;
-            --cream: #F5F0E8; --cream-dark: #EDE8DF; --white: #FAFAF8;
-            --gray-text: #6B7280; --gray-light: #D1CFC9;
-            --transition: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                :root {
+            --navy: #0c3555;
+            --navy-mid: #144b75;
+            --navy-light: #1b6092;
+            --green: #16A34A;
+            --green-dark: #15803D;
+            --green-light: #22C55E;
+            --gold: #16A34A;
+            --gold-light: #22C55E;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
+            --cream: #F8F9FA;
+            --cream-dark: #F1F5F9;
+            --gray-text: #4B5563;
+            --gray-light: #CBD5E1;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         html { scroll-behavior: smooth; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); overflow-x: hidden; }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: var(--cream); }
-        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+        ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 2px; }
 
         /* ── NAVBAR ── */
         header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 2rem; transition: all var(--transition); }
-        header.scrolled { background: rgba(11, 28, 44, 0.97); backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(201,168,76,0.15); }
+        header.scrolled { background: rgba(11, 28, 44, 0.97); backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(22,163,74,0.15); }
         .navbar-inner { max-width: 1320px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 80px; }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-mark { width: 40px; height: 40px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 16px; color: var(--navy); letter-spacing: 0.02em; }
-        .logo-text { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 13px; color: var(--white); letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; }
+        .logo-mark { width: 40px; height: 40px; background: linear-gradient(135deg, var(--green), var(--gold-light)); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 700; font-size: 16px; color: var(--navy); letter-spacing: 0.02em; }
+        .logo-text { font-family: var(--font-body); font-weight: 600; font-size: 13px; color: var(--white); letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; }
         .logo-text span { display: block; font-weight: 300; font-size: 10px; letter-spacing: 0.18em; color: var(--gold-light); opacity: 0.8; }
         nav { display: flex; align-items: center; gap: 2rem; }
         nav a { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,250,248,0.65); text-decoration: none; transition: color var(--transition); position: relative; }
-        nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width var(--transition); }
+        nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--green); transition: width var(--transition); }
         nav a:hover { color: var(--white); }
         nav a:hover::after { width: 100%; }
-        nav a.active { color: var(--gold); }
+        nav a.active { color: var(--green); }
         nav a.active::after { width: 100%; }
-        .nav-cta { background: transparent; border: 1px solid rgba(201,168,76,0.5); color: var(--gold) !important; padding: 9px 22px; font-size: 11px !important; letter-spacing: 0.14em; transition: all var(--transition) !important; }
-        .nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; border-color: var(--gold) !important; }
+        .nav-cta { background: transparent; border: 1px solid rgba(22,163,74,0.5); color: var(--green) !important; padding: 9px 22px; font-size: 11px !important; letter-spacing: 0.14em; transition: all var(--transition) !important; }
+        .nav-cta:hover { background: var(--green) !important; color: var(--navy) !important; border-color: var(--green) !important; }
         .nav-cta::after { display: none !important; }
         .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
         .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: all 0.3s; }
 
         /* ── INNER HERO ── */
-        .inner-hero { position: relative; height: 55vh; min-height: 400px; display: flex; align-items: flex-end; background: var(--navy); overflow: hidden; }
+        .inner-hero { position: relative; height: 40vh; min-height: 320px; display: flex; align-items: flex-end; background: var(--navy); overflow: hidden; }
         .inner-hero-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat; opacity: 0.25; filter: grayscale(50%); }
         .inner-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,28,44,1) 0%, transparent 100%); }
         .inner-hero-content { position: relative; max-width: 1320px; margin: 0 auto; padding: 0 2rem 60px; width: 100%; text-align: center; }
-        .inner-hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; opacity: 0; animation: fadeUp 0.9s 0.2s forwards; }
-        .inner-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 5vw, 64px); font-weight: 600; color: var(--white); line-height: 1.1; letter-spacing: -0.01em; opacity: 0; animation: fadeUp 0.9s 0.38s forwards; }
+        .inner-hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; opacity: 0; animation: fadeUp 0.9s 0.2s forwards; }
+        .inner-hero h1 { font-family: var(--font-heading); font-size: clamp(40px, 5vw, 64px); font-weight: 600; color: var(--white); line-height: 1.1; letter-spacing: -0.01em; opacity: 0; animation: fadeUp 0.9s 0.38s forwards; }
         .inner-hero h1 em { font-style: italic; color: var(--gold-light); }
 
         /* ── CONTACT SECTION ── */
@@ -63,39 +75,39 @@
         .contact-info-wrap { display: flex; flex-direction: column; gap: 48px; }
         
         .info-header .section-label { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-        .info-header .section-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
-        .info-header .section-label span { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
-        .info-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4vw, 48px); font-weight: 600; color: var(--navy); line-height: 1.1; margin-bottom: 24px; }
+        .info-header .section-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--green); }
+        .info-header .section-label span { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); }
+        .info-header h2 { font-family: var(--font-heading); font-size: clamp(34px, 4vw, 48px); font-weight: 600; color: var(--navy); line-height: 1.1; margin-bottom: 24px; }
         .info-header p { font-size: 15px; line-height: 1.75; color: var(--gray-text); font-weight: 300; }
 
         .info-cards { display: flex; flex-direction: column; gap: 24px; }
         .info-card { display: flex; align-items: flex-start; gap: 20px; padding: 32px; background: var(--cream); border: 1px solid #E5E2DA; transition: all var(--transition); }
-        .info-card:hover { border-color: var(--gold); transform: translateX(8px); }
-        .info-icon { width: 48px; height: 48px; background: var(--navy); display: flex; align-items: center; justify-content: center; border-radius: 2px; color: var(--gold); flex-shrink: 0; }
+        .info-card:hover { border-color: var(--green); transform: translateX(8px); }
+        .info-icon { width: 48px; height: 48px; background: var(--navy); display: flex; align-items: center; justify-content: center; border-radius: 2px; color: var(--green); flex-shrink: 0; }
         .info-icon svg { width: 20px; height: 20px; }
-        .info-content h4 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+        .info-content h4 { font-family: var(--font-heading); font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
         .info-content p { font-size: 14px; color: var(--gray-text); line-height: 1.6; font-weight: 300; }
 
         /* Form Container */
-        .form-wrap { background: var(--navy); padding: 56px; border: 1px solid rgba(201,168,76,0.2); position: relative; }
-        .form-wrap::before { content: ''; position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: linear-gradient(135deg, transparent 0%, rgba(201,168,76,0.03) 100%); pointer-events: none; }
+        .form-wrap { background: var(--navy); padding: 56px; border: 1px solid rgba(22,163,74,0.2); position: relative; }
+        .form-wrap::before { content: ''; position: absolute; top: 0; right: 0; width: 100%; height: 100%; background: linear-gradient(135deg, transparent 0%, rgba(22,163,74,0.03) 100%); pointer-events: none; }
         
-        .form-wrap h3 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--white); margin-bottom: 32px; position: relative; }
+        .form-wrap h3 { font-family: var(--font-heading); font-size: 32px; font-weight: 600; color: var(--white); margin-bottom: 32px; position: relative; }
         
         .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; position: relative; }
         .form-group { display: flex; flex-direction: column; gap: 8px; }
         .form-group.full { grid-column: span 2; }
         
         .form-group label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); }
-        .form-group input, .form-group textarea { background: rgba(250,250,248,0.03); border: 1px solid rgba(250,250,248,0.1); padding: 16px 20px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--white); transition: all var(--transition); }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); background: rgba(201,168,76,0.05); }
+        .form-group input, .form-group textarea { background: rgba(250,250,248,0.03); border: 1px solid rgba(250,250,248,0.1); padding: 16px 20px; font-family: var(--font-body); font-size: 14px; color: var(--white); transition: all var(--transition); }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--green); background: rgba(22,163,74,0.05); }
         .form-group textarea { min-height: 140px; resize: vertical; }
         
-        .btn-submit { background: var(--gold); color: var(--navy); border: none; cursor: pointer; padding: 18px 32px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; transition: all var(--transition); margin-top: 8px; width: 100%; display: flex; justify-content: center; align-items: center; gap: 10px; }
-        .btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(201,168,76,0.25); }
+        .btn-submit { background: var(--green); color: var(--navy); border: none; cursor: pointer; padding: 18px 32px; font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; transition: all var(--transition); margin-top: 8px; width: 100%; display: flex; justify-content: center; align-items: center; gap: 10px; }
+        .btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(22,163,74,0.25); }
         .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; box-shadow: none; }
 
-        .btn-whatsapp { background: #25D366; color: var(--white); border: none; cursor: pointer; padding: 18px 32px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: all var(--transition); width: 100%; display: flex; justify-content: center; align-items: center; gap: 10px; }
+        .btn-whatsapp { background: #25D366; color: var(--white); border: none; cursor: pointer; padding: 18px 32px; font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: all var(--transition); width: 100%; display: flex; justify-content: center; align-items: center; gap: 10px; }
         .btn-whatsapp:hover { background: #1ebd5a; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(37,211,102,0.25); }
 
         /* ── FULL WIDTH MAP SECTION ── */
@@ -111,14 +123,14 @@
         .footer-tagline { font-size: 13px; line-height: 1.75; color: rgba(250,250,248,0.35); font-weight: 300; max-width: 280px; margin-bottom: 28px; }
         .footer-social { display: flex; gap: 12px; }
         .social-btn { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: all var(--transition); color: rgba(250,250,248,0.4); }
-        .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+        .social-btn:hover { border-color: var(--green); color: var(--green); }
         .social-btn svg { width: 15px; height: 15px; }
         .footer-col h5 { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,250,248,0.3); margin-bottom: 24px; }
         .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
         .footer-col ul li a { font-size: 13px; color: rgba(250,250,248,0.5); text-decoration: none; transition: color var(--transition); font-weight: 300; }
-        .footer-col ul li a:hover { color: var(--gold); }
+        .footer-col ul li a:hover { color: var(--green); }
         .contact-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
-        .contact-item svg { width: 15px; height: 15px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+        .contact-item svg { width: 15px; height: 15px; color: var(--green); flex-shrink: 0; margin-top: 2px; }
         .contact-item span { font-size: 13px; color: rgba(250,250,248,0.5); line-height: 1.6; font-weight: 300; }
         .footer-bottom { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
         .footer-bottom p, .footer-bottom span { font-size: 12px; color: rgba(250,250,248,0.2); }
@@ -127,8 +139,8 @@
         /* ── MOBILE MENU ── */
         .mobile-menu { display: none; position: fixed; inset: 0; background: var(--navy); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
         .mobile-menu.open { display: flex; }
-        .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600; color: var(--white); text-decoration: none; letter-spacing: -0.01em; transition: color 0.3s; }
-        .mobile-menu a:hover { color: var(--gold); }
+        .mobile-menu a { font-family: var(--font-heading); font-size: 36px; font-weight: 600; color: var(--white); text-decoration: none; letter-spacing: -0.01em; transition: color 0.3s; }
+        .mobile-menu a:hover { color: var(--green); }
         .mobile-close { position: absolute; top: 28px; right: 28px; background: none; border: none; cursor: pointer; color: var(--white); padding: 8px; }
         .mobile-close svg { width: 24px; height: 24px; }
 
@@ -151,6 +163,132 @@
             .footer-top { grid-template-columns: 1fr; }
             .map-section { height: 350px; }
         }
+    
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown .dropbtn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dropdown-content {
+            display: block; visibility: hidden; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; position: absolute; background-color: var(--navy);
+            min-width: 220px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.3);
+            z-index: 100;
+            top: 100%;
+            left: 0;
+            padding: 10px 0;
+            border-top: 2px solid var(--green);
+            border-radius: 0 0 4px 4px;
+        }
+
+        .dropdown-content a {
+            color: rgba(250, 250, 248, 0.7) !important;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            text-transform: none !important;
+            letter-spacing: 0.05em !important;
+            font-size: 13px !important;
+            font-weight: 400 !important;
+        }
+
+        .dropdown-content a::after {
+            display: none !important;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--green) !important;
+        }
+
+        .nav-dropdown:hover .dropdown-content { visibility: visible; opacity: 1; transform: translateY(0); }
+
+        .mobile-nav-dropdown {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .mobile-nav-dropdown-btn {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--white);
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav-dropdown-content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .mobile-nav-dropdown-content.open {
+            display: flex;
+        }
+
+        .mobile-nav-dropdown-content a {
+            font-size: 24px !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        .mobile-nav-dropdown-content a:hover {
+            color: var(--green) !important;
+        }
+
+    
+        /* Scrolled Navbar Theme */
+        header.scrolled {
+            background: var(--white) !important;
+            backdrop-filter: none !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05) !important;
+        }
+        header.scrolled nav a { color: var(--navy) !important; }
+        header.scrolled nav a:hover { color: var(--green-light) !important; }
+        header.scrolled nav a.active { color: var(--green-light) !important; }
+        header.scrolled .logo-text { color: var(--navy) !important; }
+        header.scrolled .logo-text span { color: var(--green-light) !important; }
+        header.scrolled .nav-cta { border-color: var(--green-light) !important; color: var(--green-light) !important; }
+        header.scrolled .nav-cta:hover { background: var(--green-light) !important; color: var(--white) !important; }
+        header.scrolled .hamburger span { background: var(--navy) !important; }
+        header.scrolled .nav-dropdown .dropbtn { color: var(--navy) !important; }
+        header.scrolled .nav-dropdown:hover .dropbtn { color: var(--green-light) !important; }
+        header.scrolled .dropdown-content { background-color: var(--white) !important; border-top: 2px solid var(--green-light) !important; box-shadow: 0px 8px 24px rgba(0,0,0,0.1) !important; }
+        header.scrolled .dropdown-content a { color: var(--navy) !important; }
+        header.scrolled .dropdown-content a:hover { background-color: var(--cream) !important; color: var(--green-light) !important; }
+        header.scrolled .mobile-nav-dropdown-btn { color: var(--navy) !important; }
+        header.scrolled .mobile-close { color: var(--navy) !important; }
+
+    
+        /* Lighter green for normal navbar */
+        nav a::after { background: var(--green-light) !important; }
+        nav a.active { color: var(--green-light) !important; }
+        .nav-cta { border-color: rgba(34, 197, 94, 0.5) !important; color: var(--green-light) !important; }
+        .nav-cta:hover { background: var(--green-light) !important; color: var(--navy) !important; border-color: var(--green-light) !important; }
+        .logo-text span { color: var(--green-light) !important; }
+        .dropdown-content { border-top: 2px solid var(--green-light) !important; }
+        .dropdown-content a:hover { color: var(--green-light) !important; }
+        .mobile-nav-dropdown-content a:hover { color: var(--green-light) !important; }
+        .nav-dropdown .dropbtn.active { color: var(--green-light) !important; }
+
     </style>
 </head>
 <body>
@@ -162,11 +300,16 @@
         </button>
         <a href="index.html" onclick="closeMobileMenu()">Beranda</a>
         <a href="tentang-kami.html" onclick="closeMobileMenu()">Tentang Kami</a>
-        <a href="layanan.html" onclick="closeMobileMenu()">Layanan</a>
-        <a href="portofolio.html" onclick="closeMobileMenu()">Portofolio</a>
+        <div class="mobile-nav-dropdown">
+            <button class="mobile-nav-dropdown-btn" onclick="toggleMobileDropdown()">Layanan <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="mobile-nav-dropdown-content" id="mobileNavDropdown">
+                <a href="layanan.html" onclick="closeMobileMenu()">Layanan Utama</a>
+                <a href="portofolio.html" onclick="closeMobileMenu()">Portofolio Proyek</a>
+            </div>
+        </div>
         <a href="legalitas.html" onclick="closeMobileMenu()">Legalitas</a>
         <a href="testimoni.html" onclick="closeMobileMenu()">Testimoni</a>
-        <a href="kontak.html" onclick="closeMobileMenu()" style="color: var(--gold);">Hubungi Kami</a>
+        <a href="kontak.html" onclick="closeMobileMenu()" style="color: var(--green);">Hubungi Kami</a>
     </div>
 
     <!-- Header / Navbar -->
@@ -179,18 +322,29 @@
                 </div>
                 <!-- Logo Teks -->
                 <div class="logo-text">
-                    Kontraktor
-                    <span>Chandra Kirana Indonesia</span>
+                    CV CHANDRA KIRANA
+                    <span>KONTRAKTOR</span>
                 </div>
             </a>
             <nav>
                 <a href="index.html">Beranda</a>
                 <a href="tentang-kami.html">Tentang Kami</a>
-                <a href="layanan.html">Layanan</a>
-                <a href="portofolio.html">Portofolio</a>
+                <div class="nav-dropdown">
+
+                <a href="#" class="dropbtn">Layanan <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+                <div class="dropdown-content">
+
+                <a href="layanan.html">Layanan Utama</a>
+
+                <a href="portofolio.html">Portofolio Proyek</a>
+
+                </div>
+
+                </div>
                 <a href="legalitas.html">Legalitas</a>
                 <a href="testimoni.html">Testimoni</a>
-                <a href="kontak.html" class="nav-cta active" style="color:var(--navy)!important; background:var(--gold)!important;">Hubungi Kami</a>
+                <a href="kontak.html" class="nav-cta active" style="color:var(--navy)!important; background:var(--green)!important;">Hubungi Kami</a>
             </nav>
             <div class="hamburger" onclick="openMobileMenu()" aria-label="Open menu">
                 <span></span><span></span><span></span>
@@ -307,7 +461,7 @@
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
-            title="Lokasi Kantor CV. Chandra Kirana Indonesia">
+            title="Lokasi Kantor CV Chandra Kirana">
         </iframe>
     </section>
 
@@ -319,8 +473,8 @@
                     <div class="footer-logo">
                         <div class="logo-mark">CKI</div>
                         <div class="logo-text" style="color: var(--white);">
-                            Kontraktor
-                            <span>Chandra Kirana Indonesia</span>
+                            CV CHANDRA KIRANA
+                            <span>KONTRAKTOR</span>
                         </div>
                     </div>
                     <p class="footer-tagline">Perusahaan konstruksi dan layanan interior yang berdedikasi memberikan kualitas terbaik dengan standar keamanan nasional Indonesia.</p>
@@ -372,7 +526,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 CV. Chandra Kirana Indonesia. Hak cipta dilindungi undang-undang.</p>
+                <p>&copy; 2026 CV Chandra Kirana. Hak cipta dilindungi undang-undang.</p>
                 <span>Didesain oleh <b>Codevela</b></span>
             </div>
         </div>
@@ -451,6 +605,11 @@
                 submitBtn.disabled = false;
             }
         });
+    
+        function toggleMobileDropdown() {
+            document.getElementById('mobileNavDropdown').classList.toggle('open');
+        }
+
     </script>
 </body>
 </html>
