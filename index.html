@@ -126,7 +126,7 @@
         .logo-text span {
             display: block;
             font-weight: 300;
-            font-size: 10px;
+            font-size: 12px;
             letter-spacing: 0.18em;
             color: var(--gold-light);
             opacity: 0.8;
@@ -272,7 +272,7 @@
         }
 
         .hero-eyebrow span {
-            font-size: 11px;
+            font-size: 16px;
             font-weight: 500;
             letter-spacing: 0.22em;
             text-transform: uppercase;
@@ -321,7 +321,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--green);
+            background: var(--green-light);
             color: var(--navy);
             padding: 14px 32px;
             font-size: 12px;
@@ -479,7 +479,7 @@
             border-right: 1px solid #E5E2DA;
             position: relative;
             overflow: hidden;
-            transition: background var(--transition);
+            transition: all var(--transition);
             cursor: default;
         }
 
@@ -487,13 +487,13 @@
             border-right: none;
         }
 
-        .service-card::before {
+        .service-card::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            right: 0;
-            height: 2px;
+            width: 100%;
+            height: 3px;
             background: var(--green);
             transform: scaleX(0);
             transform-origin: left;
@@ -501,10 +501,10 @@
         }
 
         .service-card:hover {
-            background: var(--navy);
+            background: var(--cream-dark);
         }
 
-        .service-card:hover::before {
+        .service-card:hover::after {
             transform: scaleX(1);
         }
 
@@ -534,12 +534,12 @@
             letter-spacing: 0.1em;
             margin-bottom: 12px;
             opacity: 0.8;
-            transition: opacity var(--transition), color var(--transition);
+            transition: all var(--transition);
         }
 
         .service-card:hover .service-number {
             opacity: 1;
-            color: var(--gold-light);
+            transform: translateY(-2px);
         }
 
         .service-name {
@@ -549,11 +549,6 @@
             color: var(--navy);
             margin-bottom: 14px;
             line-height: 1.2;
-            transition: color var(--transition);
-        }
-
-        .service-card:hover .service-name {
-            color: var(--white);
         }
 
         .service-desc {
@@ -561,11 +556,6 @@
             line-height: 1.7;
             color: var(--gray-text);
             font-weight: 300;
-            transition: color var(--transition);
-        }
-
-        .service-card:hover .service-desc {
-            color: rgba(250, 250, 248, 0.5);
         }
 
         /* ── WHY US ── */
@@ -875,8 +865,13 @@
         }
 
         @keyframes scrollClient {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         .trust-item {
@@ -912,7 +907,7 @@
             padding: 80px 0 40px 0;
             overflow: hidden;
         }
-        
+
         .testi-header {
             text-align: center;
             margin-bottom: 48px;
@@ -956,7 +951,7 @@
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
             position: relative;
             white-space: normal;
             border-top: 3px solid transparent;
@@ -994,7 +989,7 @@
             align-items: center;
             gap: 16px;
         }
-        
+
         .author-line {
             width: 24px;
             height: 1px;
@@ -1419,7 +1414,7 @@
                 justify-content: center;
             }
         }
-    
+
         .nav-dropdown {
             position: relative;
             display: inline-block;
@@ -1432,9 +1427,15 @@
         }
 
         .dropdown-content {
-            display: block; visibility: hidden; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; position: absolute; background-color: var(--navy);
+            display: block;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            position: absolute;
+            background-color: var(--navy);
             min-width: 220px;
-            box-shadow: 0px 8px 24px rgba(0,0,0,0.3);
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
             z-index: 100;
             top: 100%;
             left: 0;
@@ -1464,7 +1465,11 @@
             color: var(--green) !important;
         }
 
-        .nav-dropdown:hover .dropdown-content { visibility: visible; opacity: 1; transform: translateY(0); }
+        .nav-dropdown:hover .dropdown-content {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .mobile-nav-dropdown {
             display: flex;
@@ -1510,41 +1515,119 @@
             color: var(--green) !important;
         }
 
-    
+
         /* Scrolled Navbar Theme */
         header.scrolled {
             background: var(--white) !important;
             backdrop-filter: none !important;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
         }
-        header.scrolled nav a { color: var(--navy) !important; }
-        header.scrolled nav a:hover { color: var(--green-light) !important; }
-        header.scrolled nav a.active { color: var(--green-light) !important; }
-        header.scrolled .logo-text { color: var(--navy) !important; }
-        header.scrolled .logo-text span { color: var(--green-light) !important; }
-        header.scrolled .nav-cta { border-color: var(--green-light) !important; color: var(--green-light) !important; }
-        header.scrolled .nav-cta:hover { background: var(--green-light) !important; color: var(--white) !important; }
-        header.scrolled .hamburger span { background: var(--navy) !important; }
-        header.scrolled .nav-dropdown .dropbtn { color: var(--navy) !important; }
-        header.scrolled .nav-dropdown:hover .dropbtn { color: var(--green-light) !important; }
-        header.scrolled .dropdown-content { background-color: var(--white) !important; border-top: 2px solid var(--green-light) !important; box-shadow: 0px 8px 24px rgba(0,0,0,0.1) !important; }
-        header.scrolled .dropdown-content a { color: var(--navy) !important; }
-        header.scrolled .dropdown-content a:hover { background-color: var(--cream) !important; color: var(--green-light) !important; }
-        header.scrolled .mobile-nav-dropdown-btn { color: var(--navy) !important; }
-        header.scrolled .mobile-close { color: var(--navy) !important; }
 
-    
+        header.scrolled nav a {
+            color: var(--navy) !important;
+        }
+
+        header.scrolled nav a:hover {
+            color: var(--green-light) !important;
+        }
+
+        header.scrolled nav a.active {
+            color: var(--green-light) !important;
+        }
+
+        header.scrolled .logo-text {
+            color: var(--navy) !important;
+        }
+
+        header.scrolled .logo-text span {
+            color: var(--green-light) !important;
+        }
+
+        header.scrolled .nav-cta {
+            border-color: var(--green-light) !important;
+            color: var(--green-light) !important;
+        }
+
+        header.scrolled .nav-cta:hover {
+            background: var(--green-light) !important;
+            color: var(--white) !important;
+        }
+
+        header.scrolled .hamburger span {
+            background: var(--navy) !important;
+        }
+
+        header.scrolled .nav-dropdown .dropbtn {
+            color: var(--navy) !important;
+        }
+
+        header.scrolled .nav-dropdown:hover .dropbtn {
+            color: var(--green-light) !important;
+        }
+
+        header.scrolled .dropdown-content {
+            background-color: var(--white) !important;
+            border-top: 2px solid var(--green-light) !important;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        header.scrolled .dropdown-content a {
+            color: var(--navy) !important;
+        }
+
+        header.scrolled .dropdown-content a:hover {
+            background-color: var(--cream) !important;
+            color: var(--green-light) !important;
+        }
+
+        header.scrolled .mobile-nav-dropdown-btn {
+            color: var(--navy) !important;
+        }
+
+        header.scrolled .mobile-close {
+            color: var(--navy) !important;
+        }
+
+
         /* Lighter green for normal navbar */
-        nav a::after { background: var(--green-light) !important; }
-        nav a.active { color: var(--green-light) !important; }
-        .nav-cta { border-color: rgba(34, 197, 94, 0.5) !important; color: var(--green-light) !important; }
-        .nav-cta:hover { background: var(--green-light) !important; color: var(--navy) !important; border-color: var(--green-light) !important; }
-        .logo-text span { color: var(--green-light) !important; }
-        .dropdown-content { border-top: 2px solid var(--green-light) !important; }
-        .dropdown-content a:hover { color: var(--green-light) !important; }
-        .mobile-nav-dropdown-content a:hover { color: var(--green-light) !important; }
-        .nav-dropdown .dropbtn.active { color: var(--green-light) !important; }
+        nav a::after {
+            background: var(--green-light) !important;
+        }
 
+        nav a.active {
+            color: var(--green-light) !important;
+        }
+
+        .nav-cta {
+            border-color: rgba(34, 197, 94, 0.5) !important;
+            color: var(--green-light) !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--green-light) !important;
+            color: var(--navy) !important;
+            border-color: var(--green-light) !important;
+        }
+
+        .logo-text span {
+            color: var(--green-light) !important;
+        }
+
+        .dropdown-content {
+            border-top: 2px solid var(--green-light) !important;
+        }
+
+        .dropdown-content a:hover {
+            color: var(--green-light) !important;
+        }
+
+        .mobile-nav-dropdown-content a:hover {
+            color: var(--green-light) !important;
+        }
+
+        .nav-dropdown .dropbtn.active {
+            color: var(--green-light) !important;
+        }
     </style>
 </head>
 
@@ -1560,7 +1643,10 @@
         <a href="index.html" onclick="closeMobileMenu()">Beranda</a>
         <a href="tentang-kami.html" onclick="closeMobileMenu()">Tentang Kami</a>
         <div class="mobile-nav-dropdown">
-            <button class="mobile-nav-dropdown-btn" onclick="toggleMobileDropdown()">Layanan <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="mobile-nav-dropdown-btn" onclick="toggleMobileDropdown()">Layanan <svg width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></button>
             <div class="mobile-nav-dropdown-content" id="mobileNavDropdown">
                 <a href="layanan.html" onclick="closeMobileMenu()">Layanan Utama</a>
                 <a href="portofolio.html" onclick="closeMobileMenu()">Portofolio Proyek</a>
@@ -1593,15 +1679,18 @@
                 <a href="tentang-kami.html">Tentang Kami</a>
                 <div class="nav-dropdown">
 
-                <a href="#" class="dropbtn">Layanan <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <a href="#" class="dropbtn">Layanan <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></a>
 
-                <div class="dropdown-content">
+                    <div class="dropdown-content">
 
-                <a href="layanan.html">Layanan Utama</a>
+                        <a href="layanan.html">Layanan Utama</a>
 
-                <a href="portofolio.html">Portofolio Proyek</a>
+                        <a href="portofolio.html">Portofolio Proyek</a>
 
-                </div>
+                    </div>
 
                 </div>
                 <a href="legalitas.html">Legalitas</a>
@@ -1621,7 +1710,7 @@
         <div class="hero-overlay-bottom"></div>
         <div class="hero-content">
             <div class="hero-eyebrow">
-                <span>CV Chandra Kirana</span>
+                <span>CV CHANDRA KIRANA INDONESIA</span>
             </div>
             <h1>Solusi Konstruksi &amp; <em>Interior</em> Terpercaya</h1>
             <p class="hero-desc">Berkomitmen menciptakan nilai melalui perencanaan yang matang, pelaksanaan yang
@@ -1639,11 +1728,11 @@
         </div>
         <div class="hero-stats">
             <div class="stat-item">
-                <div class="stat-number">10<sup>+</sup></div>
-                <div class="stat-label">Tahun Pengalaman</div>
+                <div class="stat-number">1<sup>+</sup></div>
+                <div class="stat-label">Tahun Beroperasi</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">150<sup>+</sup></div>
+                <div class="stat-number">15<sup>+</sup></div>
                 <div class="stat-label">Proyek Selesai</div>
             </div>
             <div class="stat-item">
@@ -1703,7 +1792,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="img/interior1.png" alt="Desain Bangunan & Interior">
+                        <img src="img/desainbi1.png" alt="Desain Bangunan & Interior">
                     </div>
                     <div class="service-number">05</div>
                     <h3 class="service-name">Desain Bangunan &amp; Interior</h3>
@@ -1731,40 +1820,47 @@
                         <div class="feature-item">
                             <div class="feature-icon-box">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                 </svg>
                             </div>
                             <div>
                                 <div class="feature-title">Integritas dan Keamanan</div>
-                                <div class="feature-text">Menjalankan usaha dan pengerjaan dengan tanggung jawab dan komitmen total.</div>
+                                <div class="feature-text">Menjalankan usaha dan pengerjaan dengan tanggung jawab dan
+                                    komitmen total.</div>
                             </div>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon-box">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                             </div>
                             <div>
                                 <div class="feature-title">Profesionalisme dan Legalitas</div>
-                                <div class="feature-text">Memberikan hasil pekerjaan terbaik dengan standar kerja yang tinggi.</div>
+                                <div class="feature-text">Memberikan hasil pekerjaan terbaik dengan standar kerja yang
+                                    tinggi.</div>
                             </div>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon-box">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
                                 </svg>
                             </div>
                             <div>
                                 <div class="feature-title">Kepercayaan</div>
-                                <div class="feature-text">Menjaga komitmen dan kepercayaan yang diberikan oleh klien.</div>
+                                <div class="feature-text">Menjaga komitmen dan kepercayaan yang diberikan oleh klien.
+                                </div>
                             </div>
                         </div>
                         <div class="feature-item">
                             <div class="feature-icon-box">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                                 </svg>
                             </div>
                             <div>
@@ -1817,12 +1913,14 @@
                 <h2 class="section-title">Testimoni <em>Terpercaya</em></h2>
             </div>
         </div>
-        
+
         <div class="testi-scroll-wrapper" id="testiWrapper">
             <div class="testi-track" id="testiTrack">
                 <div class="testimonial-card">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Kualitas pengerjaan CKI sangat memuaskan dan presisi. Material yang digunakan sesuai spesifikasi dan selesai tepat waktu. Sangat merekomendasikan layanan mereka.</p>
+                    <p class="testimonial-text">Kualitas pengerjaan CKI sangat memuaskan dan presisi. Material yang
+                        digunakan sesuai spesifikasi dan selesai tepat waktu. Sangat merekomendasikan layanan mereka.
+                    </p>
                     <div class="testimonial-author">
                         <div class="author-line"></div>
                         <div class="author-info">
@@ -1831,10 +1929,11 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="testimonial-card">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Pembangunan gudang operasional kami berjalan lancar. Tim CKI sangat profesional, responsif terhadap perubahan, dan standar K3 benar-benar diterapkan.</p>
+                    <p class="testimonial-text">Pembangunan gudang operasional kami berjalan lancar. Tim CKI sangat
+                        profesional, responsif terhadap perubahan, dan standar K3 benar-benar diterapkan.</p>
                     <div class="testimonial-author">
                         <div class="author-line"></div>
                         <div class="author-info">
@@ -1846,7 +1945,8 @@
 
                 <div class="testimonial-card">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Desain dan pengerjaan interior untuk kedai kami sungguh luar biasa! Estetikanya dapet banget dan fungsional. Terima kasih banyak CKI!</p>
+                    <p class="testimonial-text">Desain dan pengerjaan interior untuk kedai kami sungguh luar biasa!
+                        Estetikanya dapet banget dan fungsional. Terima kasih banyak CKI!</p>
                     <div class="testimonial-author">
                         <div class="author-line"></div>
                         <div class="author-info">
@@ -1858,7 +1958,8 @@
 
                 <div class="testimonial-card">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Komunikasi yang transparan dari awal hingga akhir proyek. Hasil renovasi kantor kami sangat rapi dan lingkungan kerja jadi lebih nyaman.</p>
+                    <p class="testimonial-text">Komunikasi yang transparan dari awal hingga akhir proyek. Hasil renovasi
+                        kantor kami sangat rapi dan lingkungan kerja jadi lebih nyaman.</p>
                     <div class="testimonial-author">
                         <div class="author-line"></div>
                         <div class="author-info">
@@ -1870,7 +1971,8 @@
 
                 <div class="testimonial-card">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Saya percayakan pembangunan rumah tinggal saya pada CKI. Desainnya modern, strukturnya sangat kokoh, dan pembagian ruangnya efektif. Hasilnya memuaskan!</p>
+                    <p class="testimonial-text">Saya percayakan pembangunan rumah tinggal saya pada CKI. Desainnya
+                        modern, strukturnya sangat kokoh, dan pembagian ruangnya efektif. Hasilnya memuaskan!</p>
                     <div class="testimonial-author">
                         <div class="author-line"></div>
                         <div class="author-info">
@@ -1882,7 +1984,8 @@
 
                 <div class="testimonial-card">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Pekerjaan renovasi berjalan efisien dan detail finishing sangat baik. Tim di lapangan sangat sopan. Sangat puas dengan pelayanan dari Chandra Kirana.</p>
+                    <p class="testimonial-text">Pekerjaan renovasi berjalan efisien dan detail finishing sangat baik.
+                        Tim di lapangan sangat sopan. Sangat puas dengan pelayanan dari Chandra Kirana.</p>
                     <div class="testimonial-author">
                         <div class="author-line"></div>
                         <div class="author-info">
@@ -2097,7 +2200,7 @@
             });
         }, { threshold: 0.12 });
         revealEls.forEach(el => observer.observe(el));
-    
+
         function toggleMobileDropdown() {
             document.getElementById('mobileNavDropdown').classList.toggle('open');
         }
@@ -2107,36 +2210,36 @@
         if (wrapper) {
             const track = document.getElementById('testiTrack');
             track.innerHTML += track.innerHTML; // Clone items for loop
-            
+
             let isDown = false;
             let startX;
             let scrollLeft;
             let autoScroll;
-            
+
             function startAutoScroll() {
                 autoScroll = setInterval(() => {
-                    if(!isDown) {
+                    if (!isDown) {
                         wrapper.scrollLeft += 1;
-                        if(wrapper.scrollLeft >= track.scrollWidth / 2) {
+                        if (wrapper.scrollLeft >= track.scrollWidth / 2) {
                             wrapper.scrollLeft = 0;
                         }
                     }
                 }, 20);
             }
-            
+
             function stopAutoScroll() {
                 clearInterval(autoScroll);
             }
-            
+
             startAutoScroll();
-            
+
             wrapper.addEventListener('mouseenter', stopAutoScroll);
             wrapper.addEventListener('mouseleave', () => {
                 isDown = false;
                 wrapper.classList.remove('active');
                 startAutoScroll();
             });
-            
+
             wrapper.addEventListener('mousedown', (e) => {
                 isDown = true;
                 wrapper.classList.add('active');
@@ -2144,21 +2247,21 @@
                 scrollLeft = wrapper.scrollLeft;
                 stopAutoScroll();
             });
-            
+
             wrapper.addEventListener('mouseup', () => {
                 isDown = false;
                 wrapper.classList.remove('active');
                 startAutoScroll();
             });
-            
+
             wrapper.addEventListener('mousemove', (e) => {
                 if (!isDown) return;
                 e.preventDefault();
                 const x = e.pageX - wrapper.offsetLeft;
                 const walk = (x - startX) * 2;
                 wrapper.scrollLeft = scrollLeft - walk;
-                
-                if(wrapper.scrollLeft >= track.scrollWidth / 2) {
+
+                if (wrapper.scrollLeft >= track.scrollWidth / 2) {
                     wrapper.scrollLeft = 0;
                     scrollLeft = wrapper.scrollLeft;
                     startX = e.pageX - wrapper.offsetLeft;
@@ -2168,27 +2271,27 @@
                     startX = e.pageX - wrapper.offsetLeft;
                 }
             });
-            
+
             // Touch events
             wrapper.addEventListener('touchstart', (e) => {
                 isDown = true;
                 startX = e.touches[0].pageX - wrapper.offsetLeft;
                 scrollLeft = wrapper.scrollLeft;
                 stopAutoScroll();
-            }, {passive: true});
-            
+            }, { passive: true });
+
             wrapper.addEventListener('touchend', () => {
                 isDown = false;
                 startAutoScroll();
             });
-            
+
             wrapper.addEventListener('touchmove', (e) => {
                 if (!isDown) return;
                 const x = e.touches[0].pageX - wrapper.offsetLeft;
                 const walk = (x - startX) * 2;
                 wrapper.scrollLeft = scrollLeft - walk;
-                
-                if(wrapper.scrollLeft >= track.scrollWidth / 2) {
+
+                if (wrapper.scrollLeft >= track.scrollWidth / 2) {
                     wrapper.scrollLeft = 0;
                     scrollLeft = wrapper.scrollLeft;
                     startX = e.touches[0].pageX - wrapper.offsetLeft;
@@ -2197,7 +2300,7 @@
                     scrollLeft = wrapper.scrollLeft;
                     startX = e.touches[0].pageX - wrapper.offsetLeft;
                 }
-            }, {passive: true});
+            }, { passive: true });
         }
 
     </script>

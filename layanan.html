@@ -58,7 +58,7 @@
         .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: all 0.3s; }
 
         /* ── INNER HERO ── */
-        .inner-hero { position: relative; height: 55vh; min-height: 400px; display: flex; align-items: flex-end; background: var(--navy); overflow: hidden; }
+        .inner-hero { position: relative; height: 40vh; min-height: 320px; display: flex; align-items: flex-end; background: var(--navy); overflow: hidden; }
         .inner-hero-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat; opacity: 0.25; filter: grayscale(50%); }
         .inner-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,28,44,1) 0%, transparent 100%); }
         .inner-hero-content { position: relative; max-width: 1320px; margin: 0 auto; padding: 0 2rem 60px; width: 100%; text-align: center; }
@@ -67,39 +67,45 @@
         .inner-hero h1 em { font-style: italic; color: var(--gold-light); }
 
         /* ── SERVICES DETAIL SECTION (REVISI) ── */
-        .services-detail-section { padding: 100px 2rem; background: var(--white); }
+        .services-detail-section { padding: 80px 2rem; background: var(--white); }
         .container { max-width: 1320px; margin: 0 auto; }
         
-        .service-row { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 120px; }
+        .service-row { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-bottom: 80px; }
         .service-row:last-child { margin-bottom: 0; }
         .service-row:nth-child(even) .service-image { order: 2; }
         .service-row:nth-child(even) .service-content { order: 1; }
 
-        /* Placeholder kotak jika gambar gagal dimuat */
-        .service-image { position: relative; background: #E5E2DA; border-radius: 2px; min-height: 480px; overflow: hidden; }
-        .service-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; color: transparent; }
+        /* Carousel & Image Styles */
+        .service-image { position: relative; background: #E5E2DA; border-radius: 4px; height: 420px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .carousel-inner { position: relative; width: 100%; height: 100%; }
+        .carousel-inner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity 0.8s ease-in-out; }
+        .carousel-inner img.active { opacity: 1; z-index: 1; }
+        .carousel-nav { position: absolute; inset: 0; display: flex; justify-content: space-between; align-items: center; padding: 0 16px; opacity: 0; transition: opacity 0.3s ease; z-index: 10; pointer-events: none; }
+        .service-image:hover .carousel-nav { opacity: 1; }
+        .carousel-nav button { pointer-events: auto; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.85); border: none; display: flex; justify-content: center; align-items: center; cursor: pointer; color: var(--navy); transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .carousel-nav button:hover { background: var(--green); color: var(--white); transform: scale(1.05); }
 
         /* Header Grup Baru (Angka Berdampingan dengan Judul) */
-        .service-header-group { display: flex; align-items: flex-start; gap: 24px; margin-bottom: 24px; }
+        .service-header-group { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 20px; }
         .service-number-badge {
-            flex-shrink: 0; width: 68px; height: 68px; background: var(--navy);
+            flex-shrink: 0; width: 56px; height: 56px; background: var(--white);
             display: flex; align-items: center; justify-content: center;
-            font-family: var(--font-heading); font-size: 28px; font-weight: 600; color: var(--green);
-            border: 1px solid rgba(22,163,74,0.3); margin-top: 4px;
+            font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: var(--navy);
+            border: 1px solid rgba(12, 53, 85, 0.15); margin-top: 4px; border-radius: 4px;
         }
 
-        .service-title-group .section-label { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+        .service-title-group .section-label { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
         .service-title-group .section-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--green); }
-        .service-title-group .section-label span { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); }
+        .service-title-group .section-label span { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); }
         
-        .service-title-group h2 { font-family: var(--font-heading); font-size: 38px; font-weight: 600; color: var(--navy); line-height: 1.15; margin-bottom: 0; }
+        .service-title-group h2 { font-family: var(--font-heading); font-size: 32px; font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 0; }
         
-        .service-content p { font-size: 15px; line-height: 1.75; color: var(--gray-text); font-weight: 300; margin-bottom: 20px; }
+        .service-content p { font-size: 16px; line-height: 1.7; color: #4B5563; font-weight: 400; margin-bottom: 20px; }
         
-        .service-features { list-style: none; margin-top: 32px; display: grid; grid-template-columns: 1fr; gap: 16px; }
+        .service-features { list-style: none; margin-top: 24px; display: grid; grid-template-columns: 1fr; gap: 14px; }
         .feature-line { display: flex; align-items: flex-start; gap: 12px; }
-        .feature-line svg { width: 18px; height: 18px; color: var(--green); flex-shrink: 0; margin-top: 3px; }
-        .feature-line span { font-size: 14px; color: var(--navy-light); font-weight: 400; line-height: 1.5; }
+        .feature-line svg { width: 20px; height: 20px; color: var(--green); flex-shrink: 0; margin-top: 2px; }
+        .feature-line span { font-size: 15px; color: var(--navy); font-weight: 500; line-height: 1.5; }
 
         /* ── CTA BANNER ── */
         .cta-section { background: var(--navy); padding: 80px 2rem; position: relative; overflow: hidden; border-top: 1px solid rgba(22,163,74,0.2); }
@@ -148,15 +154,15 @@
         /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
             .service-row { gap: 40px; }
-            .service-image { min-height: 400px; }
+            .service-image { height: 380px; }
         }
         @media (max-width: 768px) {
             nav { display: none; }
             .hamburger { display: flex; }
-            .service-row { grid-template-columns: 1fr; margin-bottom: 80px; }
+            .service-row { grid-template-columns: 1fr; margin-bottom: 60px; }
             .service-row:nth-child(even) .service-image { order: 1; }
             .service-row:nth-child(even) .service-content { order: 2; }
-            .service-image { min-height: 320px; }
+            .service-image { height: 300px; }
             .cta-inner { flex-direction: column; align-items: flex-start; }
             .footer-top { grid-template-columns: 1fr; }
         }
@@ -364,8 +370,17 @@
             
             <!-- Service 01 -->
             <div class="service-row reveal">
-                <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop" alt="Konstruksi Bangunan">
+                <div class="service-image carousel" data-auto="true">
+                    <div class="carousel-inner">
+                        <img src="img/pembangunan1.png" alt="Konstruksi Bangunan 1" class="active">
+                        <img src="img/pembangunan2.png" alt="Konstruksi Bangunan 2">
+                        <img src="img/pembangunan3.png" alt="Konstruksi Bangunan 3">
+                        <img src="img/pembangunan4.png" alt="Konstruksi Bangunan 4">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev-btn" aria-label="Previous image"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg></button>
+                        <button class="next-btn" aria-label="Next image"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></button>
+                    </div>
                 </div>
                 <div class="service-content">
                     <div class="service-header-group">
@@ -395,8 +410,15 @@
 
             <!-- Service 02 -->
             <div class="service-row reveal">
-                <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?q=80&w=2070&auto=format&fit=crop" alt="Mekanikal dan Elektrikal">
+                <div class="service-image carousel" data-auto="true">
+                    <div class="carousel-inner">
+                        <img src="img/elektrikal1.png" alt="Mekanikal dan Elektrikal 1" class="active">
+                        <img src="img/elektrikal2.png" alt="Mekanikal dan Elektrikal 2">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev-btn" aria-label="Previous image"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg></button>
+                        <button class="next-btn" aria-label="Next image"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></button>
+                    </div>
                 </div>
                 <div class="service-content">
                     <div class="service-header-group">
@@ -426,8 +448,15 @@
 
             <!-- Service 03 -->
             <div class="service-row reveal">
-                <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1584464457692-7efc92135c34?q=80&w=2072&auto=format&fit=crop" alt="Pembuatan Jalan dan Pengaspalan">
+                <div class="service-image carousel" data-auto="true">
+                    <div class="carousel-inner">
+                        <img src="img/aspal1.png" alt="Jalan dan Pengaspalan 1" class="active">
+                        <img src="img/aspal2.png" alt="Jalan dan Pengaspalan 2">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev-btn" aria-label="Previous image"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg></button>
+                        <button class="next-btn" aria-label="Next image"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></button>
+                    </div>
                 </div>
                 <div class="service-content">
                     <div class="service-header-group">
@@ -457,8 +486,16 @@
 
             <!-- Service 04 -->
             <div class="service-row reveal">
-                <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2070&auto=format&fit=crop" alt="Renovasi Rumah dan Bangunan">
+                <div class="service-image carousel" data-auto="true">
+                    <div class="carousel-inner">
+                        <img src="img/renovasi1.png" alt="Renovasi Rumah dan Bangunan 1" class="active">
+                        <img src="img/renovasi2.png" alt="Renovasi Rumah dan Bangunan 2">
+                        <img src="img/renovasi3.png" alt="Renovasi Rumah dan Bangunan 3">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev-btn" aria-label="Previous image"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg></button>
+                        <button class="next-btn" aria-label="Next image"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></button>
+                    </div>
                 </div>
                 <div class="service-content">
                     <div class="service-header-group">
@@ -488,8 +525,16 @@
 
             <!-- Service 05 -->
             <div class="service-row reveal">
-                <div class="service-image">
-                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop" alt="Desain Bangunan dan Interior">
+                <div class="service-image carousel" data-auto="true">
+                    <div class="carousel-inner">
+                        <img src="img/desainbi1.png" alt="Desain Bangunan dan Interior 1" class="active">
+                        <img src="img/desainbi2.png" alt="Desain Bangunan dan Interior 2">
+                        <img src="img/desainbi3.jpeg" alt="Desain Bangunan dan Interior 3">
+                    </div>
+                    <div class="carousel-nav">
+                        <button class="prev-btn" aria-label="Previous image"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg></button>
+                        <button class="next-btn" aria-label="Next image"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg></button>
+                    </div>
                 </div>
                 <div class="service-content">
                     <div class="service-header-group">
@@ -625,6 +670,66 @@
         function toggleMobileDropdown() {
             document.getElementById('mobileNavDropdown').classList.toggle('open');
         }
+
+        // Carousel Logic
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const inner = carousel.querySelector('.carousel-inner');
+            const images = inner.querySelectorAll('img');
+            const prevBtn = carousel.querySelector('.prev-btn');
+            const nextBtn = carousel.querySelector('.next-btn');
+            let currentIndex = 0;
+            let intervalId;
+
+            if (images.length <= 1) {
+                if (prevBtn) prevBtn.style.display = 'none';
+                if (nextBtn) nextBtn.style.display = 'none';
+                return;
+            }
+
+            function showImage(index) {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (index + images.length) % images.length;
+                images[currentIndex].classList.add('active');
+            }
+
+            function nextImage() {
+                showImage(currentIndex + 1);
+            }
+
+            function prevImage() {
+                showImage(currentIndex - 1);
+            }
+
+            nextBtn.addEventListener('click', () => {
+                nextImage();
+                resetInterval();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevImage();
+                resetInterval();
+            });
+
+            function startInterval() {
+                intervalId = setInterval(nextImage, 4000); // 4 seconds auto slide
+            }
+
+            function resetInterval() {
+                clearInterval(intervalId);
+                if (carousel.dataset.auto === 'true') {
+                    startInterval();
+                }
+            }
+
+            if (carousel.dataset.auto === 'true') {
+                startInterval();
+            }
+            
+            // Pause on hover is optional, user said keep it automatic when not hovered. The code achieves this.
+            // If we want it to pause on hover:
+            // carousel.addEventListener('mouseenter', () => clearInterval(intervalId));
+            // carousel.addEventListener('mouseleave', () => { if (carousel.dataset.auto === 'true') startInterval(); });
+        });
 
     </script>
 </body>

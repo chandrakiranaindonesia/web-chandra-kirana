@@ -58,7 +58,7 @@
         .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: all 0.3s; }
 
         /* ── INNER HERO ── */
-        .inner-hero { position: relative; height: 55vh; min-height: 400px; display: flex; align-items: flex-end; background: var(--navy); overflow: hidden; }
+        .inner-hero { position: relative; height: 40vh; min-height: 320px; display: flex; align-items: flex-end; background: var(--navy); overflow: hidden; }
         .inner-hero-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=2061&auto=format&fit=crop') center/cover no-repeat; opacity: 0.25; filter: grayscale(50%); }
         .inner-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,28,44,1) 0%, transparent 100%); }
         .inner-hero-content { position: relative; max-width: 1320px; margin: 0 auto; padding: 0 2rem 60px; width: 100%; text-align: center; }
@@ -100,38 +100,78 @@
         .author-info h4 { font-family: var(--font-heading); font-size: 20px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
         .author-info p { font-size: 12px; color: rgba(11,28,44,0.5); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
 
-        /* ── TESTIMONIAL FORM SECTION ── */
-        .form-section { background: var(--navy); padding: 100px 2rem; border-top: 1px solid rgba(22,163,74,0.2); }
-        .form-container { max-width: 800px; margin: 0 auto; background: var(--navy-mid); padding: 64px; border: 1px solid rgba(22,163,74,0.15); }
-        
-        .form-header { text-align: center; margin-bottom: 48px; }
-        .form-header h3 { font-family: var(--font-heading); font-size: 36px; font-weight: 600; color: var(--white); margin-bottom: 12px; }
-        .form-header p { font-size: 14px; color: rgba(250,250,248,0.5); font-weight: 300; }
+        /* ── CLIENTS / TRUST BAR ── */
+        .trust-section { background: var(--white); padding: 64px 2rem; border-top: 1px solid #E5E2DA; border-bottom: 1px solid #E5E2DA; overflow: hidden; }
+        .trust-inner { max-width: 1320px; margin: 0 auto; display: flex; align-items: center; gap: 48px; }
+        .trust-label { font-size: 14px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--navy); white-space: nowrap; padding-right: 48px; border-right: 1px solid #E5E2DA; flex-shrink: 0; z-index: 2; background: var(--white); }
+        .marquee-wrapper { flex: 1; overflow: hidden; display: flex; position: relative; }
+        .marquee-wrapper::before, .marquee-wrapper::after { content: ''; position: absolute; top: 0; width: 80px; height: 100%; z-index: 1; pointer-events: none; }
+        .marquee-wrapper::before { left: 0; background: linear-gradient(to right, var(--white) 0%, transparent 100%); }
+        .marquee-wrapper::after { right: 0; background: linear-gradient(to left, var(--white) 0%, transparent 100%); }
+        .marquee-content { display: flex; animation: scrollClient 30s linear infinite; width: max-content; }
+        .marquee-wrapper:hover .marquee-content { animation-play-state: paused; }
+        .marquee-group { display: flex; align-items: center; gap: 64px; padding-right: 64px; }
+        @keyframes scrollClient { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .trust-item { display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all var(--transition); }
+        .trust-item:hover { transform: scale(1.05); }
+        .trust-item img { max-height: 64px; object-fit: contain; }
+        .trust-item-text { font-family: var(--font-heading); font-size: 22px; font-weight: 700; font-style: italic; color: var(--navy); letter-spacing: 0.02em; white-space: nowrap; }
 
-        .review-form { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        /* ── TESTIMONIALS ── */
+        .testimonials-section { background: var(--cream); padding: 80px 0 40px 0; overflow: hidden; }
+        .testi-header { text-align: center; margin-bottom: 48px; padding: 0 2rem; }
+        .testi-header .section-label { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 20px; }
+        .testi-header .section-label::before, .testi-header .section-label::after { content: ''; display: block; width: 32px; height: 1px; background: var(--green); }
+        .testi-header .section-label span { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); }
+        .testi-header .section-title { font-family: var(--font-heading); font-size: clamp(34px, 4vw, 54px); font-weight: 600; color: var(--navy); line-height: 1.1; letter-spacing: -0.01em; }
+        .testi-header .section-title em { font-style: italic; color: var(--green); }
+        .testi-scroll-wrapper { width: 100%; overflow-x: auto; scroll-behavior: auto; -ms-overflow-style: none; scrollbar-width: none; cursor: grab; padding-bottom: 24px; }
+        .testi-scroll-wrapper.active { cursor: grabbing; }
+        .testi-scroll-wrapper::-webkit-scrollbar { display: none; }
+        .testi-track { display: flex; gap: 24px; width: max-content; padding: 0 2rem; }
+        .testimonial-card { background: var(--white); padding: 28px; border: 1px solid #E5E2DA; width: 320px; flex-shrink: 0; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02); position: relative; white-space: normal; border-top: 3px solid transparent; transition: border-color var(--transition); }
+        .testimonial-card:hover { border-top-color: var(--green); }
+        .quote-icon { font-family: var(--font-heading); font-size: 48px; color: var(--green); opacity: 0.15; line-height: 1; margin-bottom: 8px; display: block; }
+        .testimonial-text { font-size: 14px; line-height: 1.7; color: var(--gray-text); font-style: italic; margin-bottom: 24px; position: relative; z-index: 1; font-weight: 400; flex-grow: 1; }
+        .testimonial-author { display: flex; align-items: center; gap: 16px; }
+        .author-line { width: 24px; height: 1px; background: var(--green); }
+        .author-info { display: flex; flex-direction: column; }
+        .author-name { font-family: var(--font-heading); font-size: 14px; font-weight: 700; color: var(--navy); letter-spacing: 0.05em; }
+        .author-role { font-size: 12px; color: rgba(75, 85, 99, 0.7); margin-top: 4px; }
+
+        /* ── TESTIMONIAL FORM SECTION ── */
+        .form-section { background: var(--off-white); padding: 60px 2rem; }
+        .form-container { max-width: 650px; margin: 0 auto; background: var(--white); padding: 40px; border: 1px solid var(--green); border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        
+        .form-header { text-align: center; margin-bottom: 32px; }
+        .form-header h3 { font-family: var(--font-heading); font-size: 28px; font-weight: 600; color: var(--navy); margin-bottom: 12px; }
+        .form-header p { font-size: 14px; color: var(--gray-text); font-weight: 300; }
+
+        .review-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .form-group { display: flex; flex-direction: column; gap: 8px; }
         .form-group.full { grid-column: span 2; }
         
-        .form-group label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); }
+        .form-group label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); }
         
         .form-group input, .form-group textarea {
-            background: rgba(250,250,248,0.03);
-            border: 1px solid rgba(250,250,248,0.1);
-            padding: 16px 20px;
+            background: var(--white);
+            border: 1px solid #E5E2DA;
+            padding: 14px 16px;
             font-family: var(--font-body);
             font-size: 14px;
-            color: var(--white);
+            color: var(--navy);
+            border-radius: 4px;
             transition: all var(--transition);
         }
-        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--green); background: rgba(22,163,74,0.05); }
-        .form-group textarea { min-height: 120px; resize: vertical; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(22,163,74,0.1); }
+        .form-group textarea { min-height: 100px; resize: vertical; }
         
         /* Interactive Star Rating */
         .rating-input { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 8px; }
         .rating-input input { display: none; }
         .rating-input label {
             cursor: pointer; width: 32px; height: 32px;
-            color: rgba(250,250,248,0.2);
+            color: var(--gray-light);
             transition: color 0.2s;
         }
         .rating-input label svg { width: 100%; height: 100%; fill: currentColor; }
@@ -142,12 +182,12 @@
         }
 
         .btn-submit {
-            background: var(--green); color: var(--navy); border: none; cursor: pointer;
-            padding: 16px 32px; font-family: var(--font-body); font-size: 13px; font-weight: 600;
+            background: var(--green); color: var(--white); border: none; cursor: pointer;
+            padding: 14px 28px; font-family: var(--font-body); font-size: 13px; font-weight: 600;
             letter-spacing: 0.14em; text-transform: uppercase; transition: all var(--transition);
-            margin-top: 16px; width: 100%;
+            margin-top: 8px; width: 100%; border-radius: 4px;
         }
-        .btn-submit:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(22,163,74,0.25); }
+        .btn-submit:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22,163,74,0.2); }
         .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; box-shadow: none; }
 
         /* ── FOOTER ── */
@@ -196,6 +236,8 @@
             .review-form { grid-template-columns: 1fr; }
             .form-group.full { grid-column: span 1; }
             .footer-top { grid-template-columns: 1fr; }
+            .trust-inner { flex-direction: column; align-items: flex-start; }
+            .trust-label { border-right: none; padding-right: 0; border-bottom: 1px solid #E5E2DA; padding-bottom: 16px; width: 100%; }
         }
     
         .nav-dropdown {
@@ -407,6 +449,130 @@
             
             <div class="reviews-grid reveal" id="reviewsGrid">
                 <!-- Data akan dimuat dari testimoni.json melalui JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <div class="trust-section">
+        <div class="trust-inner">
+            <div class="trust-label">Dipercaya Oleh</div>
+            <div class="marquee-wrapper">
+                <div class="marquee-content">
+                    <div class="marquee-group">
+                        <div class="trust-item"><img src="img/ptspi.png" alt="PT Sang Plastik Indonesia"></div>
+                        <div class="trust-item"><img src="img/pttiki.png" alt="PT Citra Van Titipan Kilat"></div>
+                        <div class="trust-item"><img src="img/kedaikopi.png" alt="Kedai Kopi Kresna"></div>
+                        <div class="trust-item"><span class="trust-item-text">PT Reco Polly International</span></div>
+                        <div class="trust-item"><span class="trust-item-text">Bpk. Hendra Thiemailattu</span></div>
+                        <div class="trust-item"><span class="trust-item-text">Ibu Kolonel Amiseno</span></div>
+                        <div class="trust-item"><span class="trust-item-text">Bpk. Alex Chandra</span></div>
+                        <div class="trust-item"><span class="trust-item-text">Bpk. Aming Hartono</span></div>
+                    </div>
+                    <div class="marquee-group">
+                        <div class="trust-item"><img src="img/ptspi.png" alt="PT Sang Plastik Indonesia"></div>
+                        <div class="trust-item"><img src="img/pttiki.png" alt="PT Citra Van Titipan Kilat"></div>
+                        <div class="trust-item"><img src="img/kedaikopi.png" alt="Kedai Kopi Kresna"></div>
+                        <div class="trust-item"><span class="trust-item-text">PT Reco Polly International</span></div>
+                        <div class="trust-item"><span class="trust-item-text">Bpk. Hendra Thiemailattu</span></div>
+                        <div class="trust-item"><span class="trust-item-text">Ibu Kolonel Amiseno</span></div>
+                        <div class="trust-item"><span class="trust-item-text">Bpk. Alex Chandra</span></div>
+                        <div class="trust-item"><span class="trust-item-text">Bpk. Aming Hartono</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testi-header">
+                <div class="section-label"><span>Suara Klien Kami</span></div>
+                <h2 class="section-title">Testimoni <em>Terpercaya</em></h2>
+            </div>
+        </div>
+
+        <div class="testi-scroll-wrapper" id="testiWrapper">
+            <div class="testi-track" id="testiTrack">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Kualitas pengerjaan CKI sangat memuaskan dan presisi. Material yang
+                        digunakan sesuai spesifikasi dan selesai tepat waktu. Sangat merekomendasikan layanan mereka.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-line"></div>
+                        <div class="author-info">
+                            <span class="author-name">PT Sang Plastik Indonesia</span>
+                            <span class="author-role">Klien Korporat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Pembangunan gudang operasional kami berjalan lancar. Tim CKI sangat
+                        profesional, responsif terhadap perubahan, dan standar K3 benar-benar diterapkan.</p>
+                    <div class="testimonial-author">
+                        <div class="author-line"></div>
+                        <div class="author-info">
+                            <span class="author-name">PT Citra Van Titipan Kilat</span>
+                            <span class="author-role">Klien Korporat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Desain dan pengerjaan interior untuk kedai kami sungguh luar biasa!
+                        Estetikanya dapet banget dan fungsional. Terima kasih banyak CKI!</p>
+                    <div class="testimonial-author">
+                        <div class="author-line"></div>
+                        <div class="author-info">
+                            <span class="author-name">Kedai Kopi Kresna</span>
+                            <span class="author-role">Klien Komersial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Komunikasi yang transparan dari awal hingga akhir proyek. Hasil renovasi
+                        kantor kami sangat rapi dan lingkungan kerja jadi lebih nyaman.</p>
+                    <div class="testimonial-author">
+                        <div class="author-line"></div>
+                        <div class="author-info">
+                            <span class="author-name">PT Reco Polly International</span>
+                            <span class="author-role">Klien Korporat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Saya percayakan pembangunan rumah tinggal saya pada CKI. Desainnya
+                        modern, strukturnya sangat kokoh, dan pembagian ruangnya efektif. Hasilnya memuaskan!</p>
+                    <div class="testimonial-author">
+                        <div class="author-line"></div>
+                        <div class="author-info">
+                            <span class="author-name">Bpk. Hendra Thiemailattu</span>
+                            <span class="author-role">Klien Residensial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">Pekerjaan renovasi berjalan efisien dan detail finishing sangat baik.
+                        Tim di lapangan sangat sopan. Sangat puas dengan pelayanan dari Chandra Kirana.</p>
+                    <div class="testimonial-author">
+                        <div class="author-line"></div>
+                        <div class="author-info">
+                            <span class="author-name">Ibu Kolonel Amiseno</span>
+                            <span class="author-role">Klien Residensial</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -700,6 +866,104 @@
 
         // Panggil fungsi untuk menampilkan ulasan yang tersimpan saat web dibuka
         loadReviews();
+
+        // Testimonials Auto Scroll & Drag
+        const wrapper = document.getElementById('testiWrapper');
+        if (wrapper) {
+            const track = document.getElementById('testiTrack');
+            track.innerHTML += track.innerHTML; // Clone items for loop
+
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            let autoScroll;
+
+            function startAutoScroll() {
+                autoScroll = setInterval(() => {
+                    if (!isDown) {
+                        wrapper.scrollLeft += 1;
+                        if (wrapper.scrollLeft >= track.scrollWidth / 2) {
+                            wrapper.scrollLeft = 0;
+                        }
+                    }
+                }, 20);
+            }
+
+            function stopAutoScroll() {
+                clearInterval(autoScroll);
+            }
+
+            startAutoScroll();
+
+            wrapper.addEventListener('mouseenter', stopAutoScroll);
+            wrapper.addEventListener('mouseleave', () => {
+                isDown = false;
+                wrapper.classList.remove('active');
+                startAutoScroll();
+            });
+
+            wrapper.addEventListener('mousedown', (e) => {
+                isDown = true;
+                wrapper.classList.add('active');
+                startX = e.pageX - wrapper.offsetLeft;
+                scrollLeft = wrapper.scrollLeft;
+                stopAutoScroll();
+            });
+
+            wrapper.addEventListener('mouseup', () => {
+                isDown = false;
+                wrapper.classList.remove('active');
+                startAutoScroll();
+            });
+
+            wrapper.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - wrapper.offsetLeft;
+                const walk = (x - startX) * 2;
+                wrapper.scrollLeft = scrollLeft - walk;
+
+                if (wrapper.scrollLeft >= track.scrollWidth / 2) {
+                    wrapper.scrollLeft = 0;
+                    scrollLeft = wrapper.scrollLeft;
+                    startX = e.pageX - wrapper.offsetLeft;
+                } else if (wrapper.scrollLeft <= 0) {
+                    wrapper.scrollLeft = track.scrollWidth / 2;
+                    scrollLeft = wrapper.scrollLeft;
+                    startX = e.pageX - wrapper.offsetLeft;
+                }
+            });
+
+            // Touch events
+            wrapper.addEventListener('touchstart', (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX - wrapper.offsetLeft;
+                scrollLeft = wrapper.scrollLeft;
+                stopAutoScroll();
+            }, { passive: true });
+
+            wrapper.addEventListener('touchend', () => {
+                isDown = false;
+                startAutoScroll();
+            });
+
+            wrapper.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                const x = e.touches[0].pageX - wrapper.offsetLeft;
+                const walk = (x - startX) * 2;
+                wrapper.scrollLeft = scrollLeft - walk;
+
+                if (wrapper.scrollLeft >= track.scrollWidth / 2) {
+                    wrapper.scrollLeft = 0;
+                    scrollLeft = wrapper.scrollLeft;
+                    startX = e.touches[0].pageX - wrapper.offsetLeft;
+                } else if (wrapper.scrollLeft <= 0) {
+                    wrapper.scrollLeft = track.scrollWidth / 2;
+                    scrollLeft = wrapper.scrollLeft;
+                    startX = e.touches[0].pageX - wrapper.offsetLeft;
+                }
+            }, { passive: true });
+        }
     
         function toggleMobileDropdown() {
             document.getElementById('mobileNavDropdown').classList.toggle('open');
