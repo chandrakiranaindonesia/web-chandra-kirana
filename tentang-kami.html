@@ -5,39 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Tentang CV. Chandra Kirana Indonesia - Solusi Konstruksi dan Interior">
     <title>Tentang Kami | CV. Chandra Kirana Indonesia</title>
+    <link rel="stylesheet" href="industrial-theme.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --navy: #0B1C2C;
-            --navy-mid: #142436;
-            --navy-light: #1D3148;
-            --gold: #C9A84C;
-            --gold-light: #E2C97A;
-            --cream: #F5F0E8;
-            --cream-dark: #EDE8DF;
-            --white: #FAFAF8;
-            --gray-text: #6B7280;
-            --gray-light: #D1CFC9;
-            --transition: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --navy: #0c3555;
+            --navy-mid: #144b75;
+            --navy-light: #1b6092;
+            --green: #16A34A;
+            --green-dark: #15803D;
+            --green-light: #22C55E;
+            --gold: #16A34A;
+            --gold-light: #22C55E;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
+            --cream: #F8F9FA;
+            --cream-dark: #F1F5F9;
+            --gray-text: #4B5563;
+            --gray-light: #CBD5E1;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--cream);
+            font-family: var(--font-body);
+            background: var(--white);
             color: var(--navy);
             overflow-x: hidden;
         }
 
         /* ── SCROLLBAR ── */
         ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: var(--cream); }
-        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+        ::-webkit-scrollbar-track { background: var(--white); }
+        ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 2px; }
 
         /* ── NAVBAR (Sama dengan Beranda) ── */
         header {
@@ -50,7 +57,7 @@
         header.scrolled {
             background: rgba(11, 28, 44, 0.97);
             backdrop-filter: blur(16px);
-            box-shadow: 0 1px 0 rgba(201,168,76,0.15);
+            box-shadow: 0 1px 0 rgba(22,163,74,0.15);
         }
         .navbar-inner {
             max-width: 1320px;
@@ -70,13 +77,13 @@
             width: 40px; height: 40px;
             background: linear-gradient(135deg, var(--gold), var(--gold-light));
             display: flex; align-items: center; justify-content: center;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: var(--font-heading);
             font-weight: 700; font-size: 16px;
             color: var(--navy);
             letter-spacing: 0.02em;
         }
         .logo-text {
-            font-family: 'DM Sans', sans-serif;
+            font-family: var(--font-body);
             font-weight: 600;
             font-size: 13px;
             color: var(--white);
@@ -108,16 +115,16 @@
             position: absolute;
             bottom: -4px; left: 0;
             width: 0; height: 1px;
-            background: var(--gold);
+            background: var(--green);
             transition: width var(--transition);
         }
         nav a:hover { color: var(--white); }
         nav a:hover::after { width: 100%; }
-        nav a.active { color: var(--gold); }
+        nav a.active { color: var(--green); }
         nav a.active::after { width: 100%; }
         .nav-cta {
             background: transparent;
-            border: 1px solid rgba(201,168,76,0.5);
+            border: 1px solid rgba(22,163,74,0.5);
             color: var(--gold) !important;
             padding: 9px 22px;
             font-size: 11px !important;
@@ -127,7 +134,7 @@
         .nav-cta:hover {
             background: var(--gold) !important;
             color: var(--navy) !important;
-            border-color: var(--gold) !important;
+            border-color: var(--green) !important;
         }
         .nav-cta::after { display: none !important; }
         .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
@@ -166,13 +173,13 @@
             font-weight: 600;
             letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: var(--gold);
+            color: var(--green);
             margin-bottom: 16px;
             opacity: 0;
             animation: fadeUp 0.9s 0.2s forwards;
         }
         .inner-hero h1 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: var(--font-heading);
             font-size: clamp(40px, 5vw, 64px);
             font-weight: 600;
             color: var(--white);
@@ -190,18 +197,18 @@
             display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
         }
         .section-label::before {
-            content: ''; display: block; width: 32px; height: 1px; background: var(--gold);
+            content: ''; display: block; width: 32px; height: 1px; background: var(--green);
         }
         .section-label span {
-            font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);
+            font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green);
         }
         .section-title {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: var(--font-heading);
             font-size: clamp(34px, 4vw, 54px);
             font-weight: 600; color: var(--navy);
             line-height: 1.1; letter-spacing: -0.01em;
         }
-        .section-title em { font-style: italic; color: var(--gold); }
+        .section-title em { font-style: italic; color: var(--green); }
 
         /* ── ABOUT / LATAR BELAKANG ── */
         .about-grid {
@@ -225,7 +232,7 @@
             margin-top: 40px;
         }
         .about-quote p {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: var(--font-heading);
             font-size: 20px;
             font-style: italic;
             color: var(--navy);
@@ -245,7 +252,7 @@
             position: absolute;
             top: -24px; right: -24px;
             width: 100%; height: 100%;
-            border: 1px solid var(--gold);
+            border: 1px solid var(--green);
             z-index: -1;
             transition: all var(--transition);
         }
@@ -269,7 +276,7 @@
             border-top: 2px solid var(--gold);
         }
         .visi-box h3 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: var(--font-heading);
             font-size: 36px;
             color: var(--gold-light);
             line-height: 1.3;
@@ -286,9 +293,9 @@
             align-items: flex-start;
         }
         .misi-num {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: var(--font-heading);
             font-size: 24px;
-            color: var(--gold);
+            color: var(--green);
             font-weight: 600;
             line-height: 1;
             margin-top: 2px;
@@ -330,9 +337,9 @@
             color: var(--navy);
             transition: color var(--transition);
         }
-        .value-card:hover .value-icon { color: var(--gold); }
+        .value-card:hover .value-icon { color: var(--green); }
         .value-title {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: var(--font-heading);
             font-size: 22px;
             font-weight: 600;
             color: var(--navy);
@@ -364,7 +371,7 @@
             display: flex; align-items: center; justify-content: center;
             transition: all var(--transition); color: rgba(250,250,248,0.4);
         }
-        .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+        .social-btn:hover { border-color: var(--green); color: var(--green); }
         .social-btn svg { width: 15px; height: 15px; }
         .footer-col h5 {
             font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
@@ -372,9 +379,9 @@
         }
         .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
         .footer-col ul li a { font-size: 13px; color: rgba(250,250,248,0.5); text-decoration: none; transition: color var(--transition); font-weight: 300; }
-        .footer-col ul li a:hover { color: var(--gold); }
+        .footer-col ul li a:hover { color: var(--green); }
         .contact-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
-        .contact-item svg { width: 15px; height: 15px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+        .contact-item svg { width: 15px; height: 15px; color: var(--green); flex-shrink: 0; margin-top: 2px; }
         .contact-item span { font-size: 13px; color: rgba(250,250,248,0.5); line-height: 1.6; font-weight: 300; }
         .footer-bottom { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
         .footer-bottom p, .footer-bottom span { font-size: 12px; color: rgba(250,250,248,0.2); }
@@ -387,10 +394,10 @@
         }
         .mobile-menu.open { display: flex; }
         .mobile-menu a {
-            font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600;
+            font-family: var(--font-heading); font-size: 36px; font-weight: 600;
             color: var(--white); text-decoration: none; letter-spacing: -0.01em; transition: color 0.3s;
         }
-        .mobile-menu a:hover { color: var(--gold); }
+        .mobile-menu a:hover { color: var(--green); }
         .mobile-close { position: absolute; top: 28px; right: 28px; background: none; border: none; cursor: pointer; color: var(--white); padding: 8px; }
         .mobile-close svg { width: 24px; height: 24px; }
 
@@ -433,11 +440,11 @@
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
         <a href="index.html" onclick="closeMobileMenu()">Beranda</a>
-        <a href="tentang-kami.html" onclick="closeMobileMenu()" style="color: var(--gold);">Tentang Kami</a>
+        <a href="tentang-kami.html" onclick="closeMobileMenu()" style="color: var(--green);">Tentang Kami</a>
         <a href="layanan.html" onclick="closeMobileMenu()">Layanan</a>
         <a href="portofolio.html" onclick="closeMobileMenu()">Portofolio</a>
         <a href="legalitas.html" onclick="closeMobileMenu()">Legalitas</a>
-        <a href="kontak.html" onclick="closeMobileMenu()" style="color: var(--gold); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 600; margin-top: 16px; border: 1px solid var(--gold); padding: 14px 36px;">Hubungi Kami</a>
+        <a href="kontak.html" onclick="closeMobileMenu()" style="color: var(--green); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-body); font-weight: 600; margin-top: 16px; border: 1px solid var(--green); padding: 14px 36px;">Hubungi Kami</a>
     </div>
 
     <!-- Header / Navbar -->
@@ -450,8 +457,8 @@
                 </div>
                 <!-- Logo Teks -->
                 <div class="logo-text">
-                    Kontraktor
-                    <span>Chandra Kirana Indonesia</span>
+                    CHANDRA KIRANA INDONESIA
+                    <span>KONTRAKTOR</span>
                 </div>
             </a>
             
@@ -593,8 +600,8 @@
                     <div class="footer-logo">
                         <div class="logo-mark">CKI</div>
                         <div class="logo-text" style="color: var(--white);">
-                            Kontraktor
-                            <span>Chandra Kirana Indonesia</span>
+                            CHANDRA KIRANA INDONESIA
+                            <span>KONTRAKTOR</span>
                         </div>
                     </div>
                     <p class="footer-tagline">Perusahaan konstruksi dan layanan interior yang berdedikasi memberikan kualitas terbaik dengan standar keamanan nasional Indonesia.</p>

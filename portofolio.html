@@ -7,39 +7,51 @@
     <title>Portofolio | CV. Chandra Kirana Indonesia</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* ── BASE STYLES & VARIABLES ── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        :root {
-            --navy: #0B1C2C; --navy-mid: #142436; --navy-light: #1D3148;
-            --gold: #C9A84C; --gold-light: #E2C97A;
-            --cream: #F5F0E8; --cream-dark: #EDE8DF; --white: #FAFAF8;
-            --gray-text: #6B7280; --gray-light: #D1CFC9;
-            --transition: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                :root {
+            --navy: #0c3555;
+            --navy-mid: #144b75;
+            --navy-light: #1b6092;
+            --green: #16A34A;
+            --green-dark: #15803D;
+            --green-light: #22C55E;
+            --gold: #16A34A;
+            --gold-light: #22C55E;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
+            --cream: #F8F9FA;
+            --cream-dark: #F1F5F9;
+            --gray-text: #4B5563;
+            --gray-light: #CBD5E1;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         html { scroll-behavior: smooth; }
-        body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--navy); overflow-x: hidden; }
+        body { font-family: var(--font-body); background: var(--white); color: var(--navy); overflow-x: hidden; }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: var(--cream); }
-        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+        ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 2px; }
 
         /* ── NAVBAR ── */
         header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 2rem; transition: all var(--transition); }
-        header.scrolled { background: rgba(11, 28, 44, 0.97); backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(201,168,76,0.15); }
+        header.scrolled { background: rgba(11, 28, 44, 0.97); backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(22,163,74,0.15); }
         .navbar-inner { max-width: 1320px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 80px; }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-text { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 13px; color: var(--white); letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; }
+        .logo-text { font-family: var(--font-body); font-weight: 600; font-size: 13px; color: var(--white); letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; }
         .logo-text span { display: block; font-weight: 300; font-size: 10px; letter-spacing: 0.18em; color: var(--gold-light); opacity: 0.8; }
         nav { display: flex; align-items: center; gap: 2rem; }
         nav a { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,250,248,0.65); text-decoration: none; transition: color var(--transition); position: relative; }
-        nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width var(--transition); }
+        nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--green); transition: width var(--transition); }
         nav a:hover { color: var(--white); }
         nav a:hover::after { width: 100%; }
-        nav a.active { color: var(--gold); }
+        nav a.active { color: var(--green); }
         nav a.active::after { width: 100%; }
-        .nav-cta { background: transparent; border: 1px solid rgba(201,168,76,0.5); color: var(--gold) !important; padding: 9px 22px; font-size: 11px !important; letter-spacing: 0.14em; transition: all var(--transition) !important; }
-        .nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; border-color: var(--gold) !important; }
+        .nav-cta { background: transparent; border: 1px solid rgba(22,163,74,0.5); color: var(--green) !important; padding: 9px 22px; font-size: 11px !important; letter-spacing: 0.14em; transition: all var(--transition) !important; }
+        .nav-cta:hover { background: var(--green) !important; color: var(--navy) !important; border-color: var(--green) !important; }
         .nav-cta::after { display: none !important; }
         .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
         .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: all 0.3s; }
@@ -49,8 +61,8 @@
         .inner-hero-bg { position: absolute; inset: 0; background: url('img/desain 5.jpg') center/cover no-repeat; opacity: 0.3; filter: grayscale(30%); }
         .inner-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,28,44,1) 0%, transparent 100%); }
         .inner-hero-content { position: relative; max-width: 1320px; margin: 0 auto; padding: 0 2rem 60px; width: 100%; text-align: center; }
-        .inner-hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; opacity: 0; animation: fadeUp 0.9s 0.2s forwards; }
-        .inner-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 5vw, 64px); font-weight: 600; color: var(--white); line-height: 1.1; letter-spacing: -0.01em; opacity: 0; animation: fadeUp 0.9s 0.38s forwards; }
+        .inner-hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; opacity: 0; animation: fadeUp 0.9s 0.2s forwards; }
+        .inner-hero h1 { font-family: var(--font-heading); font-size: clamp(40px, 5vw, 64px); font-weight: 600; color: var(--white); line-height: 1.1; letter-spacing: -0.01em; opacity: 0; animation: fadeUp 0.9s 0.38s forwards; }
         .inner-hero h1 em { font-style: italic; color: var(--gold-light); }
 
         /* ── PORTFOLIO GALLERY SECTION (DESAIN 3D) ── */
@@ -60,9 +72,9 @@
         .featured-project { margin-bottom: 100px; }
         .featured-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; gap: 2rem; flex-wrap: wrap; }
         .featured-header .section-label { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-        .featured-header .section-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
-        .featured-header .section-label span { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
-        .featured-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4vw, 48px); font-weight: 600; color: var(--navy); line-height: 1.1; }
+        .featured-header .section-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--green); }
+        .featured-header .section-label span { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); }
+        .featured-header h2 { font-family: var(--font-heading); font-size: clamp(34px, 4vw, 48px); font-weight: 600; color: var(--navy); line-height: 1.1; }
         .featured-text { max-width: 500px; font-size: 15px; color: var(--gray-text); line-height: 1.7; font-weight: 300; }
 
         .bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 240px; gap: 16px; }
@@ -71,7 +83,7 @@
         .bento-item:hover img { transform: scale(1.05); }
         .bento-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,28,44,0.9) 0%, transparent 50%); opacity: 0; transition: opacity var(--transition); display: flex; align-items: flex-end; padding: 24px; }
         .bento-item:hover .bento-overlay { opacity: 1; }
-        .bento-title { color: var(--white); font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; transform: translateY(10px); transition: all 0.4s; }
+        .bento-title { color: var(--white); font-family: var(--font-heading); font-size: 20px; font-weight: 600; transform: translateY(10px); transition: all 0.4s; }
         .bento-item:hover .bento-title { transform: translateY(0); }
 
         .bento-main { grid-column: span 2; grid-row: span 2; }
@@ -79,9 +91,9 @@
         .bento-small { grid-column: span 1; grid-row: span 1; }
 
         .portfolio-filter { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 48px; list-style: none; padding-top: 40px; border-top: 1px solid #E5E2DA;}
-        .filter-btn { background: transparent; border: 1px solid #E5E2DA; color: var(--gray-text); padding: 10px 24px; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all var(--transition); }
-        .filter-btn:hover { border-color: var(--gold); color: var(--navy); }
-        .filter-btn.active { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+        .filter-btn { background: transparent; border: 1px solid #E5E2DA; color: var(--gray-text); padding: 10px 24px; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: all var(--transition); }
+        .filter-btn:hover { border-color: var(--green); color: var(--navy); }
+        .filter-btn.active { background: var(--green); border-color: var(--green); color: var(--navy); }
 
         .portfolio-grid-page { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .portfolio-item { position: relative; overflow: hidden; cursor: pointer; background: #E5E2DA; transition: all 0.4s ease; border-radius: 4px; }
@@ -90,8 +102,8 @@
         .portfolio-item:hover img { transform: scale(1.06); }
         .portfolio-overlay-std { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,28,44,0.95) 0%, rgba(11,28,44,0.2) 60%, transparent 100%); opacity: 0; transition: opacity var(--transition); display: flex; flex-direction: column; justify-content: flex-end; padding: 24px; }
         .portfolio-item:hover .portfolio-overlay-std { opacity: 1; }
-        .portfolio-category { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 8px; transform: translateY(15px); opacity: 0; transition: all 0.5s ease; }
-        .portfolio-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--white); line-height: 1.2; margin-bottom: 8px; transform: translateY(15px); opacity: 0; transition: all 0.5s ease 0.05s; }
+        .portfolio-category { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); font-weight: 600; margin-bottom: 8px; transform: translateY(15px); opacity: 0; transition: all 0.5s ease; }
+        .portfolio-name { font-family: var(--font-heading); font-size: 22px; font-weight: 600; color: var(--white); line-height: 1.2; margin-bottom: 8px; transform: translateY(15px); opacity: 0; transition: all 0.5s ease 0.05s; }
         .portfolio-location { font-size: 12px; color: rgba(250,250,248,0.6); font-weight: 300; transform: translateY(15px); opacity: 0; transition: all 0.5s ease 0.1s; display: flex; align-items: center; gap: 6px; }
         .portfolio-item:hover .portfolio-category, .portfolio-item:hover .portfolio-name, .portfolio-item:hover .portfolio-location { transform: translateY(0); opacity: 1; }
 
@@ -99,9 +111,9 @@
         .doc-section { padding: 100px 2rem; background: var(--cream); border-top: 1px solid #E5E2DA; }
         .doc-header { text-align: center; margin-bottom: 56px; }
         .doc-header .section-label { display: flex; justify-content: center; align-items: center; gap: 14px; margin-bottom: 16px; }
-        .doc-header .section-label::before, .doc-header .section-label::after { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
-        .doc-header .section-label span { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
-        .doc-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4vw, 48px); font-weight: 600; color: var(--navy); line-height: 1.1; margin-bottom: 16px; }
+        .doc-header .section-label::before, .doc-header .section-label::after { content: ''; display: block; width: 32px; height: 1px; background: var(--green); }
+        .doc-header .section-label span { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); }
+        .doc-header h2 { font-family: var(--font-heading); font-size: clamp(34px, 4vw, 48px); font-weight: 600; color: var(--navy); line-height: 1.1; margin-bottom: 16px; }
         .doc-header p { color: var(--gray-text); max-width: 600px; margin: 0 auto; line-height: 1.6; }
 
         /* Layout Grid Masonry/Gallery sederhana */
@@ -120,14 +132,14 @@
             background: #E5E2DA;
             height: 280px; /* Tinggi seragam agar rapi */
             box-shadow: 0 4px 16px rgba(11,28,44,0.05);
-            border: 1px solid rgba(201,168,76,0.2);
+            border: 1px solid rgba(22,163,74,0.2);
             transition: all var(--transition);
         }
         
         .doc-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 24px rgba(11,28,44,0.1);
-            border-color: var(--gold);
+            border-color: var(--green);
         }
         
         .doc-item img {
@@ -142,14 +154,14 @@
         }
 
         /* ── CTA BANNER ── */
-        .cta-section { background: var(--navy); padding: 80px 2rem; position: relative; overflow: hidden; border-top: 1px solid rgba(201,168,76,0.2); }
-        .cta-section::after { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: linear-gradient(135deg, transparent 0%, rgba(201,168,76,0.06) 100%); pointer-events: none; }
+        .cta-section { background: var(--navy); padding: 80px 2rem; position: relative; overflow: hidden; border-top: 1px solid rgba(22,163,74,0.2); }
+        .cta-section::after { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: linear-gradient(135deg, transparent 0%, rgba(22,163,74,0.06) 100%); pointer-events: none; }
         .cta-inner { max-width: 1320px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; }
-        .cta-text .cta-sub { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 16px; }
-        .cta-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 3.5vw, 48px); font-weight: 600; color: var(--white); line-height: 1.1; }
+        .cta-text .cta-sub { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); font-weight: 600; margin-bottom: 16px; }
+        .cta-text h2 { font-family: var(--font-heading); font-size: clamp(32px, 3.5vw, 48px); font-weight: 600; color: var(--white); line-height: 1.1; }
         .cta-text h2 em { font-style: italic; color: var(--gold-light); }
-        .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--navy); padding: 14px 32px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: all var(--transition); }
-        .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(201,168,76,0.25); }
+        .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--green); color: var(--navy); padding: 14px 32px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: all var(--transition); }
+        .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(22,163,74,0.25); }
 
         /* ── FOOTER ── */
         footer { background: #070F17; padding: 80px 2rem 0; }
@@ -159,14 +171,14 @@
         .footer-tagline { font-size: 13px; line-height: 1.75; color: rgba(250,250,248,0.35); font-weight: 300; max-width: 280px; margin-bottom: 28px; }
         .footer-social { display: flex; gap: 12px; }
         .social-btn { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: all var(--transition); color: rgba(250,250,248,0.4); }
-        .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+        .social-btn:hover { border-color: var(--green); color: var(--green); }
         .social-btn svg { width: 15px; height: 15px; }
         .footer-col h5 { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(250,250,248,0.3); margin-bottom: 24px; }
         .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
         .footer-col ul li a { font-size: 13px; color: rgba(250,250,248,0.5); text-decoration: none; transition: color var(--transition); font-weight: 300; }
-        .footer-col ul li a:hover { color: var(--gold); }
+        .footer-col ul li a:hover { color: var(--green); }
         .contact-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
-        .contact-item svg { width: 15px; height: 15px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+        .contact-item svg { width: 15px; height: 15px; color: var(--green); flex-shrink: 0; margin-top: 2px; }
         .contact-item span { font-size: 13px; color: rgba(250,250,248,0.5); line-height: 1.6; font-weight: 300; }
         .footer-bottom { padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
         .footer-bottom p, .footer-bottom span { font-size: 12px; color: rgba(250,250,248,0.2); }
@@ -175,8 +187,8 @@
         /* ── MOBILE MENU ── */
         .mobile-menu { display: none; position: fixed; inset: 0; background: var(--navy); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
         .mobile-menu.open { display: flex; }
-        .mobile-menu a { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600; color: var(--white); text-decoration: none; letter-spacing: -0.01em; transition: color 0.3s; }
-        .mobile-menu a:hover { color: var(--gold); }
+        .mobile-menu a { font-family: var(--font-heading); font-size: 36px; font-weight: 600; color: var(--white); text-decoration: none; letter-spacing: -0.01em; transition: color 0.3s; }
+        .mobile-menu a:hover { color: var(--green); }
         .mobile-close { position: absolute; top: 28px; right: 28px; background: none; border: none; cursor: pointer; color: var(--white); padding: 8px; }
         .mobile-close svg { width: 24px; height: 24px; }
 
@@ -216,10 +228,10 @@
         <a href="index.html" onclick="closeMobileMenu()">Beranda</a>
         <a href="tentang-kami.html" onclick="closeMobileMenu()">Tentang Kami</a>
         <a href="layanan.html" onclick="closeMobileMenu()">Layanan</a>
-        <a href="portofolio.html" onclick="closeMobileMenu()" style="color: var(--gold);">Portofolio</a>
+        <a href="portofolio.html" onclick="closeMobileMenu()" style="color: var(--green);">Portofolio</a>
         <a href="legalitas.html" onclick="closeMobileMenu()">Legalitas</a>
         <a href="testimoni.html" onclick="closeMobileMenu()">Testimoni</a>
-        <a href="kontak.html" onclick="closeMobileMenu()" style="color: var(--gold); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 600; margin-top: 16px; border: 1px solid var(--gold); padding: 14px 36px;">Hubungi Kami</a>
+        <a href="kontak.html" onclick="closeMobileMenu()" style="color: var(--green); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-body); font-weight: 600; margin-top: 16px; border: 1px solid var(--green); padding: 14px 36px;">Hubungi Kami</a>
     </div>
 
     <!-- Header / Navbar -->
@@ -232,8 +244,8 @@
                 </div>
                 <!-- Logo Teks -->
                 <div class="logo-text">
-                    Kontraktor
-                    <span>Chandra Kirana Indonesia</span>
+                    CHANDRA KIRANA INDONESIA
+                    <span>KONTRAKTOR</span>
                 </div>
             </a>
             <nav>
@@ -415,8 +427,8 @@
                             <img src="img/logo-cki.png" alt="Logo CKI" style="height: 100%; width: 100%; object-fit: contain;">
                         </div>
                         <div class="logo-text" style="color: var(--white);">
-                            Kontraktor
-                            <span>Chandra Kirana Indonesia</span>
+                            CHANDRA KIRANA INDONESIA
+                            <span>KONTRAKTOR</span>
                         </div>
                     </div>
                     <p class="footer-tagline">Perusahaan konstruksi dan layanan interior yang berdedikasi memberikan kualitas terbaik dengan standar keamanan nasional Indonesia.</p>
