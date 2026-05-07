@@ -95,6 +95,9 @@
         .portfolio-location { font-size: 12px; color: rgba(250,250,248,0.6); font-weight: 300; transform: translateY(15px); opacity: 0; transition: all 0.5s ease 0.1s; display: flex; align-items: center; gap: 6px; }
         .portfolio-item:hover .portfolio-category, .portfolio-item:hover .portfolio-name, .portfolio-item:hover .portfolio-location { transform: translateY(0); opacity: 1; }
 
+        /* ── CUSTOM GRID 2 COL (UNTUK WARKOP) ── */
+        .grid-2-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 1000px; margin: 0 auto; }
+
         /* ── DOKUMENTASI LAPANGAN SECTION (BARU) ── */
         .doc-section { padding: 100px 2rem; background: var(--cream); border-top: 1px solid #E5E2DA; }
         .doc-header { text-align: center; margin-bottom: 56px; }
@@ -105,41 +108,11 @@
         .doc-header p { color: var(--gray-text); max-width: 600px; margin: 0 auto; line-height: 1.6; }
 
         /* Layout Grid Masonry/Gallery sederhana */
-        .doc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .doc-item {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #E5E2DA;
-            height: 280px; /* Tinggi seragam agar rapi */
-            box-shadow: 0 4px 16px rgba(11,28,44,0.05);
-            border: 1px solid rgba(201,168,76,0.2);
-            transition: all var(--transition);
-        }
-        
-        .doc-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(11,28,44,0.1);
-            border-color: var(--gold);
-        }
-        
-        .doc-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-        
-        .doc-item:hover img {
-            transform: scale(1.08);
-        }
+        .doc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .doc-item { position: relative; border-radius: 8px; overflow: hidden; background: #E5E2DA; height: 280px; box-shadow: 0 4px 16px rgba(11,28,44,0.05); border: 1px solid rgba(201,168,76,0.2); transition: all var(--transition); }
+        .doc-item:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(11,28,44,0.1); border-color: var(--gold); }
+        .doc-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+        .doc-item:hover img { transform: scale(1.08); }
 
         /* ── CTA BANNER ── */
         .cta-section { background: var(--navy); padding: 80px 2rem; position: relative; overflow: hidden; border-top: 1px solid rgba(201,168,76,0.2); }
@@ -203,12 +176,13 @@
             .bento-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
             .bento-main, .bento-wide, .bento-small { grid-column: span 1; grid-row: span 1; }
             .bento-main { grid-row: span 2; }
+            
+            .grid-2-col { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-close" onclick="closeMobileMenu()" aria-label="Close menu">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -222,15 +196,12 @@
         <a href="kontak.html" onclick="closeMobileMenu()" style="color: var(--gold); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 600; margin-top: 16px; border: 1px solid var(--gold); padding: 14px 36px;">Hubungi Kami</a>
     </div>
 
-    <!-- Header / Navbar -->
     <header id="mainHeader">
         <div class="navbar-inner">
             <a href="index.html" class="logo">
-                <!-- Logo Gambar -->
                 <div style="background: var(--white); padding: 4px; border-radius: 6px; display: flex; align-items: center; justify-content: center; height: 44px; width: 44px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                     <img src="img/Logo cv.png" alt="Logo CKI" style="height: 100%; width: 100%; object-fit: contain;">
                 </div>
-                <!-- Logo Teks -->
                 <div class="logo-text">
                     Kontraktor
                     <span>Chandra Kirana Indonesia</span>
@@ -251,7 +222,6 @@
         </div>
     </header>
 
-    <!-- Inner Hero -->
     <section class="inner-hero">
         <div class="inner-hero-bg"></div>
         <div class="inner-hero-overlay"></div>
@@ -261,7 +231,6 @@
         </div>
     </section>
 
-    <!-- Portfolio Gallery (Desain MRF) -->
     <section class="gallery-section">
         <div class="container">
             
@@ -361,8 +330,43 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: DOKUMENTASI LAPANGAN (MENGGANTIKAN TIMELINE) -->
-    <section class="doc-section reveal">
+    <section class="gallery-section" style="background: var(--cream); border-top: 1px solid #E5E2DA;">
+        <div class="container">
+            <div class="doc-header reveal" style="margin-bottom: 48px;">
+                <div class="section-label"><span>Proyek Komersial & Interior</span></div>
+                <h2>Renovasi <em>Warkop Krisna</em></h2>
+                <p>Penataan ulang eksterior dan interior area komersial (Food & Beverage) di Rewwin, Sidoarjo. Proyek ini berfokus pada optimalisasi sirkulasi ruang fungsional dan kenyamanan pengunjung.</p>
+            </div>
+
+            <div class="grid-2-col reveal">
+                <div class="portfolio-item">
+                    <img src="img/projek warkop 1.jpeg" alt="Renovasi Warkop Krisna Rewwin Eksterior" style="height: 450px;">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Eksterior & Fasad</div>
+                        <div class="portfolio-name">Area Outdoor & Fasad Depan</div>
+                        <div class="portfolio-location">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            Rewwin, Sidoarjo
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="img/projek warkop 2.jpeg" alt="Renovasi Warkop Krisna Rewwin Interior" style="height: 450px;">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Interior Ruangan</div>
+                        <div class="portfolio-name">Penataan Area Indoor Komersial</div>
+                        <div class="portfolio-location">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            Rewwin, Sidoarjo
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc-section reveal" style="background: var(--white);">
         <div class="container">
             <div class="doc-header">
                 <div class="section-label"><span>Live Update & Aktivitas Lapangan</span></div>
@@ -370,12 +374,7 @@
                 <p>Galeri dokumentasi pengerjaan struktur bangunan secara langsung dari lapangan. Ini adalah bukti komitmen kami dalam mengawal proyek dari tahap pembongkaran awal hingga konstruksi akhir.</p>
             </div>
 
-            <!-- Grid Galeri Dokumentasi -->
             <div class="doc-grid">
-                
-                <!-- Agar gambar langsung muncul, ubah nama file foto-foto yang barusan Anda kirim 
-                     menjadi rungkut-1.jpg sampai rungkut-8.jpg dan masukkan ke folder img -->
-                     
                 <div class="doc-item reveal"><img src="img/Picture4.png" alt="Dokumentasi Proyek Rungkut 1"></div>
                 <div class="doc-item reveal"><img src="img/Picture5.png" alt="Dokumentasi Proyek Rungkut 2"></div>
                 <div class="doc-item reveal"><img src="img/Picture6.png" alt="Dokumentasi Proyek Rungkut 3"></div>
@@ -384,12 +383,10 @@
                 <div class="doc-item reveal"><img src="img/Picture9.png" alt="Dokumentasi Proyek Rungkut 6"></div>
                 <div class="doc-item reveal"><img src="img/Picture10.png" alt="Dokumentasi Proyek Rungkut 7"></div>
                 <div class="doc-item reveal"><img src="img/Picture11.png" alt="Dokumentasi Proyek Rungkut 8"></div>
-                
             </div>
         </div>
     </section>
 
-    <!-- CTA Banner -->
     <section class="cta-section">
         <div class="cta-inner">
             <div class="cta-text">
@@ -405,7 +402,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-inner">
             <div class="footer-top">
