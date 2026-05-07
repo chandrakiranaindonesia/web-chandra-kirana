@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Tentang CV. Chandra Kirana Indonesia - Solusi Konstruksi dan Interior">
-    <title>Tentang Kami | CV. Chandra Kirana Indonesia</title>
+    <meta name="description" content="Tentang CV Chandra Kirana - Solusi Konstruksi dan Interior">
+    <title>Tentang Kami | CV Chandra Kirana</title>
     <link rel="stylesheet" href="industrial-theme.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -430,6 +430,132 @@
             .values-grid { grid-template-columns: 1fr; }
             .value-card { border-right: none; }
         }
+    
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-dropdown .dropbtn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dropdown-content {
+            display: block; visibility: hidden; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; position: absolute; background-color: var(--navy);
+            min-width: 220px;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.3);
+            z-index: 100;
+            top: 100%;
+            left: 0;
+            padding: 10px 0;
+            border-top: 2px solid var(--green);
+            border-radius: 0 0 4px 4px;
+        }
+
+        .dropdown-content a {
+            color: rgba(250, 250, 248, 0.7) !important;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            text-transform: none !important;
+            letter-spacing: 0.05em !important;
+            font-size: 13px !important;
+            font-weight: 400 !important;
+        }
+
+        .dropdown-content a::after {
+            display: none !important;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--green) !important;
+        }
+
+        .nav-dropdown:hover .dropdown-content { visibility: visible; opacity: 1; transform: translateY(0); }
+
+        .mobile-nav-dropdown {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .mobile-nav-dropdown-btn {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--white);
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav-dropdown-content {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        .mobile-nav-dropdown-content.open {
+            display: flex;
+        }
+
+        .mobile-nav-dropdown-content a {
+            font-size: 24px !important;
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        .mobile-nav-dropdown-content a:hover {
+            color: var(--green) !important;
+        }
+
+    
+        /* Scrolled Navbar Theme */
+        header.scrolled {
+            background: var(--white) !important;
+            backdrop-filter: none !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05) !important;
+        }
+        header.scrolled nav a { color: var(--navy) !important; }
+        header.scrolled nav a:hover { color: var(--green-light) !important; }
+        header.scrolled nav a.active { color: var(--green-light) !important; }
+        header.scrolled .logo-text { color: var(--navy) !important; }
+        header.scrolled .logo-text span { color: var(--green-light) !important; }
+        header.scrolled .nav-cta { border-color: var(--green-light) !important; color: var(--green-light) !important; }
+        header.scrolled .nav-cta:hover { background: var(--green-light) !important; color: var(--white) !important; }
+        header.scrolled .hamburger span { background: var(--navy) !important; }
+        header.scrolled .nav-dropdown .dropbtn { color: var(--navy) !important; }
+        header.scrolled .nav-dropdown:hover .dropbtn { color: var(--green-light) !important; }
+        header.scrolled .dropdown-content { background-color: var(--white) !important; border-top: 2px solid var(--green-light) !important; box-shadow: 0px 8px 24px rgba(0,0,0,0.1) !important; }
+        header.scrolled .dropdown-content a { color: var(--navy) !important; }
+        header.scrolled .dropdown-content a:hover { background-color: var(--cream) !important; color: var(--green-light) !important; }
+        header.scrolled .mobile-nav-dropdown-btn { color: var(--navy) !important; }
+        header.scrolled .mobile-close { color: var(--navy) !important; }
+
+    
+        /* Lighter green for normal navbar */
+        nav a::after { background: var(--green-light) !important; }
+        nav a.active { color: var(--green-light) !important; }
+        .nav-cta { border-color: rgba(34, 197, 94, 0.5) !important; color: var(--green-light) !important; }
+        .nav-cta:hover { background: var(--green-light) !important; color: var(--navy) !important; border-color: var(--green-light) !important; }
+        .logo-text span { color: var(--green-light) !important; }
+        .dropdown-content { border-top: 2px solid var(--green-light) !important; }
+        .dropdown-content a:hover { color: var(--green-light) !important; }
+        .mobile-nav-dropdown-content a:hover { color: var(--green-light) !important; }
+        .nav-dropdown .dropbtn.active { color: var(--green-light) !important; }
+
     </style>
 </head>
 <body>
@@ -441,8 +567,13 @@
         </button>
         <a href="index.html" onclick="closeMobileMenu()">Beranda</a>
         <a href="tentang-kami.html" onclick="closeMobileMenu()" style="color: var(--green);">Tentang Kami</a>
-        <a href="layanan.html" onclick="closeMobileMenu()">Layanan</a>
-        <a href="portofolio.html" onclick="closeMobileMenu()">Portofolio</a>
+        <div class="mobile-nav-dropdown">
+            <button class="mobile-nav-dropdown-btn" onclick="toggleMobileDropdown()">Layanan <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="mobile-nav-dropdown-content" id="mobileNavDropdown">
+                <a href="layanan.html" onclick="closeMobileMenu()">Layanan Utama</a>
+                <a href="portofolio.html" onclick="closeMobileMenu()">Portofolio Proyek</a>
+            </div>
+        </div>
         <a href="legalitas.html" onclick="closeMobileMenu()">Legalitas</a>
         <a href="kontak.html" onclick="closeMobileMenu()" style="color: var(--green); font-size: 18px; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--font-body); font-weight: 600; margin-top: 16px; border: 1px solid var(--green); padding: 14px 36px;">Hubungi Kami</a>
     </div>
@@ -457,7 +588,7 @@
                 </div>
                 <!-- Logo Teks -->
                 <div class="logo-text">
-                    CHANDRA KIRANA INDONESIA
+                    CV CHANDRA KIRANA
                     <span>KONTRAKTOR</span>
                 </div>
             </a>
@@ -465,8 +596,19 @@
             <nav>
                 <a href="index.html">Beranda</a>
                 <a href="tentang-kami.html" class="active">Tentang Kami</a>
-                <a href="layanan.html">Layanan</a>
-                <a href="portofolio.html">Portofolio</a>
+                <div class="nav-dropdown">
+
+                <a href="#" class="dropbtn">Layanan <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+
+                <div class="dropdown-content">
+
+                <a href="layanan.html">Layanan Utama</a>
+
+                <a href="portofolio.html">Portofolio Proyek</a>
+
+                </div>
+
+                </div>
                 <a href="legalitas.html">Legalitas</a>
                 <a href="testimoni.html">Testimoni</a>
                 <a href="kontak.html" class="nav-cta">Hubungi Kami</a>
@@ -495,7 +637,7 @@
                     <div class="section-label"><span>Latar Belakang</span></div>
                     <h2 class="section-title">Membangun Nilai, <em>Menjaga Kualitas.</em></h2>
                     <p>
-                        CV. Chandra Kirana Indonesia perusahaan yang didirikan pada tahun 2025 sebagai respons terhadap permintaan domestik akan layanan konstruksi yang profesional, transparan, dan berkualitas tinggi. Perusahaan ini berlokasi strategis di Kota Surabaya.
+                        CV Chandra Kirana perusahaan yang didirikan pada tahun 2025 sebagai respons terhadap permintaan domestik akan layanan konstruksi yang profesional, transparan, dan berkualitas tinggi. Perusahaan ini berlokasi strategis di Kota Surabaya.
                     </p>
                     <p>
                         Kami memahami bahwa setiap proyek adalah investasi signifikan bagi klien kami. Oleh karena itu, kami tidak hanya membangun entitas bangunan, tetapi juga berkomitmen untuk menciptakan nilai.
@@ -504,11 +646,11 @@
                         Didukung oleh tim profesional, kami memastikan bahwa setiap tahap, mulai dari perencanaan anggaran, design, pengerjaan hingga serah terima proyek, secara ketat mematuhi spesifikasi teknis dan standar keamanan nasional.
                     </p>
                     <div class="about-quote">
-                        <p>"Bagi CV. Chandra Kirana Indonesia, kepuasan klien dan integritas kualitas proyek adalah prinsip utama yang tidak dapat dinegosiasikan."</p>
+                        <p>"Bagi CV Chandra Kirana, kepuasan klien dan integritas kualitas proyek adalah prinsip utama yang tidak dapat dinegosiasikan."</p>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop" alt="Proyek Konstruksi CV Chandra Kirana Indonesia">
+                    <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop" alt="Proyek Konstruksi CV Chandra Kirana">
                 </div>
             </div>
         </div>
@@ -600,7 +742,7 @@
                     <div class="footer-logo">
                         <div class="logo-mark">CKI</div>
                         <div class="logo-text" style="color: var(--white);">
-                            CHANDRA KIRANA INDONESIA
+                            CV CHANDRA KIRANA
                             <span>KONTRAKTOR</span>
                         </div>
                     </div>
@@ -653,7 +795,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 CV. Chandra Kirana Indonesia. Hak cipta dilindungi undang-undang.</p>
+                <p>&copy; 2026 CV Chandra Kirana. Hak cipta dilindungi undang-undang.</p>
                 <span>Didesain oleh <b>Codevela</b></span>
             </div>
         </div>
@@ -688,6 +830,11 @@
             });
         }, { threshold: 0.12 });
         revealEls.forEach(el => observer.observe(el));
+    
+        function toggleMobileDropdown() {
+            document.getElementById('mobileNavDropdown').classList.toggle('open');
+        }
+
     </script>
 </body>
 </html>
