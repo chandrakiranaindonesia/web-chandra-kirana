@@ -135,7 +135,7 @@
         nav {
             display: flex;
             align-items: center;
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         nav a {
@@ -470,12 +470,12 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             border: 1px solid #E5E2DA;
         }
 
         .service-card {
-            padding: 40px 32px;
+            padding: 40px 24px;
             border-right: 1px solid #E5E2DA;
             position: relative;
             overflow: hidden;
@@ -1161,6 +1161,11 @@
                 border-right: none;
             }
 
+            .service-card:nth-child(5) {
+                border-top: 1px solid #E5E2DA;
+                border-right: 1px solid #E5E2DA;
+            }
+
             .why-inner {
                 grid-template-columns: 1fr;
                 gap: 60px;
@@ -1396,9 +1401,18 @@
                             d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
                         </path>
                     </svg>
-                    <h3 class="service-name">Desain &amp; Renovasi</h3>
-                    <p class="service-desc">Desain arsitektur, penataan interior, serta renovasi bangunan untuk fungsi
-                        dan estetika optimal.</p>
+                    <h3 class="service-name">Renovasi Rumah &amp; Bangunan</h3>
+                    <p class="service-desc">Menyediakan layanan renovasi profesional untuk menciptakan bangunan yang lebih nyaman, aman, dan estetis.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <svg class="service-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                        </path>
+                    </svg>
+                    <h3 class="service-name">Desain Bangunan &amp; Interior</h3>
+                    <p class="service-desc">Pembuatan desain arsitektur dan penataan interior modern untuk mewujudkan ruangan yang harmonis dan fungsional.</p>
                 </div>
             </div>
         </div>
