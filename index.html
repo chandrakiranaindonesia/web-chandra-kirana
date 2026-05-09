@@ -940,19 +940,26 @@
         .testi-scroll-wrapper {
             width: 100%;
             overflow-x: auto;
-            scroll-behavior: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
             -ms-overflow-style: none;
-            scrollbar-width: none;
-            cursor: grab;
+            scrollbar-width: thin;
+            scrollbar-color: var(--green) var(--cream);
             padding-bottom: 24px;
         }
 
-        .testi-scroll-wrapper.active {
-            cursor: grabbing;
+        .testi-scroll-wrapper::-webkit-scrollbar {
+            height: 6px;
         }
 
-        .testi-scroll-wrapper::-webkit-scrollbar {
-            display: none;
+        .testi-scroll-wrapper::-webkit-scrollbar-track {
+            background: var(--cream);
+            border-radius: 4px;
+        }
+
+        .testi-scroll-wrapper::-webkit-scrollbar-thumb {
+            background: var(--green);
+            border-radius: 4px;
         }
 
         .testi-track {
@@ -970,15 +977,19 @@
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
             position: relative;
             white-space: normal;
             border-top: 3px solid transparent;
-            transition: border-color var(--transition);
+            transition: all var(--transition);
+            scroll-snap-align: start;
         }
 
         .testimonial-card:hover {
             border-top-color: var(--green);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
         }
 
         .quote-icon {
@@ -2226,104 +2237,7 @@
             document.getElementById('mobileNavDropdown').classList.toggle('open');
         }
 
-        // Testimonials Auto Scroll & Drag
-        const wrapper = document.getElementById('testiWrapper');
-        if (wrapper) {
-            const track = document.getElementById('testiTrack');
-            track.innerHTML += track.innerHTML; // Clone items for loop
-
-            let isDown = false;
-            let startX;
-            let scrollLeft;
-            let autoScroll;
-
-            function startAutoScroll() {
-                autoScroll = setInterval(() => {
-                    if (!isDown) {
-                        wrapper.scrollLeft += 1;
-                        if (wrapper.scrollLeft >= track.scrollWidth / 2) {
-                            wrapper.scrollLeft = 0;
-                        }
-                    }
-                }, 20);
-            }
-
-            function stopAutoScroll() {
-                clearInterval(autoScroll);
-            }
-
-            startAutoScroll();
-
-            wrapper.addEventListener('mouseenter', stopAutoScroll);
-            wrapper.addEventListener('mouseleave', () => {
-                isDown = false;
-                wrapper.classList.remove('active');
-                startAutoScroll();
-            });
-
-            wrapper.addEventListener('mousedown', (e) => {
-                isDown = true;
-                wrapper.classList.add('active');
-                startX = e.pageX - wrapper.offsetLeft;
-                scrollLeft = wrapper.scrollLeft;
-                stopAutoScroll();
-            });
-
-            wrapper.addEventListener('mouseup', () => {
-                isDown = false;
-                wrapper.classList.remove('active');
-                startAutoScroll();
-            });
-
-            wrapper.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - wrapper.offsetLeft;
-                const walk = (x - startX) * 2;
-                wrapper.scrollLeft = scrollLeft - walk;
-
-                if (wrapper.scrollLeft >= track.scrollWidth / 2) {
-                    wrapper.scrollLeft = 0;
-                    scrollLeft = wrapper.scrollLeft;
-                    startX = e.pageX - wrapper.offsetLeft;
-                } else if (wrapper.scrollLeft <= 0) {
-                    wrapper.scrollLeft = track.scrollWidth / 2;
-                    scrollLeft = wrapper.scrollLeft;
-                    startX = e.pageX - wrapper.offsetLeft;
-                }
-            });
-
-            // Touch events
-            wrapper.addEventListener('touchstart', (e) => {
-                isDown = true;
-                startX = e.touches[0].pageX - wrapper.offsetLeft;
-                scrollLeft = wrapper.scrollLeft;
-                stopAutoScroll();
-            }, { passive: true });
-
-            wrapper.addEventListener('touchend', () => {
-                isDown = false;
-                startAutoScroll();
-            });
-
-            wrapper.addEventListener('touchmove', (e) => {
-                if (!isDown) return;
-                const x = e.touches[0].pageX - wrapper.offsetLeft;
-                const walk = (x - startX) * 2;
-                wrapper.scrollLeft = scrollLeft - walk;
-
-                if (wrapper.scrollLeft >= track.scrollWidth / 2) {
-                    wrapper.scrollLeft = 0;
-                    scrollLeft = wrapper.scrollLeft;
-                    startX = e.touches[0].pageX - wrapper.offsetLeft;
-                } else if (wrapper.scrollLeft <= 0) {
-                    wrapper.scrollLeft = track.scrollWidth / 2;
-                    scrollLeft = wrapper.scrollLeft;
-                    startX = e.touches[0].pageX - wrapper.offsetLeft;
-                }
-            }, { passive: true });
-        }
-
+        // Testimonials JS removed for standard CSS horizontal scrolling
     </script>
 </body>
 
