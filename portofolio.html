@@ -323,73 +323,155 @@
             font-weight: 300;
         }
 
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: 200px;
-            gap: 16px;
-        }
-
-        .bento-item {
+        /* ── FEATURED SLIDER SECTION ── */
+        .featured-slider-wrapper {
             position: relative;
-            overflow: hidden;
-            border-radius: 4px;
-            background: #E5E2DA;
-            cursor: pointer;
+            border-radius: 16px;
+            padding: 24px;
+            background-color: var(--white);
+            /* Subtle Geometric Pattern */
+            background-image: linear-gradient(rgba(22, 163, 74, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(22, 163, 74, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-position: center center;
+            box-shadow: 0 12px 40px rgba(11, 28, 44, 0.06);
+            margin-bottom: 32px;
         }
 
-        .bento-item img {
+        .featured-slider {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #E5E2DA;
+            aspect-ratio: 16 / 7;
+            width: 100%;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .featured-slider {
+                aspect-ratio: 4 / 3;
+            }
+            .featured-slider-wrapper {
+                padding: 16px;
+                border-radius: 12px;
+            }
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            display: flex;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        .bento-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .bento-overlay {
+        .slide-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(11, 28, 44, 0.9) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity var(--transition);
+            background: linear-gradient(to top, rgba(11, 28, 44, 0.85) 0%, rgba(11, 28, 44, 0.1) 40%, transparent 100%);
             display: flex;
-            align-items: flex-end;
-            padding: 16px;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 32px;
         }
 
-        .bento-item:hover .bento-overlay {
-            opacity: 1;
-        }
-
-        .bento-title {
+        .slide-caption {
             color: var(--white);
             font-family: var(--font-heading);
-            font-size: 18px;
-            font-weight: 600;
-            transform: translateY(10px);
-            transition: all 0.4s;
+            font-size: 24px;
+            font-weight: 700;
         }
 
-        .bento-item:hover .bento-title {
-            transform: translateY(0);
+        @media (max-width: 768px) {
+            .slide-caption {
+                font-size: 18px;
+            }
+            .slide-overlay {
+                padding: 24px;
+            }
         }
 
-        .bento-main {
-            grid-column: span 2;
-            grid-row: span 2;
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .bento-wide {
-            grid-column: span 2;
-            grid-row: span 1;
+        .slider-btn:hover {
+            background: var(--green);
+            border-color: var(--green);
+            color: var(--white);
         }
 
-        .bento-small {
-            grid-column: span 1;
-            grid-row: span 1;
+        .slider-btn.prev {
+            left: 20px;
+        }
+
+        .slider-btn.next {
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .slider-btn {
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.25);
+            }
+            .slider-btn.prev {
+                left: 12px;
+            }
+            .slider-btn.next {
+                right: 12px;
+            }
+        }
+
+        .slider-indicators {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 8px;
+        }
+
+        .slider-indicator {
+            width: 32px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-indicator.active {
+            background: var(--green);
+            width: 48px;
         }
 
         .portfolio-filter {
@@ -898,24 +980,7 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .bento-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
 
-            .bento-main {
-                grid-column: span 2;
-                grid-row: span 2;
-            }
-
-            .bento-wide {
-                grid-column: span 2;
-                grid-row: span 1;
-            }
-
-            .bento-small {
-                grid-column: span 1;
-                grid-row: span 1;
-            }
         }
 
         @media (max-width: 768px) {
@@ -940,24 +1005,22 @@
                 grid-template-columns: 1fr;
             }
 
-            .bento-grid {
-                grid-template-columns: 1fr;
-                grid-auto-rows: 200px;
-            }
 
-            .bento-main,
-            .bento-wide,
-            .bento-small {
-                grid-column: span 1;
-                grid-row: span 1;
-            }
-
-            .bento-main {
-                grid-row: span 2;
-            }
 
             .grid-2-col {
                 grid-template-columns: 1fr;
+            }
+
+            .portfolio-overlay-std {
+                opacity: 1 !important;
+                background: linear-gradient(to top, rgba(11, 28, 44, 0.95) 0%, transparent 100%) !important;
+            }
+
+            .portfolio-category,
+            .portfolio-name,
+            .portfolio-location {
+                transform: translateY(0) !important;
+                opacity: 1 !important;
             }
         }
 
@@ -1259,10 +1322,64 @@
         <div class="container">
 
             <div class="featured-project reveal">
-                <div class="featured-header">
+                <div class="featured-slider-wrapper">
+                    <div class="featured-slider" id="featuredSlider">
+                        <div class="slide active">
+                            <img src="img/desain 5.jpeg" alt="Kawasan Industri Terpadu">
+                            <div class="slide-overlay">
+                                <h3 class="slide-caption">Kawasan Industri Terpadu</h3>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="img/peresmian 2.jpeg" alt="Peninjauan Lokasi Terpadu" style="object-position: top;">
+                            <div class="slide-overlay">
+                                <h3 class="slide-caption">Peninjauan Lokasi Terpadu</h3>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="img/peresmian 1.jpeg" alt="Peresmian Fasilitas" style="object-position: top;">
+                            <div class="slide-overlay">
+                                <h3 class="slide-caption">Peresmian Fasilitas</h3>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="img/desain 7.jpeg" alt="Tipping & Loading">
+                            <div class="slide-overlay">
+                                <h3 class="slide-caption">Tipping & Loading</h3>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="img/desain 4.jpeg" alt="Rumah Pompa">
+                            <div class="slide-overlay">
+                                <h3 class="slide-caption">Rumah Pompa</h3>
+                            </div>
+                        </div>
+
+                        <button class="slider-btn prev" onclick="moveSlide(-1)" aria-label="Previous Slide">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button class="slider-btn next" onclick="moveSlide(1)" aria-label="Next Slide">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                        
+                        <div class="slider-indicators">
+                            <div class="slider-indicator active" onclick="goToSlide(0)"></div>
+                            <div class="slider-indicator" onclick="goToSlide(1)"></div>
+                            <div class="slider-indicator" onclick="goToSlide(2)"></div>
+                            <div class="slider-indicator" onclick="goToSlide(3)"></div>
+                            <div class="slider-indicator" onclick="goToSlide(4)"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-header" style="align-items: flex-start; margin-bottom: 0;">
                     <div>
                         <div class="section-label"><span>Proyek Unggulan</span></div>
-                        <h2>Fasilitas Industri <em>Terpadu</em></h2>
+                        <h2 style="margin-top: 8px;">Fasilitas Industri <em>Terpadu</em></h2>
                     </div>
                     <div class="featured-text">
                         <p>Desain dan pembangunan kawasan Mini MRF (Material Recovery Facility), mencakup rumah pompa,
@@ -1270,163 +1387,53 @@
                             oleh jajaran pejabat daerah setempat.</p>
                     </div>
                 </div>
-
-                <div class="bento-grid">
-                    <div class="bento-item bento-main">
-                        <img src="img/desain 5.jpeg" alt="Aerial View Fasilitas Industri">
-                        <div class="bento-overlay">
-                            <h3 class="bento-title">Kawasan Industri Terpadu</h3>
-                        </div>
-                    </div>
-
-                    <div class="bento-item bento-wide">
-                        <img src="img/peresmian 1.jpeg" alt="Peresmian Fasilitas oleh Bupati Malang"
-                            style="object-position: top;">
-                        <div class="bento-overlay">
-                            <h3 class="bento-title">Peresmian Fasilitas oleh Bupati Malang</h3>
-                        </div>
-                    </div>
-
-                    <div class="bento-item bento-wide">
-                        <img src="img/peresmian 2.jpeg" alt="Peninjauan Lokasi Proyek" style="object-position: top;">
-                        <div class="bento-overlay">
-                            <h3 class="bento-title">Peninjauan Lokasi Terpadu</h3>
-                        </div>
-                    </div>
-
-                    <div class="bento-item bento-small">
-                        <img src="img/desain 7.jpeg" alt="Tipping and Loading Area">
-                        <div class="bento-overlay">
-                            <h3 class="bento-title">Tipping & Loading</h3>
-                        </div>
-                    </div>
-
-                    <div class="bento-item bento-small">
-                        <img src="img/desain 4.jpeg" alt="Rumah Pompa">
-                        <div class="bento-overlay">
-                            <h3 class="bento-title">Rumah Pompa</h3>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <ul class="portfolio-filter reveal">
                 <li><button class="filter-btn active" data-filter="all">Semua Kategori</button></li>
-                <li><button class="filter-btn" data-filter="konstruksi">Konstruksi Bangunan</button></li>
-                <li><button class="filter-btn" data-filter="infrastruktur">Infrastruktur Area</button></li>
-                <li><button class="filter-btn" data-filter="mekanikal">Mekanikal & Elektrikal</button></li>
+                <li><button class="filter-btn" data-filter="pasuruan">Proyek Pasuruan</button></li>
+                <li><button class="filter-btn" data-filter="rungkut">Rungkut Menanggal</button></li>
+                <li><button class="filter-btn" data-filter="warkop">Renovasi Warkop</button></li>
             </ul>
 
             <div class="portfolio-grid-page reveal" id="portfolioGrid">
-                <div class="portfolio-item infrastruktur">
-                    <img src="img/desain 1.jpeg" alt="Gerbang Timbangan">
-                    <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Infrastruktur Area</div>
-                        <div class="portfolio-name">Fasilitas Gerbang & Timbangan</div>
-                    </div>
-                </div>
-                <div class="portfolio-item infrastruktur">
-                    <img src="img/desain 2.jpeg" alt="Fasilitas Parkir">
-                    <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Infrastruktur Area</div>
-                        <div class="portfolio-name">Area Parkir Alat Berat</div>
-                    </div>
-                </div>
-                <div class="portfolio-item mekanikal">
-                    <img src="img/desain 6.jpeg" alt="Struktur Pabrik Pengolahan">
-                    <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Mekanikal & Elektrikal</div>
-                        <div class="portfolio-name">Sistem Conveyor Pengolahan</div>
-                    </div>
-                </div>
-                <div class="portfolio-item infrastruktur">
-                    <img src="img/desain 3.jpeg" alt="Washing Area">
-                    <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Infrastruktur Area</div>
-                        <div class="portfolio-name">Fasilitas Washing Area</div>
-                    </div>
-                </div>
-                <div class="portfolio-item konstruksi">
-                    <img src="img/desain 8.jpeg" alt="Area Residu">
-                    <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Konstruksi Bangunan</div>
-                        <div class="portfolio-name">Perencanaan Struktur Residu</div>
-                    </div>
-                </div>
+                <!-- Pasuruan -->
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan1.png" alt="Proyek Pasuruan 1" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 1</div></div></div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan2.png" alt="Proyek Pasuruan 2" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 2</div></div></div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan3.png" alt="Proyek Pasuruan 3" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 3</div></div></div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan4.png" alt="Proyek Pasuruan 4" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 4</div></div></div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan5.png" alt="Proyek Pasuruan 5" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 5</div></div></div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan6.png" alt="Proyek Pasuruan 6" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 6</div></div></div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan7.png" alt="Proyek Pasuruan 7" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 7</div></div></div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan8.png" alt="Proyek Pasuruan 8" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 8</div></div></div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan9.png" alt="Proyek Pasuruan 9" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 9</div></div></div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan10.png" alt="Proyek Pasuruan 10" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 10</div></div></div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan11.png" alt="Proyek Pasuruan 11" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 11</div></div></div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan12.png" alt="Proyek Pasuruan 12" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 12</div></div></div>
+
+                <!-- Rungkut -->
+                <div class="portfolio-item rungkut"><img src="img/rungkut1.png" alt="Proyek Rungkut 1" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 1</div></div></div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut2.png" alt="Proyek Rungkut 2" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 2</div></div></div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut3.png" alt="Proyek Rungkut 3" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 3</div></div></div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut4.png" alt="Proyek Rungkut 4" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 4</div></div></div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut5.png" alt="Proyek Rungkut 5" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 5</div></div></div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut6.png" alt="Proyek Rungkut 6" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 6</div></div></div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut7.png" alt="Proyek Rungkut 7" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 7</div></div></div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut8.png" alt="Proyek Rungkut 8" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 8</div></div></div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut9.png" alt="Proyek Rungkut 9" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 9</div></div></div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut10.png" alt="Proyek Rungkut 10" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 10</div></div></div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut11.png" alt="Proyek Rungkut 11" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 11</div></div></div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut12.png" alt="Proyek Rungkut 12" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 12</div></div></div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut13.png" alt="Proyek Rungkut 13" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 13</div></div></div>
+
+                <!-- Warkop -->
+                <div class="portfolio-item warkop"><img src="img/projek warkop 1.jpeg" alt="Renovasi Warkop Krisna 1" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Renovasi Warkop</div><div class="portfolio-name">Area Outdoor & Fasad</div></div></div>
+                <div class="portfolio-item warkop"><img src="img/projek warkop 2.jpeg" alt="Renovasi Warkop Krisna 2" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Renovasi Warkop</div><div class="portfolio-name">Area Indoor Komersial</div></div></div>
             </div>
         </div>
     </section>
 
-    <section class="gallery-section" style="background: var(--cream); border-top: 1px solid #E5E2DA;">
-        <div class="container">
-            <div class="doc-header reveal" style="margin-bottom: 48px;">
-                <div class="section-label"><span>Proyek Komersial & Interior</span></div>
-                <h2>Renovasi <em>Warkop Krisna</em></h2>
-                <p>Penataan ulang eksterior dan interior area komersial (Food & Beverage) di Rewwin, Sidoarjo. Proyek
-                    ini berfokus pada optimalisasi sirkulasi ruang fungsional dan kenyamanan pengunjung.</p>
-            </div>
 
-            <div class="grid-2-col reveal">
-                <div class="portfolio-item">
-                    <img src="img/projek warkop 1.jpeg" alt="Renovasi Warkop Krisna Rewwin Eksterior"
-                        style="height: 450px;">
-                    <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Eksterior & Fasad</div>
-                        <div class="portfolio-name">Area Outdoor & Fasad Depan</div>
-                        <div class="portfolio-location">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            Rewwin, Sidoarjo
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item">
-                    <img src="img/projek warkop 2.jpeg" alt="Renovasi Warkop Krisna Rewwin Interior"
-                        style="height: 450px;">
-                    <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Interior Ruangan</div>
-                        <div class="portfolio-name">Penataan Area Indoor Komersial</div>
-                        <div class="portfolio-location">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            Rewwin, Sidoarjo
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="doc-section reveal" style="background: var(--white);">
-        <div class="container">
-            <div class="doc-header">
-                <div class="section-label"><span>Live Update & Aktivitas Lapangan</span></div>
-                <h2>Proyek <em>Rungkut Menanggal</em></h2>
-                <p>Galeri dokumentasi pengerjaan struktur bangunan secara langsung dari lapangan. Ini adalah bukti
-                    komitmen kami dalam mengawal proyek dari tahap pembongkaran awal hingga konstruksi akhir.</p>
-            </div>
-
-            <div class="doc-grid">
-                <div class="doc-item reveal"><img src="img/Picture4.png" alt="Dokumentasi Proyek Rungkut 1"></div>
-                <div class="doc-item reveal"><img src="img/Picture5.png" alt="Dokumentasi Proyek Rungkut 2"></div>
-                <div class="doc-item reveal"><img src="img/Picture6.png" alt="Dokumentasi Proyek Rungkut 3"></div>
-                <div class="doc-item reveal"><img src="img/Picture7.png" alt="Dokumentasi Proyek Rungkut 4"></div>
-                <div class="doc-item reveal"><img src="img/Picture8.png" alt="Dokumentasi Proyek Rungkut 5"></div>
-                <div class="doc-item reveal"><img src="img/Picture9.png" alt="Dokumentasi Proyek Rungkut 6"></div>
-                <div class="doc-item reveal"><img src="img/Picture10.png" alt="Dokumentasi Proyek Rungkut 7"></div>
-                <div class="doc-item reveal"><img src="img/Picture11.png" alt="Dokumentasi Proyek Rungkut 8"></div>
-            </div>
-        </div>
-    </section>
 
     <section class="cta-section">
         <div class="cta-inner">
@@ -1591,6 +1598,47 @@
             document.getElementById('mobileNavDropdown').classList.toggle('open');
         }
 
+        // Featured Slider Logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.slider-indicator');
+        let slideInterval;
+
+        function updateSlider() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            updateSlider();
+            resetInterval();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+            resetInterval();
+        }
+
+        function startInterval() {
+            slideInterval = setInterval(() => {
+                moveSlide(1);
+            }, 5000);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            if(slides.length > 0) startInterval();
+        }
+
+        if (slides.length > 0) {
+            startInterval();
+        }
     </script>
 </body>
 
