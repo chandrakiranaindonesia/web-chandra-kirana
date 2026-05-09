@@ -227,7 +227,7 @@
         .inner-hero-bg {
             position: absolute;
             inset: 0;
-            background: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+            background: url('img/legalitashero.jpeg') center/cover no-repeat;
             opacity: 0.25;
             filter: grayscale(50%);
         }
@@ -1204,6 +1204,7 @@
             object-fit: contain;
             object-position: top;
             padding: 12px;
+            cursor: pointer;
             transition: transform var(--transition);
         }
 
@@ -1285,6 +1286,74 @@
             .legality-item {
                 padding: 16px 0;
             }
+        }
+
+        /* ── IMAGE MODAL ── */
+        .image-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition);
+            padding: 2rem;
+        }
+
+        .image-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .image-modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0.95);
+            transition: transform var(--transition);
+        }
+
+        .image-modal.active .image-modal-content {
+            transform: scale(1);
+        }
+
+        .image-modal img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            object-fit: contain;
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            padding: 8px;
+            transition: color var(--transition);
+        }
+
+        .image-modal-close:hover {
+            color: var(--green);
+        }
+
+        .image-modal-close svg {
+            width: 32px;
+            height: 32px;
         }
     </style>
 </head>
@@ -1427,7 +1496,8 @@
                 <!-- Dokumen 1 -->
                 <div class="doc-card">
                     <div class="doc-card-image">
-                        <img src="img/Legalitas 1.png" alt="SK Kemenkumham Republik Indonesia">
+                        <img src="img/Legalitas 1.png" alt="SK Kemenkumham Republik Indonesia"
+                            onclick="openImageModal(this.src)">
                     </div>
                     <div class="doc-card-footer">
                         <div class="doc-card-meta">
@@ -1446,7 +1516,8 @@
                 <!-- Dokumen 2 -->
                 <div class="doc-card">
                     <div class="doc-card-image">
-                        <img src="img/Legalitas 2.png" alt="Perizinan Berusaha Berbasis Risiko (NIB)">
+                        <img src="img/Legalitas 2.png" alt="Perizinan Berusaha Berbasis Risiko (NIB)"
+                            onclick="openImageModal(this.src)">
                     </div>
                     <div class="doc-card-footer">
                         <div class="doc-card-meta">
@@ -1581,7 +1652,34 @@
         </div>
     </footer>
 
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal" onclick="closeImageModal(event)">
+        <div class="image-modal-content">
+            <button class="image-modal-close" aria-label="Close modal">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <img src="" alt="Dokumen Resmi" id="modalImage">
+        </div>
+    </div>
+
     <script>
+        // Image Modal Logic
+        function openImageModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = src;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal(e) {
+            if (e.target.id === 'imageModal' || e.target.closest('.image-modal-close')) {
+                document.getElementById('imageModal').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
         const header = document.getElementById('mainHeader');
         window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 40); });
         header.classList.toggle('scrolled', window.scrollY > 40);

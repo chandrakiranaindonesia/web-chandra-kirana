@@ -227,7 +227,7 @@
         .inner-hero-bg {
             position: absolute;
             inset: 0;
-            background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop') center/cover no-repeat;
+            background: url('img/tentanghero.jpeg') center/cover no-repeat;
             opacity: 0.25;
             filter: grayscale(50%);
         }
@@ -367,9 +367,17 @@
         }
 
         @keyframes floatLogo {
-            0% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-12px) scale(1.02); }
-            100% { transform: translateY(0) scale(1); }
+            0% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-12px) scale(1.02);
+            }
+
+            100% {
+                transform: translateY(0) scale(1);
+            }
         }
 
         .about-image img {
@@ -1226,8 +1234,10 @@
             <div class="footer-top">
                 <div>
                     <div class="footer-logo">
-                        <div style="background: var(--white); padding: 4px; border-radius: 6px; display: flex; align-items: center; justify-content: center; height: 44px; width: 44px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                            <img src="img/Logo cv.png" alt="Logo CV Chandra Kirana" style="height: 100%; width: 100%; object-fit: contain;">
+                        <div
+                            style="background: var(--white); padding: 4px; border-radius: 6px; display: flex; align-items: center; justify-content: center; height: 44px; width: 44px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                            <img src="img/Logo cv.png" alt="Logo CV Chandra Kirana"
+                                style="height: 100%; width: 100%; object-fit: contain;">
                         </div>
                         <div class="logo-text" style="color: var(--white);">
                             CV CHANDRA KIRANA
