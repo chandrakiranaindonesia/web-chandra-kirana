@@ -683,21 +683,24 @@
         /* ── TESTIMONIAL FORM SECTION ── */
         .form-section {
             background: var(--off-white);
-            padding: 60px 2rem;
+            padding: 80px 2rem;
+        }
+
+        .form-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 60px;
+            align-items: center;
         }
 
         .form-container {
-            max-width: 1000px;
-            margin: 0 auto;
             background: var(--white);
             padding: 40px;
             border: 1px solid var(--green);
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
         }
 
         .form-header {
@@ -708,16 +711,18 @@
 
         .form-header h3 {
             font-family: var(--font-heading);
-            font-size: 28px;
+            font-size: clamp(32px, 4vw, 42px);
             font-weight: 600;
             color: var(--navy);
-            margin-bottom: 12px;
+            margin-bottom: 16px;
+            line-height: 1.2;
         }
 
         .form-header p {
-            font-size: 14px;
+            font-size: 16px;
             color: var(--gray-text);
             font-weight: 300;
+            line-height: 1.6;
         }
 
         .review-form {
@@ -1051,16 +1056,19 @@
                 display: flex;
             }
 
-            .form-container {
-                padding: 40px 24px;
+            .form-layout {
                 grid-template-columns: 1fr;
-                gap: 24px;
+                gap: 32px;
+            }
+
+            .form-container {
+                padding: 32px 24px;
             }
 
             .form-header {
                 text-align: center;
                 padding-right: 0;
-                margin-bottom: 12px;
+                margin-bottom: 0;
             }
 
             .review-form {
@@ -1516,13 +1524,14 @@
 
     <!-- Review Form Section -->
     <section class="form-section reveal">
-        <div class="form-container">
+        <div class="form-layout">
             <div class="form-header">
                 <h3>Bagikan Pengalaman Anda</h3>
                 <p>Ulasan Anda sangat berarti bagi kami untuk terus meningkatkan kualitas layanan ke depannya.</p>
             </div>
 
-            <form class="review-form" id="reviewForm">
+            <div class="form-container">
+                <form class="review-form" id="reviewForm">
                 <div class="form-group">
                     <label for="name">Nama Lengkap</label>
                     <input type="text" id="name" placeholder="Masukkan nama Anda" required>
@@ -1584,6 +1593,7 @@
                     <button type="submit" class="btn-submit">Kirim Ulasan</button>
                 </div>
             </form>
+            </div>
         </div>
     </section>
 
