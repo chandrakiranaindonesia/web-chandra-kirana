@@ -512,7 +512,9 @@
 
         .portfolio-grid-page {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            grid-auto-rows: 220px;
+            grid-auto-flow: dense;
             gap: 16px;
         }
 
@@ -522,7 +524,58 @@
             cursor: pointer;
             background: #E5E2DA;
             transition: all 0.4s ease;
-            border-radius: 4px;
+            border-radius: 12px;
+        }
+
+        /* Variasi ukuran untuk efek kolase estetik (Bento Grid) */
+        .portfolio-grid-page .portfolio-item:nth-child(7n + 1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .portfolio-grid-page .portfolio-item:nth-child(7n + 4) {
+            grid-column: span 2;
+        }
+
+        .portfolio-grid-page .portfolio-item:nth-child(7n + 5) {
+            grid-row: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid-page {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 200px;
+            }
+            .portfolio-grid-page .portfolio-item:nth-child(n) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-grid-page {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 180px;
+                gap: 12px;
+            }
+            .portfolio-overlay-std {
+                padding: 12px;
+            }
+            .portfolio-name {
+                font-size: 14px;
+                margin-bottom: 4px;
+                line-height: 1.3;
+            }
+            .portfolio-category {
+                font-size: 8px;
+                margin-bottom: 4px;
+            }
+            .portfolio-location {
+                display: none; /* Disembunyikan agar teks tidak terlalu padat di layar kecil */
+            }
+            .portfolio-item {
+                border-radius: 8px;
+            }
         }
 
         .portfolio-item.hidden {
@@ -531,7 +584,7 @@
 
         .portfolio-item img {
             width: 100%;
-            height: 220px;
+            height: 100%;
             object-fit: cover;
             display: block;
             transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -598,6 +651,18 @@
         .portfolio-item:hover .portfolio-location {
             transform: translateY(0);
             opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-overlay-std {
+                opacity: 1;
+            }
+            .portfolio-category,
+            .portfolio-name,
+            .portfolio-location {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         /* ── CUSTOM GRID 2 COL (UNTUK WARKOP) ── */
