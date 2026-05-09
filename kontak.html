@@ -134,13 +134,72 @@
         .footer-bottom p, .footer-bottom span { font-size: 12px; color: rgba(250,250,248,0.2); }
         .footer-bottom span b { color: rgba(250,250,248,0.4); }
 
-        /* ── MOBILE MENU ── */
-        .mobile-menu { display: none; position: fixed; inset: 0; background: var(--navy); z-index: 200; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
-        .mobile-menu.open { display: flex; }
-        .mobile-menu a { font-family: var(--font-heading); font-size: 36px; font-weight: 600; color: var(--white); text-decoration: none; letter-spacing: -0.01em; transition: color 0.3s; }
-        .mobile-menu a:hover { color: var(--green); }
-        .mobile-close { position: absolute; top: 28px; right: 28px; background: none; border: none; cursor: pointer; color: var(--white); padding: 8px; }
-        .mobile-close svg { width: 24px; height: 24px; }
+        /* ── MOBILE MENU (SIDE DRAWER) ── */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 75%;
+            max-width: 300px;
+            height: 100vh;
+            background: var(--white);
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 80px 32px 32px;
+            gap: 1.5rem;
+            transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+        }
+
+        .mobile-menu.open {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--navy);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            width: 100%;
+            border-bottom: 1px solid #E5E2DA;
+            padding-bottom: 12px;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--green);
+            border-bottom-color: var(--green);
+        }
+
+        .mobile-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: rgba(22, 163, 74, 0.1);
+            border: none;
+            cursor: pointer;
+            color: var(--green);
+            padding: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .mobile-close:hover {
+            background: rgba(22, 163, 74, 0.2);
+        }
+
+        .mobile-close svg {
+            width: 20px;
+            height: 20px;
+        }
 
         /* ── ANIMATIONS ── */
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -219,26 +278,29 @@
 
         .mobile-nav-dropdown-btn {
             font-family: var(--font-heading);
-            font-size: 36px;
+            font-size: 16px;
             font-weight: 600;
-            color: var(--white);
+            color: var(--navy);
             background: none;
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 0;
+            justify-content: space-between;
+            width: 100%;
+            border-bottom: 1px solid #E5E2DA;
+            padding-bottom: 12px;
             margin: 0;
         }
 
         .mobile-nav-dropdown-content {
             display: none;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             width: 100%;
-            margin-top: 20px;
-            gap: 20px;
+            margin-top: 12px;
+            gap: 16px;
+            padding-left: 16px;
         }
 
         .mobile-nav-dropdown-content.open {
@@ -246,8 +308,10 @@
         }
 
         .mobile-nav-dropdown-content a {
-            font-size: 24px !important;
-            color: rgba(255, 255, 255, 0.7) !important;
+            font-size: 14px !important;
+            color: var(--gray-text) !important;
+            border-bottom: none !important;
+            padding-bottom: 0 !important;
         }
 
         .mobile-nav-dropdown-content a:hover {
