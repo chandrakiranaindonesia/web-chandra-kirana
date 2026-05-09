@@ -7,6 +7,7 @@
     <meta name="description"
         content="Testimoni Pelanggan CV Chandra Kirana. Lihat apa kata klien tentang kualitas konstruksi dan layanan kami.">
     <title>Testimoni | CV Chandra Kirana</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -1055,6 +1056,7 @@
                 grid-template-columns: 1fr;
                 gap: 24px;
             }
+
             .form-header {
                 text-align: center;
                 padding-right: 0;
@@ -1895,12 +1897,12 @@
                 isDown = true;
                 startX = e.touches[0].pageX - wrapper.offsetLeft;
                 scrollLeft = wrapper.scrollLeft;
-                
+
             }, { passive: true });
 
             wrapper.addEventListener('touchend', () => {
                 isDown = false;
-                
+
             });
 
             wrapper.addEventListener('touchmove', (e) => {
