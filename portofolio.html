@@ -30,6 +30,7 @@
             --green: #16A34A;
             --green-dark: #15803D;
             --green-light: #22C55E;
+            --green-bright: #4ADE80;
             --gold: #16A34A;
             --gold-light: #22C55E;
             --white: #FFFFFF;
@@ -143,7 +144,7 @@
             left: 0;
             width: 0;
             height: 1px;
-            background: var(--green);
+            background: var(--green-bright);
             transition: width var(--transition);
         }
 
@@ -156,7 +157,7 @@
         }
 
         nav a.active {
-            color: var(--green);
+            color: var(--green-bright);
         }
 
         nav a.active::after {
@@ -165,8 +166,8 @@
 
         .nav-cta {
             background: transparent;
-            border: 1px solid rgba(22, 163, 74, 0.5);
-            color: var(--green) !important;
+            border: 1px solid rgba(74, 222, 128, 0.5);
+            color: var(--green-bright) !important;
             padding: 9px 22px;
             font-size: 11px !important;
             letter-spacing: 0.14em;
@@ -174,9 +175,9 @@
         }
 
         .nav-cta:hover {
-            background: var(--green) !important;
+            background: var(--green-bright) !important;
             color: var(--navy) !important;
-            border-color: var(--green) !important;
+            border-color: var(--green-bright) !important;
         }
 
         .nav-cta::after {
@@ -214,7 +215,7 @@
             position: absolute;
             inset: 0;
             background: url('img/portohero.webp') center/cover no-repeat;
-            opacity: 0.25;
+            opacity: 0.50;
             filter: grayscale(50%);
         }
 
@@ -238,7 +239,7 @@
             font-weight: 600;
             letter-spacing: 0.22em;
             text-transform: uppercase;
-            color: var(--green);
+            color: var(--green-bright);
             margin-bottom: 16px;
             opacity: 0;
             animation: fadeUp 0.9s 0.2s forwards;
