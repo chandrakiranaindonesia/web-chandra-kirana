@@ -332,7 +332,7 @@
             background-color: var(--white);
             /* Subtle Geometric Pattern */
             background-image: linear-gradient(rgba(22, 163, 74, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(22, 163, 74, 0.05) 1px, transparent 1px);
+                linear-gradient(90deg, rgba(22, 163, 74, 0.05) 1px, transparent 1px);
             background-size: 32px 32px;
             background-position: center center;
             box-shadow: 0 12px 40px rgba(11, 28, 44, 0.06);
@@ -353,6 +353,7 @@
             .featured-slider {
                 aspect-ratio: 4 / 3;
             }
+
             .featured-slider-wrapper {
                 padding: 16px;
                 border-radius: 12px;
@@ -399,6 +400,7 @@
             .slide-caption {
                 font-size: 18px;
             }
+
             .slide-overlay {
                 padding: 24px;
             }
@@ -443,9 +445,11 @@
                 height: 40px;
                 background: rgba(255, 255, 255, 0.25);
             }
+
             .slider-btn.prev {
                 left: 12px;
             }
+
             .slider-btn.next {
                 right: 12px;
             }
@@ -547,6 +551,7 @@
                 grid-template-columns: repeat(2, 1fr);
                 grid-auto-rows: 200px;
             }
+
             .portfolio-grid-page .portfolio-item:nth-child(n) {
                 grid-column: span 1;
                 grid-row: span 1;
@@ -559,21 +564,27 @@
                 grid-auto-rows: 180px;
                 gap: 12px;
             }
+
             .portfolio-overlay-std {
                 padding: 12px;
             }
+
             .portfolio-name {
                 font-size: 14px;
                 margin-bottom: 4px;
                 line-height: 1.3;
             }
+
             .portfolio-category {
                 font-size: 8px;
                 margin-bottom: 4px;
             }
+
             .portfolio-location {
-                display: none; /* Disembunyikan agar teks tidak terlalu padat di layar kecil */
+                display: none;
+                /* Disembunyikan agar teks tidak terlalu padat di layar kecil */
             }
+
             .portfolio-item {
                 border-radius: 8px;
             }
@@ -658,12 +669,47 @@
             .portfolio-overlay-std {
                 opacity: 1;
             }
+
             .portfolio-category,
             .portfolio-name,
             .portfolio-location {
                 transform: translateY(0);
                 opacity: 1;
             }
+        }
+
+        /* ── VIEW MORE OVERLAY ── */
+        .view-more-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(11, 28, 44, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1 !important;
+            z-index: 10;
+        }
+
+        .view-more-btn {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--white);
+            border: 2px solid var(--white);
+            padding: 10px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+
+        .view-more-btn:hover {
+            background: var(--white);
+            color: var(--navy);
         }
 
         /* ── CUSTOM GRID 2 COL (UNTUK WARKOP) ── */
@@ -986,7 +1032,7 @@
             padding: 80px 32px 32px;
             gap: 1.5rem;
             transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
         }
 
         .mobile-menu.open {
@@ -1422,13 +1468,15 @@
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="img/peresmian 2.webp" alt="Peninjauan Lokasi Terpadu" style="object-position: top;" loading="lazy">
+                            <img src="img/peresmian 2.webp" alt="Peninjauan Lokasi Terpadu"
+                                style="object-position: top;" loading="lazy">
                             <div class="slide-overlay">
                                 <h3 class="slide-caption">Peninjauan Lokasi Terpadu</h3>
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="img/peresmian 1.webp" alt="Peresmian Fasilitas" style="object-position: top;" loading="lazy">
+                            <img src="img/peresmian 1.webp" alt="Peresmian Fasilitas" style="object-position: top;"
+                                loading="lazy">
                             <div class="slide-overlay">
                                 <h3 class="slide-caption">Peresmian Fasilitas</h3>
                             </div>
@@ -1448,15 +1496,17 @@
 
                         <button class="slider-btn prev" onclick="moveSlide(-1)" aria-label="Previous Slide">
                             <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7" />
                             </svg>
                         </button>
                         <button class="slider-btn next" onclick="moveSlide(1)" aria-label="Next Slide">
                             <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
                             </svg>
                         </button>
-                        
+
                         <div class="slider-indicators">
                             <div class="slider-indicator active" onclick="goToSlide(0)"></div>
                             <div class="slider-indicator" onclick="goToSlide(1)"></div>
@@ -1485,41 +1535,260 @@
                 <li><button class="filter-btn" data-filter="pasuruan">Proyek Pasuruan</button></li>
                 <li><button class="filter-btn" data-filter="rungkut">Rungkut Menanggal</button></li>
                 <li><button class="filter-btn" data-filter="warkop">Renovasi Warkop</button></li>
+                <li><button class="filter-btn" data-filter="babatan">Proyek Babatan</button></li>
+                <li><button class="filter-btn" data-filter="prapen">Proyek Prapen</button></li>
             </ul>
 
             <div class="portfolio-grid-page reveal" id="portfolioGrid">
                 <!-- Pasuruan -->
-                <div class="portfolio-item pasuruan"><img src="img/pasuruan1.webp" alt="Proyek Pasuruan 1" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 1</div></div></div>
-                <div class="portfolio-item pasuruan"><img src="img/pasuruan2.webp" alt="Proyek Pasuruan 2" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 2</div></div></div>
-                <div class="portfolio-item pasuruan"><img src="img/pasuruan3.webp" alt="Proyek Pasuruan 3" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 3</div></div></div>
-                <div class="portfolio-item pasuruan"><img src="img/pasuruan4.webp" alt="Proyek Pasuruan 4" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 4</div></div></div>
-                <div class="portfolio-item pasuruan"><img src="img/pasuruan5.webp" alt="Proyek Pasuruan 5" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 5</div></div></div>
-                <div class="portfolio-item pasuruan"><img src="img/pasuruan6.webp" alt="Proyek Pasuruan 6" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 6</div></div></div>
-                <div class="portfolio-item pasuruan"><img src="img/pasuruan7.webp" alt="Proyek Pasuruan 7" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 7</div></div></div>
-                <div class="portfolio-item pasuruan"><img src="img/pasuruan8.webp" alt="Proyek Pasuruan 8" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 8</div></div></div>
-                <div class="portfolio-item pasuruan"><img src="img/pasuruan9.webp" alt="Proyek Pasuruan 9" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 9</div></div></div>
-                <div class="portfolio-item pasuruan"><img src="img/pasuruan10.webp" alt="Proyek Pasuruan 10" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 10</div></div></div>
-                <div class="portfolio-item pasuruan"><img src="img/pasuruan11.webp" alt="Proyek Pasuruan 11" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 11</div></div></div>
-                <div class="portfolio-item pasuruan"><img src="img/pasuruan12.webp" alt="Proyek Pasuruan 12" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Pasuruan</div><div class="portfolio-name">Dokumentasi Lapangan 12</div></div></div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan1.webp" alt="Proyek Pasuruan 1"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Pasuruan</div>
+                        <div class="portfolio-name">Pembongkaran dan Pembenahan Atap</div>
+                    </div>
+                </div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan2.webp" alt="Proyek Pasuruan 2"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Pasuruan</div>
+                        <div class="portfolio-name">Penutupan Lubang Jendela dan Pasang Herbel Acian</div>
+                    </div>
+                </div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan3.webp" alt="Proyek Pasuruan 3"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Pasuruan</div>
+                        <div class="portfolio-name">Menyambung Talang</div>
+                    </div>
+                </div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan4.webp" alt="Proyek Pasuruan 4"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Pasuruan</div>
+                        <div class="portfolio-name">Mengganti Seng 3 buah</div>
+                    </div>
+                </div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan5.webp" alt="Proyek Pasuruan 5"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Pasuruan</div>
+                        <div class="portfolio-name">Mulai pekerjaan dasar cat</div>
+                    </div>
+                </div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan6.webp" alt="Proyek Pasuruan 6"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Pasuruan</div>
+                        <div class="portfolio-name">Mengulang dasar pekerjaan cat dalam</div>
+                    </div>
+                </div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan7.webp" alt="Proyek Pasuruan 7"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Pasuruan</div>
+                        <div class="portfolio-name">Pembenahan Talang</div>
+                    </div>
+                </div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan8.webp" alt="Proyek Pasuruan 8"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Pasuruan</div>
+                        <div class="portfolio-name">Pembenahan Atap</div>
+                    </div>
+                </div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan9.webp" alt="Proyek Pasuruan 9"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Pasuruan</div>
+                        <div class="portfolio-name">Bongkar Scaffolding</div>
+                    </div>
+                </div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan10.webp" alt="Proyek Pasuruan 10"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Pasuruan</div>
+                        <div class="portfolio-name">Pengecatan tembok dalam</div>
+                    </div>
+                </div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan11.webp" alt="Proyek Pasuruan 11"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Pasuruan</div>
+                        <div class="portfolio-name">Pengecatan tembok luar</div>
+                    </div>
+                </div>
+                <div class="portfolio-item pasuruan"><img src="img/pasuruan12.webp" alt="Proyek Pasuruan 12"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Pasuruan</div>
+                        <div class="portfolio-name">Finishing dan Pengecatan</div>
+                    </div>
+                </div>
 
                 <!-- Rungkut -->
-                <div class="portfolio-item rungkut"><img src="img/rungkut1.webp" alt="Proyek Rungkut 1" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 1</div></div></div>
-                <div class="portfolio-item rungkut"><img src="img/rungkut2.webp" alt="Proyek Rungkut 2" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 2</div></div></div>
-                <div class="portfolio-item rungkut"><img src="img/rungkut3.webp" alt="Proyek Rungkut 3" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 3</div></div></div>
-                <div class="portfolio-item rungkut"><img src="img/rungkut4.webp" alt="Proyek Rungkut 4" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 4</div></div></div>
-                <div class="portfolio-item rungkut"><img src="img/rungkut5.webp" alt="Proyek Rungkut 5" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 5</div></div></div>
-                <div class="portfolio-item rungkut"><img src="img/rungkut6.webp" alt="Proyek Rungkut 6" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 6</div></div></div>
-                <div class="portfolio-item rungkut"><img src="img/rungkut7.webp" alt="Proyek Rungkut 7" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 7</div></div></div>
-                <div class="portfolio-item rungkut"><img src="img/rungkut8.webp" alt="Proyek Rungkut 8" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 8</div></div></div>
-                <div class="portfolio-item rungkut"><img src="img/rungkut9.webp" alt="Proyek Rungkut 9" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 9</div></div></div>
-                <div class="portfolio-item rungkut"><img src="img/rungkut10.webp" alt="Proyek Rungkut 10" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 10</div></div></div>
-                <div class="portfolio-item rungkut"><img src="img/rungkut11.webp" alt="Proyek Rungkut 11" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 11</div></div></div>
-                <div class="portfolio-item rungkut"><img src="img/rungkut12.webp" alt="Proyek Rungkut 12" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 12</div></div></div>
-                <div class="portfolio-item rungkut"><img src="img/rungkut13.webp" alt="Proyek Rungkut 13" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Proyek Rungkut</div><div class="portfolio-name">Dokumentasi Lapangan 13</div></div></div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut1.webp" alt="Proyek Rungkut 1" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Rungkut</div>
+                        <div class="portfolio-name">Pengecoran, bongkar, bangun dek</div>
+                    </div>
+                </div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut2.webp" alt="Proyek Rungkut 2" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Rungkut</div>
+                        <div class="portfolio-name">Pembuatan Dek</div>
+                    </div>
+                </div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut3.webp" alt="Proyek Rungkut 3" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Rungkut</div>
+                        <div class="portfolio-name">Meluruskan Besi</div>
+                    </div>
+                </div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut4.webp" alt="Proyek Rungkut 4" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Rungkut</div>
+                        <div class="portfolio-name">Ngeram</div>
+                    </div>
+                </div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut5.webp" alt="Proyek Rungkut 5" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Rungkut</div>
+                        <div class="portfolio-name">Membuat begel Kolom</div>
+                    </div>
+                </div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut6.webp" alt="Proyek Rungkut 6" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Rungkut</div>
+                        <div class="portfolio-name">Pasang tutup begesting</div>
+                    </div>
+                </div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut7.webp" alt="Proyek Rungkut 7" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Rungkut</div>
+                        <div class="portfolio-name">Pengecoran Kolom dan Pemasangan bata</div>
+                    </div>
+                </div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut8.webp" alt="Proyek Rungkut 8" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Rungkut</div>
+                        <div class="portfolio-name">Plamir, pasang bata</div>
+                    </div>
+                </div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut9.webp" alt="Proyek Rungkut 9" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Rungkut</div>
+                        <div class="portfolio-name">Plester Samping dan bongkar dek bawah</div>
+                    </div>
+                </div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut10.webp" alt="Proyek Rungkut 10"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Rungkut</div>
+                        <div class="portfolio-name">Tahap Pengerjaan Lanjutan</div>
+                    </div>
+                </div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut11.webp" alt="Proyek Rungkut 11"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Rungkut</div>
+                        <div class="portfolio-name">Proses Pembangunan</div>
+                    </div>
+                </div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut12.webp" alt="Proyek Rungkut 12"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Rungkut</div>
+                        <div class="portfolio-name">Penyelesaian Struktur</div>
+                    </div>
+                </div>
+                <div class="portfolio-item rungkut"><img src="img/rungkut13.webp" alt="Proyek Rungkut 13"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Rungkut</div>
+                        <div class="portfolio-name">Finishing Akhir</div>
+                    </div>
+                </div>
 
                 <!-- Warkop -->
-                <div class="portfolio-item warkop"><img src="img/projek warkop 1.webp" alt="Renovasi Warkop Krisna 1" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Renovasi Warkop</div><div class="portfolio-name">Area Outdoor & Fasad</div></div></div>
-                <div class="portfolio-item warkop"><img src="img/projek warkop 2.webp" alt="Renovasi Warkop Krisna 2" loading="lazy"><div class="portfolio-overlay-std"><div class="portfolio-category">Renovasi Warkop</div><div class="portfolio-name">Area Indoor Komersial</div></div></div>
+                <div class="portfolio-item warkop"><img src="img/projek warkop 1.webp" alt="Renovasi Warkop Krisna 1"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Renovasi Warkop</div>
+                        <div class="portfolio-name">Area Outdoor & Fasad</div>
+                    </div>
+                </div>
+                <div class="portfolio-item warkop"><img src="img/projek warkop 2.webp" alt="Renovasi Warkop Krisna 2"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Renovasi Warkop</div>
+                        <div class="portfolio-name">Area Indoor Komersial</div>
+                    </div>
+                </div>
+
+                <!-- Babatan -->
+                <div class="portfolio-item babatan"><img src="img/babatan1.webp" alt="Proyek Babatan 1" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Babatan</div>
+                        <div class="portfolio-name">Persiapan Pengecatan</div>
+                    </div>
+                </div>
+                <div class="portfolio-item babatan"><img src="img/babatan2.webp" alt="Proyek Babatan 2" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Babatan</div>
+                        <div class="portfolio-name">Hasil Akhir Pengecatan</div>
+                    </div>
+                </div>
+                <div class="portfolio-item babatan"><img src="img/babatan3.webp" alt="Proyek Babatan 3" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Babatan</div>
+                        <div class="portfolio-name">Pengecatan Dinding Utama</div>
+                    </div>
+                </div>
+                <div class="portfolio-item babatan"><img src="img/babatan4.webp" alt="Proyek Babatan 4" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Babatan</div>
+                        <div class="portfolio-name">Pengecatan Area Detail</div>
+                    </div>
+                </div>
+                <div class="portfolio-item babatan"><img src="img/babatan5.webp" alt="Proyek Babatan 5" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Babatan</div>
+                        <div class="portfolio-name">Pengecatan Lapisan Akhir</div>
+                    </div>
+                </div>
+                <div class="portfolio-item babatan"><img src="img/babatan6.webp" alt="Proyek Babatan 6" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Babatan</div>
+                        <div class="portfolio-name">Hasil Akhir Pengecatan</div>
+                    </div>
+                </div>
+
+                <!-- Prapen -->
+                <div class="portfolio-item prapen"><img src="img/prapen1.webp" alt="Proyek Prapen 1" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Prapen</div>
+                        <div class="portfolio-name">Perbaikan talang bocor</div>
+                    </div>
+                </div>
+                <div class="portfolio-item prapen"><img src="img/prapen2.webp" alt="Proyek Prapen 2" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Prapen</div>
+                        <div class="portfolio-name">Penambalan Tembok</div>
+                    </div>
+                </div>
+                <div class="portfolio-item prapen"><img src="img/prapen3.webp" alt="Proyek Prapen 3" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Prapen</div>
+                        <div class="portfolio-name">Pengecatan Tembok</div>
+                    </div>
+                </div>
+                <div class="portfolio-item prapen"><img src="img/prapen4.webp" alt="Proyek Prapen 4" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">Proyek Prapen</div>
+                        <div class="portfolio-name">Penyelesaian Akhir Prapen</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1632,8 +1901,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 CV Chandra Kirana. Hak cipta dilindungi undang-undang.</p>
-                <span>Didesain oleh <b>Codevela</b></span>
+                <p>&copy; 2026 CV Chandra Kirana.</p>
             </div>
         </div>
     </footer>
@@ -1661,29 +1929,104 @@
         const filterBtns = document.querySelectorAll('.filter-btn');
         const portfolioItems = document.querySelectorAll('.portfolio-item');
 
+        let currentFilter = 'all';
+        let isExpanded = false;
+
+        function applyGalleryLimit() {
+            const isMobile = window.innerWidth <= 768;
+
+            const visibleItems = Array.from(portfolioItems).filter(item => {
+                if (currentFilter === 'all') return true;
+                return item.classList.contains(currentFilter);
+            });
+
+            // Sembunyikan semua item dulu secara visual agar bersih
+            portfolioItems.forEach(item => {
+                item.classList.add('hidden');
+                item.style.display = '';
+                const existingOverlay = item.querySelector('.view-more-overlay');
+                if (existingOverlay) existingOverlay.remove();
+            });
+
+            visibleItems.forEach((item, index) => {
+                item.classList.remove('hidden');
+
+                if (!isMobile || isExpanded) {
+                    item.style.display = '';
+                } else {
+                    if (index < 5) {
+                        item.style.display = '';
+                    } else if (index === 5) {
+                        item.style.display = '';
+                        const overlay = document.createElement('div');
+                        overlay.className = 'view-more-overlay';
+                        const btn = document.createElement('div');
+                        btn.className = 'view-more-btn';
+                        btn.textContent = 'Lihat Semua';
+                        overlay.appendChild(btn);
+
+                        overlay.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            isExpanded = true;
+                            showAllCurrentCategory(visibleItems);
+                        });
+                        item.appendChild(overlay);
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+
+                if (!isMobile || isExpanded || index <= 5) {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.transition = 'all 0.5s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                }
+            });
+        }
+
+        function showAllCurrentCategory(items) {
+            items.forEach((item, index) => {
+                const overlay = item.querySelector('.view-more-overlay');
+                if (overlay) overlay.remove();
+                item.style.display = '';
+
+                if (index >= 5) {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.transition = 'all 0.5s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50 + (index - 5) * 50);
+                }
+            });
+        }
+
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
-                const filterValue = btn.getAttribute('data-filter');
-
-                portfolioItems.forEach(item => {
-                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
-                        item.classList.remove('hidden');
-                        item.style.opacity = '0';
-                        item.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            item.style.transition = 'all 0.5s ease';
-                            item.style.opacity = '1';
-                            item.style.transform = 'translateY(0)';
-                        }, 50);
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                });
+                currentFilter = btn.getAttribute('data-filter');
+                isExpanded = false; // Reset ekspansi saat ganti filter
+                applyGalleryLimit();
             });
         });
+
+        // Update on resize to handle screen width changes gracefully
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                applyGalleryLimit();
+            }, 250);
+        });
+
+        // Initialize first run
+        applyGalleryLimit();
 
         function toggleMobileDropdown() {
             document.getElementById('mobileNavDropdown').classList.toggle('open');
@@ -1724,7 +2067,7 @@
 
         function resetInterval() {
             clearInterval(slideInterval);
-            if(slides.length > 0) startInterval();
+            if (slides.length > 0) startInterval();
         }
 
         if (slides.length > 0) {
