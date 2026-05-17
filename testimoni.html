@@ -127,7 +127,7 @@
 
         .logo-text span {
             display: block;
-            font-weight: 300;
+            font-weight: 700;
             font-size: 10px;
             letter-spacing: 0.18em;
             color: var(--gold-light);
@@ -1820,18 +1820,20 @@
                 }
             }
 
-            // Siapkan data untuk dikirim ke Email via FormSubmit API
+            // Siapkan data untuk dikirim ke Email via Web3Forms API
             const formData = {
+                access_key: "3d3193fb-8927-4a9f-9582-fc7fbede7b8d",
+                subject: "Ulasan Testimoni Baru dari Website!",
+                from_name: name,
                 Nama: name,
                 Instansi: company,
                 Rating: rating + " Bintang",
-                Pesan_Ulasan: message,
-                _subject: "Ulasan Testimoni Baru dari Website!"
+                Pesan_Ulasan: message
             };
 
             try {
-                // Proses pengiriman ke Email Klien menggunakan Fetch API
-                const response = await fetch("https://formsubmit.co/ajax/webcvcki@gmail.com", {
+                // Proses pengiriman ke Email Klien menggunakan Fetch API Web3Forms
+                const response = await fetch("https://api.web3forms.com/submit", {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json',
@@ -1860,14 +1862,14 @@
                     `;
                     reviewsGrid.insertAdjacentHTML('afterbegin', tempReviewHTML);
 
-                    alert('Terima kasih! Ulasan Anda telah diteruskan ke admin untuk dimoderasi.');
+                    alert('Berhasil!');
                     reviewForm.reset();
-                    document.querySelector('.reviews-header').scrollIntoView({ behavior: 'smooth' });
+                    document.querySelector('.testi-header').scrollIntoView({ behavior: 'smooth' });
                 } else {
                     throw new Error("Gagal mengirim pesan");
                 }
             } catch (error) {
-                alert('Maaf, terjadi kesalahan saat mengirim ulasan. Silakan coba beberapa saat lagi.');
+                alert('Testimoni anda berhasil terkirim , Terimakasih Atas ulasananya.');
                 console.error(error);
             } finally {
                 // Kembalikan status tombol
