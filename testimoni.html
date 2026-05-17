@@ -1823,10 +1823,12 @@
             // Siapkan data untuk dikirim ke Email via FormSubmit API
             const formData = {
                 Nama: name,
-                Instansi: company,
+                Instansi: company || '-',
                 Rating: rating + " Bintang",
                 Pesan_Ulasan: message,
-                _subject: "Ulasan Testimoni Baru dari Website!"
+                _subject: "Ulasan Testimoni Baru dari Website!",
+                _captcha: "false",
+                _template: "table"
             };
 
             try {
@@ -1840,7 +1842,10 @@
                     body: JSON.stringify(formData)
                 });
 
-                if (response.ok) {
+                const result = await response.json();
+                console.log('FormSubmit response:', result);
+
+                if (result.success === "true" || result.success === true) {
                     // Munculkan simulasi di layar pengunjung
                     const initial = name.charAt(0).toUpperCase();
                     const companyText = company ? company : "Klien CKI";
@@ -1862,13 +1867,46 @@
 
                     alert('Terima kasih! Ulasan Anda telah diteruskan ke admin untuk dimoderasi.');
                     reviewForm.reset();
-                    document.querySelector('.reviews-header').scrollIntoView({ behavior: 'smooth' });
+                    const reviewsHeader = document.querySelector('.reviews-header');
+                    if (reviewsHeader) reviewsHeader.scrollIntoView({ behavior: 'smooth' });
                 } else {
-                    throw new Error("Gagal mengirim pesan");
+                    // FormSubmit mengembalikan error spesifik
+                    console.error('FormSubmit error detail:', result);
+                    throw new Error(result.message || "Gagal mengirim pesan");
                 }
             } catch (error) {
-                alert('Maaf, terjadi kesalahan saat mengirim ulasan. Silakan coba beberapa saat lagi.');
-                console.error(error);
+                console.error('Error pengiriman ulasan:', error);
+                // Fallback: kirim via form HTML biasa (non-AJAX)
+                try {
+                    const fallbackForm = document.createElement('form');
+                    fallbackForm.method = 'POST';
+                    fallbackForm.action = 'https://formsubmit.co/webcvcki@gmail.com';
+                    fallbackForm.style.display = 'none';
+
+                    const fields = {
+                        'Nama': name,
+                        'Instansi': company || '-',
+                        'Rating': rating + ' Bintang',
+                        'Pesan_Ulasan': message,
+                        '_subject': 'Ulasan Testimoni Baru dari Website!',
+                        '_captcha': 'false',
+                        '_next': window.location.href
+                    };
+
+                    for (const [key, value] of Object.entries(fields)) {
+                        const input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = key;
+                        input.value = value;
+                        fallbackForm.appendChild(input);
+                    }
+
+                    document.body.appendChild(fallbackForm);
+                    fallbackForm.submit();
+                } catch (fallbackError) {
+                    alert('Maaf, terjadi kesalahan saat mengirim ulasan. Silakan coba beberapa saat lagi.');
+                    console.error('Fallback error:', fallbackError);
+                }
             } finally {
                 // Kembalikan status tombol
                 submitBtn.innerText = originalBtnText;
