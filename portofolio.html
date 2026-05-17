@@ -235,7 +235,7 @@
         }
 
         .inner-hero-eyebrow {
-            font-size: 11px;
+            font-size: 14px;
             font-weight: 600;
             letter-spacing: 0.22em;
             text-transform: uppercase;
@@ -265,6 +265,12 @@
         .gallery-section {
             padding: 40px 2rem;
             background: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-section {
+                padding: 32px 0.75rem;
+            }
         }
 
         .container {
@@ -301,7 +307,7 @@
         }
 
         .featured-header .section-label span {
-            font-size: 10px;
+            font-size: 14px;
             font-weight: 600;
             letter-spacing: 0.22em;
             text-transform: uppercase;
@@ -355,8 +361,8 @@
             }
 
             .featured-slider-wrapper {
-                padding: 16px;
-                border-radius: 12px;
+                padding: 8px;
+                border-radius: 10px;
             }
         }
 
@@ -398,11 +404,15 @@
 
         @media (max-width: 768px) {
             .slide-caption {
-                font-size: 18px;
+                font-size: 16px;
             }
 
             .slide-overlay {
-                padding: 24px;
+                padding: 16px 18px 44px;
+            }
+
+            .slider-indicators {
+                bottom: 14px;
             }
         }
 
@@ -561,32 +571,38 @@
         @media (max-width: 480px) {
             .portfolio-grid-page {
                 grid-template-columns: repeat(2, 1fr);
-                grid-auto-rows: 180px;
-                gap: 12px;
+                grid-auto-rows: 190px;
+                gap: 10px;
             }
 
             .portfolio-overlay-std {
-                padding: 12px;
+                padding: 10px !important;
+                background: linear-gradient(to top, rgba(11, 28, 44, 0.92) 0%, rgba(11, 28, 44, 0.2) 35%, transparent 50%) !important;
             }
 
             .portfolio-name {
-                font-size: 14px;
-                margin-bottom: 4px;
-                line-height: 1.3;
+                font-size: 14px !important;
+                margin-bottom: 2px !important;
+                line-height: 1.2 !important;
             }
 
             .portfolio-category {
-                font-size: 8px;
-                margin-bottom: 4px;
+                font-size: 7px !important;
+                margin-bottom: 2px !important;
+                letter-spacing: 0.12em !important;
             }
 
             .portfolio-location {
-                display: none;
+                display: none !important;
                 /* Disembunyikan agar teks tidak terlalu padat di layar kecil */
             }
 
             .portfolio-item {
                 border-radius: 8px;
+            }
+
+            .img-mobile-lower {
+                object-position: center 70% !important;
             }
         }
 
@@ -751,7 +767,7 @@
         }
 
         .doc-header .section-label span {
-            font-size: 10px;
+            font-size: 14px;
             font-weight: 600;
             letter-spacing: 0.22em;
             text-transform: uppercase;
@@ -1145,7 +1161,8 @@
 
             .portfolio-overlay-std {
                 opacity: 1 !important;
-                background: linear-gradient(to top, rgba(11, 28, 44, 0.95) 0%, transparent 100%) !important;
+                background: linear-gradient(to top, rgba(11, 28, 44, 0.9) 0%, rgba(11, 28, 44, 0.3) 40%, transparent 60%) !important;
+                padding: 12px 14px !important;
             }
 
             .portfolio-category,
@@ -1153,6 +1170,22 @@
             .portfolio-location {
                 transform: translateY(0) !important;
                 opacity: 1 !important;
+            }
+
+            .portfolio-category {
+                font-size: 9px !important;
+                margin-bottom: 3px !important;
+                letter-spacing: 0.15em !important;
+            }
+
+            .portfolio-name {
+                font-size: 14px !important;
+                margin-bottom: 3px !important;
+                line-height: 1.2 !important;
+            }
+
+            .portfolio-location {
+                font-size: 11px !important;
             }
         }
 
@@ -1462,9 +1495,9 @@
                 <div class="featured-slider-wrapper">
                     <div class="featured-slider" id="featuredSlider">
                         <div class="slide active">
-                            <img src="img/desain 5.webp" alt="Kawasan Industri Terpadu" loading="lazy">
+                            <img src="img/desain 5.webp" alt="Desain Bangunan TPA Paras" loading="lazy">
                             <div class="slide-overlay">
-                                <h3 class="slide-caption">Kawasan Industri Terpadu</h3>
+                                <h3 class="slide-caption">Desain Bangunan TPA Paras</h3>
                             </div>
                         </div>
                         <div class="slide">
@@ -1496,15 +1529,15 @@
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="img/desain 7.webp" alt="Tipping & Loading" loading="lazy">
+                            <img src="img/paras1.webp" alt="Sinergi bersama para Stackholder" loading="lazy">
                             <div class="slide-overlay">
-                                <h3 class="slide-caption">Tipping & Loading</h3>
+                                <h3 class="slide-caption">Sinergi bersama para Stackholder</h3>
                             </div>
                         </div>
                         <div class="slide">
-                            <img src="img/desain 4.webp" alt="Rumah Pompa" loading="lazy">
+                            <img src="img/paras2.webp" alt="Standarisasi Proyek dan K3" loading="lazy">
                             <div class="slide-overlay">
-                                <h3 class="slide-caption">Rumah Pompa</h3>
+                                <h3 class="slide-caption">Standarisasi Proyek dan K3</h3>
                             </div>
                         </div>
 
@@ -1559,37 +1592,187 @@
                 <div class="portfolio-item paras"><img src="img/paras1.webp" alt="Proyek TPA Paras 1" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">TPA Paras Poncokusumo</div>
-                        <div class="portfolio-name">Progres Pembangunan Area</div>
+                        <div class="portfolio-name">Sinergi para Stackholder</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Poncokusumo, Malang
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item paras"><img src="img/paras2.webp" alt="Proyek TPA Paras 2" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">TPA Paras Poncokusumo</div>
                         <div class="portfolio-name">Pekerjaan Struktur</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Poncokusumo, Malang
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item paras"><img src="img/paras3.webp" alt="Proyek TPA Paras 3" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">TPA Paras Poncokusumo</div>
                         <div class="portfolio-name">Tahap Pengerjaan Lanjutan</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Poncokusumo, Malang
+                        </div>
                     </div>
                 </div>
-                <div class="portfolio-item paras"><img src="img/paras4.webp" alt="Proyek TPA Paras 4" loading="lazy">
+                <div class="portfolio-item paras"><img src="img/paras4.webp" alt="Proyek TPA Paras 4" loading="lazy" class="img-mobile-lower">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">TPA Paras Poncokusumo</div>
                         <div class="portfolio-name">Detail Pengerjaan</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Poncokusumo, Malang
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item paras"><img src="img/paras5.webp" alt="Proyek TPA Paras 5" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">TPA Paras Poncokusumo</div>
                         <div class="portfolio-name">Penyelesaian Area</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Poncokusumo, Malang
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item paras"><img src="img/paras6.webp" alt="Proyek TPA Paras 6" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">TPA Paras Poncokusumo</div>
                         <div class="portfolio-name">Hasil Akhir Pengerjaan</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Poncokusumo, Malang
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item paras"><img src="img/desain 7.webp"
+                        alt="Desain Bangunan TPA Paras Poncokusumo Malang" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">TPA Paras Poncokusumo</div>
+                        <div class="portfolio-name">Desain Bangunan TPA Paras</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Poncokusumo, Malang
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item paras"><img src="img/desain 3.webp"
+                        alt="Desain Bangunan TPA Paras Poncokusumo Malang" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">TPA Paras Poncokusumo</div>
+                        <div class="portfolio-name">Desain Bangunan TPA Paras</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Poncokusumo, Malang
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item paras"><img src="img/peresmian 1.webp"
+                        alt="Peresmian TPA Paras Poncokusumo Malang" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">TPA Paras Poncokusumo</div>
+                        <div class="portfolio-name">Peresmian Fasilitas TPA Paras</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Poncokusumo, Malang
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item paras"><img src="img/peresmian 2.webp"
+                        alt="Peninjauan Lokasi TPA Paras Poncokusumo" style="object-position: top;" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">TPA Paras Poncokusumo</div>
+                        <div class="portfolio-name">Peninjauan Lokasi Bersama Pejabat Daerah</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Poncokusumo, Malang
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item paras"><img src="img/peresmian3.webp" alt="Peresmian Bersama Bupati Malang"
+                        loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">TPA Paras Poncokusumo</div>
+                        <div class="portfolio-name">Peresmian Bersama Bupati Malang</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Poncokusumo, Malang
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item paras"><img src="img/peresmian4.webp"
+                        alt="Peresmian Bersama Bupati Malang II" style="object-position: top;" loading="lazy">
+                    <div class="portfolio-overlay-std">
+                        <div class="portfolio-category">TPA Paras Poncokusumo</div>
+                        <div class="portfolio-name">Peresmian Bersama Bupati Malang II</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Poncokusumo, Malang
+                        </div>
                     </div>
                 </div>
 
@@ -1599,6 +1782,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Pasuruan</div>
                         <div class="portfolio-name">Pembongkaran dan Pembenahan Atap</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Sukorejo, Pasuruan
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item pasuruan"><img src="img/pasuruan2.webp" alt="Proyek Pasuruan 2"
@@ -1606,6 +1798,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Pasuruan</div>
                         <div class="portfolio-name">Penutupan Lubang Jendela dan Pasang Herbel Acian</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Sukorejo, Pasuruan
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item pasuruan"><img src="img/pasuruan3.webp" alt="Proyek Pasuruan 3"
@@ -1613,6 +1814,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Pasuruan</div>
                         <div class="portfolio-name">Menyambung Talang</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Sukorejo, Pasuruan
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item pasuruan"><img src="img/pasuruan4.webp" alt="Proyek Pasuruan 4"
@@ -1620,6 +1830,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Pasuruan</div>
                         <div class="portfolio-name">Mengganti Seng 3 buah</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Sukorejo, Pasuruan
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item pasuruan"><img src="img/pasuruan5.webp" alt="Proyek Pasuruan 5"
@@ -1627,6 +1846,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Pasuruan</div>
                         <div class="portfolio-name">Mulai pekerjaan dasar cat</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Sukorejo, Pasuruan
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item pasuruan"><img src="img/pasuruan6.webp" alt="Proyek Pasuruan 6"
@@ -1634,6 +1862,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Pasuruan</div>
                         <div class="portfolio-name">Mengulang dasar pekerjaan cat dalam</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Sukorejo, Pasuruan
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item pasuruan"><img src="img/pasuruan7.webp" alt="Proyek Pasuruan 7"
@@ -1641,6 +1878,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Pasuruan</div>
                         <div class="portfolio-name">Pembenahan Talang</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Sukorejo, Pasuruan
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item pasuruan"><img src="img/pasuruan8.webp" alt="Proyek Pasuruan 8"
@@ -1648,6 +1894,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Pasuruan</div>
                         <div class="portfolio-name">Pembenahan Atap</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Sukorejo, Pasuruan
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item pasuruan"><img src="img/pasuruan9.webp" alt="Proyek Pasuruan 9"
@@ -1655,6 +1910,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Pasuruan</div>
                         <div class="portfolio-name">Bongkar Scaffolding</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Sukorejo, Pasuruan
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item pasuruan"><img src="img/pasuruan10.webp" alt="Proyek Pasuruan 10"
@@ -1662,6 +1926,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Pasuruan</div>
                         <div class="portfolio-name">Pengecatan tembok dalam</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Sukorejo, Pasuruan
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item pasuruan"><img src="img/pasuruan11.webp" alt="Proyek Pasuruan 11"
@@ -1669,6 +1942,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Pasuruan</div>
                         <div class="portfolio-name">Pengecatan tembok luar</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Sukorejo, Pasuruan
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item pasuruan"><img src="img/pasuruan12.webp" alt="Proyek Pasuruan 12"
@@ -1676,6 +1958,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Pasuruan</div>
                         <div class="portfolio-name">Finishing dan Pengecatan</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Sukorejo, Pasuruan
+                        </div>
                     </div>
                 </div>
 
@@ -1684,54 +1975,135 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Rungkut</div>
                         <div class="portfolio-name">Pengecoran, bongkar, bangun dek</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rungkut Menanggal, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item rungkut"><img src="img/rungkut2.webp" alt="Proyek Rungkut 2" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Rungkut</div>
                         <div class="portfolio-name">Pembuatan Dek</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rungkut Menanggal, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item rungkut"><img src="img/rungkut3.webp" alt="Proyek Rungkut 3" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Rungkut</div>
                         <div class="portfolio-name">Meluruskan Besi</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rungkut Menanggal, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item rungkut"><img src="img/rungkut4.webp" alt="Proyek Rungkut 4" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Rungkut</div>
                         <div class="portfolio-name">Ngeram</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rungkut Menanggal, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item rungkut"><img src="img/rungkut5.webp" alt="Proyek Rungkut 5" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Rungkut</div>
                         <div class="portfolio-name">Membuat begel Kolom</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rungkut Menanggal, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item rungkut"><img src="img/rungkut6.webp" alt="Proyek Rungkut 6" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Rungkut</div>
                         <div class="portfolio-name">Pasang tutup begesting</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rungkut Menanggal, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item rungkut"><img src="img/rungkut7.webp" alt="Proyek Rungkut 7" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Rungkut</div>
                         <div class="portfolio-name">Pengecoran Kolom dan Pemasangan bata</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rungkut Menanggal, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item rungkut"><img src="img/rungkut8.webp" alt="Proyek Rungkut 8" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Rungkut</div>
                         <div class="portfolio-name">Plamir, pasang bata</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rungkut Menanggal, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item rungkut"><img src="img/rungkut9.webp" alt="Proyek Rungkut 9" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Rungkut</div>
                         <div class="portfolio-name">Plester Samping dan bongkar dek bawah</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rungkut Menanggal, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item rungkut"><img src="img/rungkut10.webp" alt="Proyek Rungkut 10"
@@ -1739,6 +2111,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Rungkut</div>
                         <div class="portfolio-name">Tahap Pengerjaan Lanjutan</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rungkut Menanggal, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item rungkut"><img src="img/rungkut11.webp" alt="Proyek Rungkut 11"
@@ -1746,6 +2127,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Rungkut</div>
                         <div class="portfolio-name">Proses Pembangunan</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rungkut Menanggal, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item rungkut"><img src="img/rungkut12.webp" alt="Proyek Rungkut 12"
@@ -1753,6 +2143,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Rungkut</div>
                         <div class="portfolio-name">Penyelesaian Struktur</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rungkut Menanggal, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item rungkut"><img src="img/rungkut13.webp" alt="Proyek Rungkut 13"
@@ -1760,6 +2159,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Rungkut</div>
                         <div class="portfolio-name">Finishing Akhir</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rungkut Menanggal, Surabaya
+                        </div>
                     </div>
                 </div>
 
@@ -1769,6 +2177,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Renovasi Warkop</div>
                         <div class="portfolio-name">Area Outdoor & Fasad</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rewwin, Sidoarjo
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item warkop"><img src="img/projek warkop 2.webp" alt="Renovasi Warkop Krisna 2"
@@ -1776,6 +2193,15 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Renovasi Warkop</div>
                         <div class="portfolio-name">Area Indoor Komersial</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Rewwin, Sidoarjo
+                        </div>
                     </div>
                 </div>
 
@@ -1784,36 +2210,90 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Babatan</div>
                         <div class="portfolio-name">Persiapan Pengecatan</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Babatan, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item babatan"><img src="img/babatan2.webp" alt="Proyek Babatan 2" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Babatan</div>
                         <div class="portfolio-name">Hasil Akhir Pengecatan</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Babatan, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item babatan"><img src="img/babatan3.webp" alt="Proyek Babatan 3" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Babatan</div>
                         <div class="portfolio-name">Pengecatan Dinding Utama</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Babatan, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item babatan"><img src="img/babatan4.webp" alt="Proyek Babatan 4" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Babatan</div>
                         <div class="portfolio-name">Pengecatan Area Detail</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Babatan, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item babatan"><img src="img/babatan5.webp" alt="Proyek Babatan 5" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Babatan</div>
                         <div class="portfolio-name">Pengecatan Lapisan Akhir</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Babatan, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item babatan"><img src="img/babatan6.webp" alt="Proyek Babatan 6" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Babatan</div>
                         <div class="portfolio-name">Hasil Akhir Pengecatan</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Babatan, Surabaya
+                        </div>
                     </div>
                 </div>
 
@@ -1822,24 +2302,60 @@
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Prapen</div>
                         <div class="portfolio-name">Perbaikan talang bocor</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Prapen, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item prapen"><img src="img/prapen2.webp" alt="Proyek Prapen 2" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Prapen</div>
                         <div class="portfolio-name">Penambalan Tembok</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Prapen, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item prapen"><img src="img/prapen3.webp" alt="Proyek Prapen 3" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Prapen</div>
                         <div class="portfolio-name">Pengecatan Tembok</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Prapen, Surabaya
+                        </div>
                     </div>
                 </div>
                 <div class="portfolio-item prapen"><img src="img/prapen4.webp" alt="Proyek Prapen 4" loading="lazy">
                     <div class="portfolio-overlay-std">
                         <div class="portfolio-category">Proyek Prapen</div>
                         <div class="portfolio-name">Penyelesaian Akhir Prapen</div>
+                        <div class="portfolio-location">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Prapen, Surabaya
+                        </div>
                     </div>
                 </div>
             </div>
