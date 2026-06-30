@@ -1518,7 +1518,7 @@
             bottom: 10px;
             background: #FFF;
             border: 1px solid #D1D5DB;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
             z-index: 1;
             overflow: hidden;
             cursor: pointer;
@@ -1539,7 +1539,7 @@
             z-index: 2;
             background: #FFF;
             border: 1px solid #E5E2DA;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
             height: 380px;
             overflow: hidden;
             cursor: pointer;
@@ -1558,12 +1558,12 @@
         /* Hover: geser ke kiri sedikit untuk ekspos halaman belakang */
         .cert-img-stacked:hover .page-front {
             transform: translateX(-14px) translateY(-4px);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
         }
 
         .cert-img-stacked:hover .page-back {
             transform: translateX(6px) translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
         .cert-img-stacked .page-front:hover img {
@@ -1717,8 +1717,8 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.15);
-            border: 1px solid rgba(255,255,255,0.25);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1745,7 +1745,7 @@
             transform: translateX(-50%);
             font-size: 12px;
             font-weight: 600;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
             letter-spacing: 0.1em;
         }
     </style>
@@ -1785,7 +1785,7 @@
                 <!-- Logo Gambar -->
                 <div
                     style="background: var(--white); padding: 4px; border-radius: 6px; display: flex; align-items: center; justify-content: center; height: 44px; width: 44px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <img src="img/Logo cv.webp" alt="Logo CKI" style="height: 100%; width: 100%; object-fit: contain;">
+                    <img src="img/logo cv.webp" alt="Logo CKI" style="height: 100%; width: 100%; object-fit: contain;">
                 </div>
                 <!-- Logo Teks -->
                 <div class="logo-text">
@@ -1893,8 +1893,11 @@
                         <div class="nib-card-desc">Surat Keterangan Terdaftar Administrasi Badan Usaha</div>
                     </div>
                 </div>
-                <div style="height:400px; background:#FFF; border:1px solid #E5E2DA; overflow:hidden; cursor:pointer;" onclick="openImageModal('img/Legalitas 1.webp')">
-                    <img src="img/Legalitas 1.webp" alt="SK Kemenkumham" loading="lazy" style="width:100%;height:100%;object-fit:contain;object-position:top;padding:14px;transition:transform 0.35s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="height:400px; background:#FFF; border:1px solid #E5E2DA; overflow:hidden; cursor:pointer;"
+                    onclick="openImageModal('img/legalitas 1.webp')">
+                    <img src="img/legalitas 1.webp" alt="SK Kemenkumham" loading="lazy"
+                        style="width:100%;height:100%;object-fit:contain;object-position:top;padding:14px;transition:transform 0.35s;"
+                        onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                 </div>
             </div>
 
@@ -1916,21 +1919,30 @@
                 <div class="nib-carousel" id="nibCarousel">
                     <div class="nib-carousel-track" id="nibTrack">
                         <div class="nib-carousel-slide">
-                            <img src="img/NIB1.webp" alt="NIB Halaman 1" loading="lazy" onclick="openMultiModal(['img/NIB1.webp','img/NIB2.webp','img/NIB3.webp'], 0)">
+                            <img src="img/nib1.webp" alt="NIB Halaman 1" loading="lazy"
+                                onclick="openMultiModal(['img/nib1.webp','img/nib2.webp','img/nib3.webp'], 0)">
                         </div>
                         <div class="nib-carousel-slide">
-                            <img src="img/NIB2.webp" alt="NIB Halaman 2" loading="lazy" onclick="openMultiModal(['img/NIB1.webp','img/NIB2.webp','img/NIB3.webp'], 1)">
+                            <img src="img/nib2.webp" alt="NIB Halaman 2" loading="lazy"
+                                onclick="openMultiModal(['img/nib1.webp','img/nib2.webp','img/nib3.webp'], 1)">
                         </div>
                         <div class="nib-carousel-slide">
-                            <img src="img/NIB3.webp" alt="NIB Halaman 3" loading="lazy" onclick="openMultiModal(['img/NIB1.webp','img/NIB2.webp','img/NIB3.webp'], 2)">
+                            <img src="img/nib3.webp" alt="NIB Halaman 3" loading="lazy"
+                                onclick="openMultiModal(['img/nib1.webp','img/nib2.webp','img/nib3.webp'], 2)">
                         </div>
                     </div>
                     <div class="nib-nav">
                         <button class="nib-nav-btn" onclick="nibPrev()" aria-label="Sebelumnya">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7" />
+                            </svg>
                         </button>
                         <button class="nib-nav-btn" onclick="nibNext()" aria-label="Berikutnya">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -1955,9 +1967,12 @@
                                 <span class="cert-type-tag sbujk">SBUJK</span>
                                 <span class="cert-panel-name">Sertifikat Badan Usaha Jasa Konstruksi</span>
                             </div>
-                            <div class="cert-img-single" onclick="openImageModal('img/SBUJK41011.webp')">
-                                <img src="img/SBUJK41011.webp" alt="SBUJK 41011" loading="lazy">
-                                <div class="zoom-hint"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>Perbesar</div>
+                            <div class="cert-img-single" onclick="openImageModal('img/sbujk41011.webp')">
+                                <img src="img/sbujk41011.webp" alt="SBUJK 41011" loading="lazy">
+                                <div class="zoom-hint"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                    </svg>Perbesar</div>
                             </div>
                         </div>
                         <!-- SS 41011 -->
@@ -1967,11 +1982,13 @@
                                 <span class="cert-panel-name">Sertifikat Standar — 2 Halaman</span>
                             </div>
                             <div class="cert-img-stacked">
-                                <div class="page-back" onclick="openMultiModal(['img/SS41011.webp','img/SS41011-2.webp'], 1)">
-                                    <img src="img/SS41011-2.webp" alt="SS 41011 Halaman 2" loading="lazy">
+                                <div class="page-back"
+                                    onclick="openMultiModal(['img/ss41011.webp','img/ss41011-2.webp'], 1)">
+                                    <img src="img/ss41011-2.webp" alt="SS 41011 Halaman 2" loading="lazy">
                                 </div>
-                                <div class="page-front" onclick="openMultiModal(['img/SS41011.webp','img/SS41011-2.webp'], 0)">
-                                    <img src="img/SS41011.webp" alt="SS 41011 Halaman 1" loading="lazy">
+                                <div class="page-front"
+                                    onclick="openMultiModal(['img/ss41011.webp','img/ss41011-2.webp'], 0)">
+                                    <img src="img/ss41011.webp" alt="SS 41011 Halaman 1" loading="lazy">
                                 </div>
 
                             </div>
@@ -1994,9 +2011,12 @@
                                 <span class="cert-type-tag sbujk">SBUJK</span>
                                 <span class="cert-panel-name">Sertifikat Badan Usaha Jasa Konstruksi</span>
                             </div>
-                            <div class="cert-img-single" onclick="openImageModal('img/SBUJK41012.webp')">
-                                <img src="img/SBUJK41012.webp" alt="SBUJK 41012" loading="lazy">
-                                <div class="zoom-hint"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>Perbesar</div>
+                            <div class="cert-img-single" onclick="openImageModal('img/sbujk41012.webp')">
+                                <img src="img/sbujk41012.webp" alt="SBUJK 41012" loading="lazy">
+                                <div class="zoom-hint"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                    </svg>Perbesar</div>
                             </div>
                         </div>
                         <div class="cert-panel">
@@ -2005,11 +2025,13 @@
                                 <span class="cert-panel-name">Sertifikat Standar — 2 Halaman</span>
                             </div>
                             <div class="cert-img-stacked">
-                                <div class="page-back" onclick="openMultiModal(['img/SS41012.webp','img/SS41012-2.webp'], 1)">
-                                    <img src="img/SS41012-2.webp" alt="SS 41012 Halaman 2" loading="lazy">
+                                <div class="page-back"
+                                    onclick="openMultiModal(['img/ss41012.webp','img/ss41012-2.webp'], 1)">
+                                    <img src="img/ss41012-2.webp" alt="SS 41012 Halaman 2" loading="lazy">
                                 </div>
-                                <div class="page-front" onclick="openMultiModal(['img/SS41012.webp','img/SS41012-2.webp'], 0)">
-                                    <img src="img/SS41012.webp" alt="SS 41012 Halaman 1" loading="lazy">
+                                <div class="page-front"
+                                    onclick="openMultiModal(['img/ss41012.webp','img/ss41012-2.webp'], 0)">
+                                    <img src="img/ss41012.webp" alt="SS 41012 Halaman 1" loading="lazy">
                                 </div>
 
                             </div>
@@ -2032,9 +2054,12 @@
                                 <span class="cert-type-tag sbujk">SBUJK</span>
                                 <span class="cert-panel-name">Sertifikat Badan Usaha Jasa Konstruksi</span>
                             </div>
-                            <div class="cert-img-single" onclick="openImageModal('img/SBUJK41013.webp')">
-                                <img src="img/SBUJK41013.webp" alt="SBUJK 41013" loading="lazy">
-                                <div class="zoom-hint"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>Perbesar</div>
+                            <div class="cert-img-single" onclick="openImageModal('img/sbujk41013.webp')">
+                                <img src="img/sbujk41013.webp" alt="SBUJK 41013" loading="lazy">
+                                <div class="zoom-hint"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                    </svg>Perbesar</div>
                             </div>
                         </div>
                         <div class="cert-panel">
@@ -2043,11 +2068,13 @@
                                 <span class="cert-panel-name">Sertifikat Standar — 2 Halaman</span>
                             </div>
                             <div class="cert-img-stacked">
-                                <div class="page-back" onclick="openMultiModal(['img/SS41013.webp','img/SS41013-2.webp'], 1)">
-                                    <img src="img/SS41013-2.webp" alt="SS 41013 Halaman 2" loading="lazy">
+                                <div class="page-back"
+                                    onclick="openMultiModal(['img/ss41013.webp','img/ss41013-2.webp'], 1)">
+                                    <img src="img/ss41013-2.webp" alt="SS 41013 Halaman 2" loading="lazy">
                                 </div>
-                                <div class="page-front" onclick="openMultiModal(['img/SS41013.webp','img/SS41013-2.webp'], 0)">
-                                    <img src="img/SS41013.webp" alt="SS 41013 Halaman 1" loading="lazy">
+                                <div class="page-front"
+                                    onclick="openMultiModal(['img/ss41013.webp','img/ss41013-2.webp'], 0)">
+                                    <img src="img/ss41013.webp" alt="SS 41013 Halaman 1" loading="lazy">
                                 </div>
 
                             </div>
@@ -2070,9 +2097,12 @@
                                 <span class="cert-type-tag sbujk">SBUJK</span>
                                 <span class="cert-panel-name">Sertifikat Badan Usaha Jasa Konstruksi</span>
                             </div>
-                            <div class="cert-img-single" onclick="openImageModal('img/SBUJK42101.webp')">
-                                <img src="img/SBUJK42101.webp" alt="SBUJK 42101" loading="lazy">
-                                <div class="zoom-hint"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>Perbesar</div>
+                            <div class="cert-img-single" onclick="openImageModal('img/sbujk42101.webp')">
+                                <img src="img/sbujk42101.webp" alt="SBUJK 42101" loading="lazy">
+                                <div class="zoom-hint"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                                    </svg>Perbesar</div>
                             </div>
                         </div>
                         <div class="cert-panel">
@@ -2081,11 +2111,13 @@
                                 <span class="cert-panel-name">Sertifikat Standar — 2 Halaman</span>
                             </div>
                             <div class="cert-img-stacked">
-                                <div class="page-back" onclick="openMultiModal(['img/SS42101.webp','img/SS42101-2.webp'], 1)">
-                                    <img src="img/SS42101-2.webp" alt="SS 42101 Halaman 2" loading="lazy">
+                                <div class="page-back"
+                                    onclick="openMultiModal(['img/ss42101.webp','img/ss42101-2.webp'], 1)">
+                                    <img src="img/ss42101-2.webp" alt="SS 42101 Halaman 2" loading="lazy">
                                 </div>
-                                <div class="page-front" onclick="openMultiModal(['img/SS42101.webp','img/SS42101-2.webp'], 0)">
-                                    <img src="img/SS42101.webp" alt="SS 42101 Halaman 1" loading="lazy">
+                                <div class="page-front"
+                                    onclick="openMultiModal(['img/ss42101.webp','img/ss42101-2.webp'], 0)">
+                                    <img src="img/ss42101.webp" alt="SS 42101 Halaman 1" loading="lazy">
                                 </div>
 
                             </div>
@@ -2126,7 +2158,7 @@
                     <div class="footer-logo">
                         <div
                             style="background: var(--white); padding: 4px; border-radius: 6px; display: flex; align-items: center; justify-content: center; height: 44px; width: 44px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                            <img src="img/Logo cv.webp" alt="Logo CV Chandra Kirana"
+                            <img src="img/logo cv.webp" alt="Logo CV Chandra Kirana"
                                 style="height: 100%; width: 100%; object-fit: contain;">
                         </div>
                         <div class="logo-text" style="color: var(--white);">
@@ -2144,10 +2176,12 @@
                                     d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
                             </svg>
                         </a>
-                        <a class="social-btn" href="https://www.instagram.com/chandrakiranaindonesia?igsh=bWJubDdiOWVtbXk5" target="_blank"
-                            rel="noopener noreferrer" aria-label="Instagram">
+                        <a class="social-btn"
+                            href="https://www.instagram.com/chandrakiranaindonesia?igsh=bWJubDdiOWVtbXk5"
+                            target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                             <svg fill="currentColor" viewBox="0 0 24 24" width="15" height="15">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                             </svg>
                         </a>
                     </div>
@@ -2207,17 +2241,22 @@
     <!-- Image Modal (single & multi) -->
     <div class="image-modal" id="imageModal" onclick="closeImageModal(event)">
         <div class="image-modal-content">
-            <button class="image-modal-close" onclick="closeImageModal({target:document.getElementById('imageModal')})" aria-label="Close modal">
+            <button class="image-modal-close" onclick="closeImageModal({target:document.getElementById('imageModal')})"
+                aria-label="Close modal">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
             <div class="modal-nav" id="modalNav" style="display:none;">
                 <button class="modal-nav-btn" onclick="modalNavGo(-1)" id="modalPrev" aria-label="Sebelumnya">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
                 </button>
                 <button class="modal-nav-btn" onclick="modalNavGo(1)" id="modalNext" aria-label="Berikutnya">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
                 </button>
             </div>
             <img src="" alt="Dokumen Resmi" id="modalImage" loading="lazy">
