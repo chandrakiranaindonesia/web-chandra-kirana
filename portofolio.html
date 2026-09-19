@@ -728,6 +728,73 @@
             color: var(--navy);
         }
 
+        /* ── DESKTOP LIHAT SEMUA (kategori 'all') ── */
+        .portfolio-grid-wrapper {
+            position: relative;
+        }
+
+        .portfolio-grid-fade {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.85) 55%, var(--white) 100%);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .portfolio-grid-fade.visible {
+            display: block;
+        }
+
+        .portfolio-show-all-wrap {
+            display: none;
+            justify-content: center;
+            margin-top: -80px;
+            padding-bottom: 32px;
+            position: relative;
+            z-index: 6;
+        }
+
+        .portfolio-show-all-wrap.visible {
+            display: flex;
+        }
+
+        .portfolio-show-all-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--navy);
+            color: var(--white);
+            padding: 14px 36px;
+            font-family: var(--font-heading);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition);
+            border-radius: 2px;
+        }
+
+        .portfolio-show-all-btn:hover {
+            background: var(--green);
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(22, 163, 74, 0.25);
+        }
+
+        .portfolio-show-all-btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-show-all-btn:hover svg {
+            transform: translateX(4px);
+        }
+
         /* ── CUSTOM GRID 2 COL (UNTUK WARKOP) ── */
         .grid-2-col {
             display: grid;
@@ -1581,13 +1648,13 @@
                 <li><button class="filter-btn active" data-filter="all">Semua Kategori</button></li>
                 <li><button class="filter-btn" data-filter="pasuruan">Proyek Pasuruan</button></li>
                 <li><button class="filter-btn" data-filter="rungkut">Rungkut Menanggal</button></li>
-                <li><button class="filter-btn" data-filter="warkop">Renovasi Warkop</button></li>
-                <li><button class="filter-btn" data-filter="kedaikopi">Renovasi Kedai Kopi</button></li>
+                <li><button class="filter-btn" data-filter="warkop">Renovasi Kedai Kopi</button></li>
+                <li><button class="filter-btn" data-filter="kedaikopi">Pembangunan Kedai Lantai 2</button></li>
                 <li><button class="filter-btn" data-filter="babatan">Proyek Babatan</button></li>
                 <li><button class="filter-btn" data-filter="prapen">Proyek Prapen</button></li>
                 <li><button class="filter-btn" data-filter="paras">TPA Paras Poncokusumo</button></li>
             </ul>
-
+            <div class="portfolio-grid-wrapper">
             <div class="portfolio-grid-page reveal" id="portfolioGrid">
                 <!-- Paras -->
                 <div class="portfolio-item paras"><img src="/img/paras1.webp" alt="Proyek TPA Paras 1" loading="lazy">
@@ -2161,7 +2228,7 @@
                 <div class="portfolio-item warkop"><img src="/img/projek warkop 1.webp" alt="Renovasi Warkop Krisna 1"
                         loading="lazy">
                     <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Renovasi Warkop</div>
+                        <div class="portfolio-category">Renovasi Kedai Kopi</div>
                         <div class="portfolio-name">Area Outdoor & Fasad</div>
                         <div class="portfolio-location">
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2170,14 +2237,14 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Rewwin, Sidoarjo
+                            Kedai Kopi Krisna Rewin, Sidoarjo
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item warkop"><img src="/img/projek warkop 2.webp" alt="Renovasi Warkop Krisna 2"
                         loading="lazy">
                     <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Renovasi Warkop</div>
+                        <div class="portfolio-category">Renovasi Kedai Kopi</div>
                         <div class="portfolio-name">Area Indoor Komersial</div>
                         <div class="portfolio-location">
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2186,7 +2253,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Rewwin, Sidoarjo
+                            Kedai Kopi Krisna Rewin, Sidoarjo
                         </div>
                     </div>
                 </div>
@@ -2194,7 +2261,7 @@
                 <!-- Babatan -->
                 <div class="portfolio-item kedaikopi"><img src="/img/kedai1.webp" alt="Pemasangan Furnitur Area Outdoor Kedai Kopi" loading="lazy">
                     <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Renovasi Kedai Kopi</div>
+                        <div class="portfolio-category">Pembangunan Kedai Lantai 2</div>
                         <div class="portfolio-name">Pemasangan Furnitur Area Outdoor</div>
                         <div class="portfolio-location">
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2203,13 +2270,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Rewwin, Sidoarjo
+                            Kedai Kopi Krisna Rewin, Sidoarjo
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item kedaikopi"><img src="/img/kedai2.webp" alt="Pemasangan Rangka Baja Kanopi Lantai 2" loading="lazy">
                     <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Renovasi Kedai Kopi</div>
+                        <div class="portfolio-category">Pembangunan Kedai Lantai 2</div>
                         <div class="portfolio-name">Pemasangan Rangka Baja Kanopi Lantai 2</div>
                         <div class="portfolio-location">
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2218,13 +2285,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Rewwin, Sidoarjo
+                            Kedai Kopi Krisna Rewin, Sidoarjo
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item kedaikopi"><img src="/img/kedai3.webp" alt="Plesteran Dinding Eksterior Lantai 2" loading="lazy">
                     <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Renovasi Kedai Kopi</div>
+                        <div class="portfolio-category">Pembangunan Kedai Lantai 2</div>
                         <div class="portfolio-name">Plesteran Dinding Eksterior Lantai 2</div>
                         <div class="portfolio-location">
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2233,13 +2300,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Rewwin, Sidoarjo
+                            Kedai Kopi Krisna Rewin, Sidoarjo
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item kedaikopi"><img src="/img/kedai4.webp" alt="Pemasangan Bata Ringan Dinding Lantai 2" loading="lazy">
                     <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Renovasi Kedai Kopi</div>
+                        <div class="portfolio-category">Pembangunan Kedai Lantai 2</div>
                         <div class="portfolio-name">Pemasangan Bata Ringan Dinding Lantai 2</div>
                         <div class="portfolio-location">
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2248,13 +2315,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Rewwin, Sidoarjo
+                            Kedai Kopi Krisna Rewin, Sidoarjo
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item kedaikopi"><img src="/img/kedai5.webp" alt="Area Lantai 2 Siap dengan Kanopi" loading="lazy">
                     <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Renovasi Kedai Kopi</div>
+                        <div class="portfolio-category">Pembangunan Kedai Lantai 2</div>
                         <div class="portfolio-name">Area Lantai 2 Siap dengan Kanopi</div>
                         <div class="portfolio-location">
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2263,13 +2330,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Rewwin, Sidoarjo
+                            Kedai Kopi Krisna Rewin, Sidoarjo
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item kedaikopi"><img src="/img/kedai6.webp" alt="Pemasangan Rangka Pintu Kaca Fasad" loading="lazy">
                     <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Renovasi Kedai Kopi</div>
+                        <div class="portfolio-category">Pembangunan Kedai Lantai 2</div>
                         <div class="portfolio-name">Pemasangan Rangka Pintu Kaca Fasad</div>
                         <div class="portfolio-location">
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2278,13 +2345,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Rewwin, Sidoarjo
+                            Kedai Kopi Krisna Rewin, Sidoarjo
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item kedaikopi"><img src="/img/kedai7.webp" alt="Pemasangan Kaca Panel Depan Kedai" loading="lazy">
                     <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Renovasi Kedai Kopi</div>
+                        <div class="portfolio-category">Pembangunan Kedai Lantai 2</div>
                         <div class="portfolio-name">Pemasangan Kaca Panel Depan Kedai</div>
                         <div class="portfolio-location">
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2293,13 +2360,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Rewwin, Sidoarjo
+                            Kedai Kopi Krisna Rewin, Sidoarjo
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item kedaikopi"><img src="/img/kedai8.webp" alt="Instalasi Pipa Utilitas Eksterior" loading="lazy">
                     <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Renovasi Kedai Kopi</div>
+                        <div class="portfolio-category">Pembangunan Kedai Lantai 2</div>
                         <div class="portfolio-name">Instalasi Pipa Utilitas Eksterior</div>
                         <div class="portfolio-location">
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2308,13 +2375,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Rewwin, Sidoarjo
+                            Kedai Kopi Krisna Rewin, Sidoarjo
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item kedaikopi"><img src="/img/kedai9.webp" alt="Progres Pembangunan Lantai 2 Kedai Kopi" loading="lazy">
                     <div class="portfolio-overlay-std">
-                        <div class="portfolio-category">Renovasi Kedai Kopi</div>
+                        <div class="portfolio-category">Pembangunan Kedai Lantai 2</div>
                         <div class="portfolio-name">Progres Pembangunan Lantai 2 Kedai Kopi</div>
                         <div class="portfolio-location">
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2323,7 +2390,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            Rewwin, Sidoarjo
+                            Kedai Kopi Krisna Rewin, Sidoarjo
                         </div>
                     </div>
                 </div>
@@ -2482,6 +2549,18 @@
                     </div>
                 </div>
             </div>
+            <!-- Desktop fade overlay -->
+            <div class="portfolio-grid-fade" id="portfolioFade"></div>
+        </div>
+        <!-- Desktop lihat semua button -->
+        <div class="portfolio-show-all-wrap" id="portfolioShowAllWrap">
+            <button class="portfolio-show-all-btn" id="portfolioShowAllBtn" onclick="desktopShowAll()">
+                Lihat Semua Proyek
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </button>
+        </div>
         </div>
     </section>
 
@@ -2615,6 +2694,13 @@
 
         let currentFilter = 'all';
         let isExpanded = false;
+        let isDesktopExpanded = false;
+
+        const MOBILE_LIMIT = 5; // show 5, overlay on 6th
+        const DESKTOP_LIMIT = 10; // show 10 for 'all' on desktop
+
+        const desktopFade = document.getElementById('portfolioFade');
+        const desktopShowAllWrap = document.getElementById('portfolioShowAllWrap');
 
         function applyGalleryLimit() {
             const isMobile = window.innerWidth <= 768;
@@ -2632,44 +2718,76 @@
                 if (existingOverlay) existingOverlay.remove();
             });
 
-            visibleItems.forEach((item, index) => {
-                item.classList.remove('hidden');
+            // Sembunyikan elemen desktop show-all
+            desktopFade.classList.remove('visible');
+            desktopShowAllWrap.classList.remove('visible');
 
-                if (!isMobile || isExpanded) {
-                    item.style.display = '';
-                } else {
-                    if (index < 5) {
-                        item.style.display = '';
-                    } else if (index === 5) {
-                        item.style.display = '';
-                        const overlay = document.createElement('div');
-                        overlay.className = 'view-more-overlay';
-                        const btn = document.createElement('div');
-                        btn.className = 'view-more-btn';
-                        btn.textContent = 'Lihat Semua';
-                        overlay.appendChild(btn);
+            if (isMobile) {
+                // ── MOBILE: Batasi 5 + overlay di gambar ke-6 ──
+                visibleItems.forEach((item, index) => {
+                    item.classList.remove('hidden');
 
-                        overlay.addEventListener('click', (e) => {
-                            e.stopPropagation();
-                            isExpanded = true;
-                            showAllCurrentCategory(visibleItems);
-                        });
-                        item.appendChild(overlay);
+                    if (isExpanded) {
+                        item.style.display = '';
                     } else {
-                        item.style.display = 'none';
-                    }
-                }
+                        if (index < MOBILE_LIMIT) {
+                            item.style.display = '';
+                        } else if (index === MOBILE_LIMIT) {
+                            item.style.display = '';
+                            const overlay = document.createElement('div');
+                            overlay.className = 'view-more-overlay';
+                            const btn = document.createElement('div');
+                            btn.className = 'view-more-btn';
+                            btn.textContent = 'Lihat Semua';
+                            overlay.appendChild(btn);
 
-                if (!isMobile || isExpanded || index <= 5) {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        item.style.transition = 'all 0.5s ease';
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, 50);
+                            overlay.addEventListener('click', (e) => {
+                                e.stopPropagation();
+                                isExpanded = true;
+                                showAllCurrentCategory(visibleItems);
+                            });
+                            item.appendChild(overlay);
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }
+
+                    if (isExpanded || index <= MOBILE_LIMIT) {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.transition = 'all 0.5s ease';
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 50);
+                    }
+                });
+            } else {
+                // ── DESKTOP ──
+                const needsDesktopLimit = currentFilter === 'all' && !isDesktopExpanded && visibleItems.length > DESKTOP_LIMIT;
+
+                visibleItems.forEach((item, index) => {
+                    item.classList.remove('hidden');
+
+                    if (needsDesktopLimit && index >= DESKTOP_LIMIT) {
+                        item.style.display = 'none';
+                    } else {
+                        item.style.display = '';
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.transition = 'all 0.5s ease';
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 50 + index * 30);
+                    }
+                });
+
+                if (needsDesktopLimit) {
+                    desktopFade.classList.add('visible');
+                    desktopShowAllWrap.classList.add('visible');
                 }
-            });
+            }
         }
 
         function showAllCurrentCategory(items) {
@@ -2678,14 +2796,36 @@
                 if (overlay) overlay.remove();
                 item.style.display = '';
 
-                if (index >= 5) {
+                if (index >= MOBILE_LIMIT) {
                     item.style.opacity = '0';
                     item.style.transform = 'translateY(20px)';
                     setTimeout(() => {
                         item.style.transition = 'all 0.5s ease';
                         item.style.opacity = '1';
                         item.style.transform = 'translateY(0)';
-                    }, 50 + (index - 5) * 50);
+                    }, 50 + (index - MOBILE_LIMIT) * 50);
+                }
+            });
+        }
+
+        function desktopShowAll() {
+            isDesktopExpanded = true;
+            desktopFade.classList.remove('visible');
+            desktopShowAllWrap.classList.remove('visible');
+
+            const visibleItems = Array.from(portfolioItems).filter(item => item.classList.contains('hidden') === false || currentFilter === 'all');
+            const allItems = Array.from(portfolioItems);
+
+            allItems.forEach((item, index) => {
+                if (currentFilter === 'all' && item.style.display === 'none') {
+                    item.style.display = '';
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.transition = 'all 0.5s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50 + (index - DESKTOP_LIMIT) * 30);
                 }
             });
         }
@@ -2695,7 +2835,8 @@
                 filterBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 currentFilter = btn.getAttribute('data-filter');
-                isExpanded = false; // Reset ekspansi saat ganti filter
+                isExpanded = false; // Reset ekspansi mobile saat ganti filter
+                isDesktopExpanded = false; // Reset ekspansi desktop saat ganti filter
                 applyGalleryLimit();
             });
         });
